@@ -1827,7 +1827,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f96677;
+  background: #671b2b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2665,7 +2665,7 @@ embed {
   display: inline-block;
 }
 body {
-  background: url("https://source.unsplash.com/random/1600x900");
+  background: url("http://api.dujin.org/bing/1920.php");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
