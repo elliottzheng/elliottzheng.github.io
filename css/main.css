@@ -1827,7 +1827,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #507818;
+  background: #0b6ca3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2663,4 +2663,7 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+body {
+  background: url("http://api.dujin.org/bing/1920.php");
 }
