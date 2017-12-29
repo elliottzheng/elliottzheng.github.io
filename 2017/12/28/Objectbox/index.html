@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="超立方体">
 <meta property="og:description" content="最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。 今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。 我们首先看一下Box类的getAll函数的说明， 12java.util.List getAll()Returns all stored Objects in this Box. 以L">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T00:37:03.863Z">
+<meta property="og:updated_time" content="2017-12-29T18:03:03.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃">
 <meta name="twitter:description" content="最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。 今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。 我们首先看一下Box类的getAll函数的说明， 12java.util.List getAll()Returns all stored Objects in this Box. 以L">
@@ -350,8 +350,7 @@
 <p>让我疑惑不解的是，在Collections类的定义中，EMPTY_LIST好像就是定义为null啊。。。。，但是将返回值和null比较又不相等。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> List EMPTY_LIST = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
 <p>知道的朋友希望能够在评论区指出，如果文章有错误欢迎在评论区讨论，共同进步。</p>
-<p>&nbsp;</p>
-<div style="color: #0; "><br><br>作者： <a href="http://www.cnblogs.com/elliottzheng/" target="_blank" rel="noopener">郑英林</a><br><br>出处： <a href="http://www.cnblogs.com/elliottzheng/p/8068055.html" target="_blank" rel="noopener">http://www.cnblogs.com/elliottzheng/p/8068055.html&gt;</a><br><br>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出, <a href="#">原文链接</a> 如有问题， 可邮件（elliott.zheng@foxmail.com）咨询.<br><br></div>
+
       
     </div>
     
@@ -381,7 +380,7 @@
   <p><span>本文标题:</span><a href="/2017/12/28/Objectbox/">Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 郑英林 的个人博客">郑英林</a></p>
   <p><span>发布时间:</span>2017年12月28日 - 08:12</p>
-  <p><span>最后更新:</span>2017年12月28日 - 08:12</p>
+  <p><span>最后更新:</span>2017年12月30日 - 02:12</p>
   <p><span>原始链接:</span><a href="/2017/12/28/Objectbox/" title="Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃">www.hypercube.top/2017/12/28/Objectbox/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="www.hypercube.top/2017/12/28/Objectbox/"  aria-label="复制成功！"></i></span>
   </p>
