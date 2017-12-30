@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Android,数据库," />
+  <meta name="keywords" content="编程闲谈," />
 
 
 
@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。 今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。 我们首先看一下Box类的getAll函数的说明， 12java.util.List getAll()Returns all stored Objects in this Box. 以L">
-<meta name="keywords" content="Android,数据库">
+<meta name="description" content="下载工具 Internet Download Manager（配合Firefox食用） 迅雷9精简版（迅雷下载BT的速度还可以，但是奈何广告太多，浏览器太大）  办公软件 Office 2016 iSkysoft Pdf Editor6 Pro Adobe PhotoShop CC 2017 Evernote  多媒体 PotPlayer 网易云音乐 2345看图王精简版  浏览器 Firefox">
+<meta name="keywords" content="编程闲谈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃">
-<meta property="og:url" content="www.hypercube.top/2017/12/28/Objectbox/index.html">
+<meta property="og:title" content="电脑中的软件分享">
+<meta property="og:url" content="www.hypercube.top/2017/12/31/mycomputer/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。 今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。 我们首先看一下Box类的getAll函数的说明， 12java.util.List getAll()Returns all stored Objects in this Box. 以L">
+<meta property="og:description" content="下载工具 Internet Download Manager（配合Firefox食用） 迅雷9精简版（迅雷下载BT的速度还可以，但是奈何广告太多，浏览器太大）  办公软件 Office 2016 iSkysoft Pdf Editor6 Pro Adobe PhotoShop CC 2017 Evernote  多媒体 PotPlayer 网易云音乐 2345看图王精简版  浏览器 Firefox">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-29T18:03:03.682Z">
+<meta property="og:updated_time" content="2017-12-30T17:01:32.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃">
-<meta name="twitter:description" content="最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。 今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。 我们首先看一下Box类的getAll函数的说明， 12java.util.List getAll()Returns all stored Objects in this Box. 以L">
+<meta name="twitter:title" content="电脑中的软件分享">
+<meta name="twitter:description" content="下载工具 Internet Download Manager（配合Firefox食用） 迅雷9精简版（迅雷下载BT的速度还可以，但是奈何广告太多，浏览器太大）  办公软件 Office 2016 iSkysoft Pdf Editor6 Pro Adobe PhotoShop CC 2017 Evernote  多媒体 PotPlayer 网易云音乐 2345看图王精简版  浏览器 Firefox">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="www.hypercube.top/2017/12/28/Objectbox/"/>
+  <link rel="canonical" href="www.hypercube.top/2017/12/31/mycomputer/"/>
 
 
 
 
 
-  <title>Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃 | 超立方体</title>
+  <title>电脑中的软件分享 | 超立方体</title>
   
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.hypercube.top/2017/12/28/Objectbox/">
+    <link itemprop="mainEntityOfPage" href="www.hypercube.top/2017/12/31/mycomputer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑英林">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃</h1>
+          <h1 class="post-title" itemprop="name headline">电脑中的软件分享</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T08:07:18+08:00">
-                2017-12-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T00:57:26+08:00">
+                2017-12-31
               </time>
             
 
@@ -331,25 +331,77 @@
       
 
       
-        <p>最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。</p>
-<p>今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。</p>
-<p>我们首先看一下Box类的getAll函数的说明，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.util.<span class="function">List <span class="title">getAll</span><span class="params">()</span></span></span><br><span class="line"><span class="function">Returns all stored Objects in <span class="keyword">this</span> Box.</span></span><br></pre></td></tr></table></figure>
-<p>以Lists的形式返回box中的所有对象。<br>我很自然地加了一个检验是否返回为null的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;StockInfo&gt; stockInfoList=stockInfoBox.getAll();<span class="comment">//getAll函数你要判断是不是一个emptylist</span></span><br><span class="line"><span class="keyword">if</span>(stockInfoList!=<span class="keyword">null</span>)</span><br><span class="line">   <span class="keyword">return</span> stockInfoList;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;StockInfo&gt;();</span><br></pre></td></tr></table></figure>
-<p>结果当表为空的时候，我要往stockInfoList里面添加数据时，程序瞬间崩溃了，其中最关键的log告诉我</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.RuntimeException: Failure delivering result ResultInfo&#123;who=<span class="keyword">null</span>, request=<span class="number">65537</span>, result=<span class="number">3</span>, data=Intent &#123; (has extras) &#125;&#125; to activity &#123;com.elliott.zheng.xica/com.elliott.zheng.xica.Activity.MainActivity&#125;: </span><br><span class="line">java.lang.UnsupportedOperationException at android.app.ActivityThread.deliverResults(ActivityThread.java:<span class="number">3769</span>)</span><br></pre></td></tr></table></figure>
-<p>UnsupportedOperationException 也就是由于不支持的操作导致的异常。</p>
-<p>经过一番痛苦的调试，查看下列getAll函数源码，<strong>发现当box为空时，getAll函数返回的不是null而是Collections.emptyList()</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns all stored Objects in this Box.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;T&gt; <span class="title">getAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Cursor&lt;T&gt; cursor = getReader();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            T first = cursor.first();</span><br><span class="line">            <span class="keyword">if</span> (first == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> Collections.emptyList();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ArrayList&lt;T&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                list.add(first);</span><br><span class="line">                <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">                    T next = cursor.next();</span><br><span class="line">                    <span class="keyword">if</span> (next != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        list.add(next);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> list;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            releaseReader(cursor);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>这个东西非常神奇，它的长度为空，不支持add操作，而且它不等于null，所以上面我那个语句判断&nbsp;stockInfoList!=null 为true而</p>
-<p>直接将这个Collection.emptyList()生成的对象直接返回，而当我试图往里面add元素时，程序直接崩溃，因为这个对象不允许进行add()操作，一旦进行添加操作，会直接抛出异常，</p>
-<p>说不支持这种操作，导致程序崩溃。</p>
-<p><strong>解决办法：判断getAll函数返回值是否等于Collections.EMPTY_LIST</strong>(这里判断返回值是否为null，没有用)，即</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;StockInfo&gt; stockInfoList=stockInfoBox.getAll();<span class="comment">//getAll函数返回值应判断是不是一个emptylist</span></span><br><span class="line"><span class="keyword">if</span>(stockInfoList!=Collections.EMPTY_LIST)</span><br><span class="line">    <span class="keyword">return</span> stockInfoList;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;StockInfo&gt;();</span><br></pre></td></tr></table></figure>
-<p>让我疑惑不解的是，在Collections类的定义中，EMPTY_LIST好像就是定义为null啊。。。。，但是将返回值和null比较又不相等。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> List EMPTY_LIST = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
-<p>知道的朋友希望能够在评论区指出，如果文章有错误欢迎在评论区讨论，共同进步。</p>
+        <h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><ul>
+<li>Internet Download Manager（配合Firefox食用）</li>
+<li>迅雷9精简版（迅雷下载BT的速度还可以，但是奈何广告太多，浏览器太大）</li>
+</ul>
+<h2 id="办公软件"><a href="#办公软件" class="headerlink" title="办公软件"></a>办公软件</h2><ul>
+<li>Office 2016</li>
+<li>iSkysoft Pdf Editor6 Pro</li>
+<li>Adobe PhotoShop CC 2017</li>
+<li>Evernote</li>
+</ul>
+<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
+<li>PotPlayer</li>
+<li>网易云音乐</li>
+<li>2345看图王精简版</li>
+</ul>
+<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
+<li>Firefox Developer Edition</li>
+</ul>
+<h2 id="版本控制系统"><a href="#版本控制系统" class="headerlink" title="版本控制系统"></a>版本控制系统</h2><ul>
+<li>git  （有些东西还是得在命令行下做）</li>
+<li>Tortoise git（日常的提交，推送的什么的图形化还还是快些）</li>
+</ul>
+<h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><ul>
+<li>Startisback （win10 状态栏美化）</li>
+<li>Rain Meter （桌面美化）</li>
+</ul>
+<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><ul>
+<li>广告拦截器 （拦截桌面弹窗，比如说QQ，迅雷，福昕，不过这三个我好像都没有）</li>
+<li>ShadowSocks （你懂的）</li>
+<li>WinHotkey （快捷键）</li>
+<li>CCleaner （系统清理工具）</li>
+</ul>
+<h2 id="压缩软件"><a href="#压缩软件" class="headerlink" title="压缩软件"></a>压缩软件</h2><ul>
+<li>Bandzip （第一感觉是漂亮）</li>
+</ul>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
+<li>Everything(用来搜索文件名，速度很快)</li>
+<li>Docfetcher(用来搜索文件内容，需要建索引)</li>
+</ul>
+<h2 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h2><ul>
+<li>网易邮箱大师</li>
+<li>TIM（QQ的弹窗很烦）</li>
+</ul>
+<h2 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h2><ul>
+<li>Pycharm</li>
+<li>Android Studio</li>
+<li>web storm</li>
+<li>Visual Studio</li>
+<li>IntelliJ IDEA Community</li>
+<li>MATLAB</li>
+</ul>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ul>
+<li>Atom(不怎么用)</li>
+<li>Visual studio code</li>
+<li>Notepad++ // 用来替代</li>
+<li>Typora 用来写markdown的，这篇文章就是用它写的，蛋疼死我了</li>
+</ul>
+<h2 id="编程字体"><a href="#编程字体" class="headerlink" title="编程字体"></a>编程字体</h2><ul>
+<li>思源黑体（安卓开发的时候）</li>
+<li>苹方（其他时候）</li>
+<li>Monaco（下面那几个看心情了）</li>
+<li>Consolas</li>
+<li>Unbuntu </li>
+<li>monofur</li>
+</ul>
+<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
+<li>夜神模拟器（安卓模拟器）</li>
+<li>TeamViewer（最近几次老是连接不上，不知道为什么）</li>
+<li>Xshell（本来是是用来连接vps的，现在vps过期了）</li>
+<li>VMware workstation （虚拟机）</li>
+</ul>
 
       
     </div>
@@ -377,12 +429,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2017/12/28/Objectbox/">Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃</a></p>
+  <p><span>本文标题:</span><a href="/2017/12/31/mycomputer/">电脑中的软件分享</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 郑英林 的个人博客">郑英林</a></p>
-  <p><span>发布时间:</span>2017年12月28日 - 08:12</p>
-  <p><span>最后更新:</span>2017年12月30日 - 02:12</p>
-  <p><span>原始链接:</span><a href="/2017/12/28/Objectbox/" title="Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃">www.hypercube.top/2017/12/28/Objectbox/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="www.hypercube.top/2017/12/28/Objectbox/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2017年12月31日 - 00:12</p>
+  <p><span>最后更新:</span>2017年12月31日 - 01:12</p>
+  <p><span>原始链接:</span><a href="/2017/12/31/mycomputer/" title="电脑中的软件分享">www.hypercube.top/2017/12/31/mycomputer/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="www.hypercube.top/2017/12/31/mycomputer/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
 </div>
@@ -413,9 +465,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
-          
-            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+            <a href="/tags/编程闲谈/" rel="tag"><i class="fa fa-tag"></i> 编程闲谈</a>
           
         </div>
       
@@ -428,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/24/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/12/29/DoubleArr/" rel="next" title="C++自封装二维数组类">
+                <i class="fa fa-chevron-left"></i> C++自封装二维数组类
               </a>
             
           </div>
@@ -437,10 +487,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/29/DoubleArr/" rel="prev" title="C++自封装二维数组类">
-                C++自封装二维数组类 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -490,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -568,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载工具"><span class="nav-number">1.</span> <span class="nav-text">下载工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#办公软件"><span class="nav-number">2.</span> <span class="nav-text">办公软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多媒体"><span class="nav-number">3.</span> <span class="nav-text">多媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器"><span class="nav-number">4.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本控制系统"><span class="nav-number">5.</span> <span class="nav-text">版本控制系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统美化"><span class="nav-number">6.</span> <span class="nav-text">系统美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统优化"><span class="nav-number">7.</span> <span class="nav-text">系统优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩软件"><span class="nav-number">8.</span> <span class="nav-text">压缩软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索"><span class="nav-number">9.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通讯"><span class="nav-number">10.</span> <span class="nav-text">通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成开发环境"><span class="nav-number">11.</span> <span class="nav-text">集成开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器"><span class="nav-number">12.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程字体"><span class="nav-number">13.</span> <span class="nav-text">编程字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他工具"><span class="nav-number">14.</span> <span class="nav-text">其他工具</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
