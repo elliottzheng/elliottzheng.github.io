@@ -333,160 +333,14 @@
 
       
         
-          
-            <h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><hr>
-<h3 id="按照排序方式分"><a href="#按照排序方式分" class="headerlink" title="按照排序方式分"></a>按照排序方式分</h3><ul>
-<li>插入排序<ul>
-<li>直接插入排序</li>
-<li>希尔排序</li>
-</ul>
-</li>
-<li>选择排序<ul>
-<li>简单选择排序</li>
-<li>堆排序</li>
-<li>树形选择排序</li>
-</ul>
-</li>
-<li>交换排序<ul>
-<li>冒泡排序</li>
-<li>快速排序</li>
-</ul>
-</li>
-<li>归并排序</li>
-<li>基数排序</li>
-<li>计数排序</li>
-</ul>
-<hr>
-<h3 id="按照算法复杂度分"><a href="#按照算法复杂度分" class="headerlink" title="按照算法复杂度分"></a>按照算法复杂度分</h3><ul>
-<li>O(n) <ul>
-<li>计数排序     O(n+h)</li>
-<li>基数排序     O(n)</li>
-</ul>
-</li>
-<li>O(n log(n)) <ul>
-<li>归并排序</li>
-<li>快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2））</li>
-<li>堆排序</li>
-<li>树形选择排序</li>
-<li>希尔排序（下界是O(n*log2n),与增量序列的选取有关）</li>
-</ul>
-</li>
-<li>O(n^2) <ul>
-<li>冒泡排序</li>
-<li>插入排序</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="按稳定性分"><a href="#按稳定性分" class="headerlink" title="按稳定性分"></a>按稳定性分</h3><p>　　这边大家看着高兴就好，有人说一种排序方法，如果它不稳定，那么无论你写出什么样的程序来实现它，总会有使之不稳定的实例存在。但是对于稳定的排序，可能有的程序实现算法会不稳定，但是总能写出另一种算法使其稳定。我不保证下面这些是对的，但是大部分应该是对的。</p>
-<ul>
-<li>稳定排序<ul>
-<li>基数排序(LSD方法)</li>
-<li>直接插入排序</li>
-<li>冒泡排序</li>
-<li>归并排序</li>
-<li>树形选择排序</li>
-<li>简单选择排序</li>
-</ul>
-</li>
-<li>不稳定排序<ul>
-<li>快速排序</li>
-<li>堆排序</li>
-<li>希尔排序</li>
-<li>选择排序</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="简单解释"><a href="#简单解释" class="headerlink" title="简单解释"></a>简单解释</h2><hr>
-<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　实际上是希尔排序增量因子初值为1时的情况。将前面的一部分假设为有序，然后取出有序部分之后的第一个无序元素，那么就会出现一个空位，然后我们将空位前移到有序部分它应该在的地方，然后再将元素插入。（之所以原来要把元素取出来，是为了减少交换元素的操作，取出来可以直接赋值，无需交换）</p>
-<hr>
-<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</p>
-<hr>
-<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><h4 id="算法思想-2"><a href="#算法思想-2" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
-<li><p>初始无序序列为整个数组</p>
-</li>
-<li><p>从无序序列中选出一个最小的，将它和无序序列最前端的元素做交换</p>
-</li>
-<li><p>拓展有序序列</p>
-</li>
-<li><p>重复2,3步骤，直到整个序列均为有序序列</p>
-</li>
-</ol>
-<hr>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><h4 id="算法思想-3"><a href="#算法思想-3" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
-<li>建立一个堆（实际上是从下往上，逐个调整子堆）</li>
-<li>取出堆顶元素</li>
-<li>调整堆</li>
-<li>重复2,3步骤直到堆为空</li>
-</ol>
-<h4 id="我的想法"><a href="#我的想法" class="headerlink" title="我的想法"></a>我的想法</h4><p>　　优雅的算法</p>
-<hr>
-<h3 id="树形选择排序"><a href="#树形选择排序" class="headerlink" title="树形选择排序"></a>树形选择排序</h3><h4 id="算法思想-4"><a href="#算法思想-4" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
-<li><p>两两比较，将结果存在二叉树当中</p>
-</li>
-<li><p>然后取出最大的，将其置为无穷大，再从原最大元素的子树开始，向上更新二叉树，重新获得最大值。</p>
-</li>
-<li><p>重复2步骤，直到所有元素均为无穷大</p>
-</li>
-</ol>
-<h4 id="我的想法-1"><a href="#我的想法-1" class="headerlink" title="我的想法"></a>我的想法</h4><p>　　请你当场去世，谢谢</p>
-<hr>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h4 id="算法思想-5"><a href="#算法思想-5" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
-<li>将递归地调用归并排序将左右两边分别排好序</li>
-<li>合并两个数组</li>
-</ol>
-<h4 id="我的想法-2"><a href="#我的想法-2" class="headerlink" title="我的想法"></a>我的想法</h4><p>　　这玩意儿好蛋疼啊，辅助数组很艰难，归并的时候很难受的其实，主要是动态申请空间的问题，容易内存泄露。但是我做错了一个东西就是，辅助数组应该是共用的，现在改过来了</p>
-<hr>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h4 id="算法思想-6"><a href="#算法思想-6" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
-<li><p>初始认为整体序列无序</p>
-</li>
-<li><p>遍历无序序列，将最大值交换到无序序列最后</p>
-</li>
-<li><p>无序序列缩小</p>
-</li>
-<li><p>重复2,3直到无序序列为空</p>
-</li>
-</ol>
-<hr>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="算法思想-7"><a href="#算法思想-7" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　每次调整将无序序列的第一个元素放到序列中他应该在的位置，然后递归地对前面一半序列，和后面一个序列进行快速排序。</p>
-<hr>
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><h4 id="算法思想-8"><a href="#算法思想-8" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　基数排序属于“分配式排序”，又称“桶子法”（bucket sort）或bin sort，顾名思义，它是透过键值的部份资讯，将要排序的元素分配至某些“桶”中，藉以达到排序的作用，</p>
-<h4 id="我的想法-3"><a href="#我的想法-3" class="headerlink" title="我的想法"></a>我的想法</h4><p>　　脱离了低级趣味的排序方法，虽然是O（n）的复杂度，但是系数比较大，至于空间的话其实可以用链表来搞定，会提高空间利用率，像我下面这样用二维数组当然是很浪费空间的啦。</p>
-<hr>
-<h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><h4 id="算法思想-9"><a href="#算法思想-9" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　数组A，大小为n，用来存放待排序数组</p>
-<p>　　辅助数组C ，大小为K+1（K为数列中最大数的大小），C[i]用来记录比i小的元素的个数。</p>
-<p>　　辅助数组B，大小为n，用来暂时存放排好序的数组。</p>
-<ol>
-<li><p>遍历数组A，填充辅助数组C。</p>
-</li>
-<li><p>再次遍历数组A，对于A中每个元素A[i],将C[A[i]]作为它在数组B的索引然后暂存到B数组中。</p>
-</li>
-<li><p>对于重复的数 i ，每排好一个 i 则对其C[i] 减一，以此对完成其余相同的数字进行排位。</p>
-</li>
-<li><p>将B数组拷贝到A数组。</p>
-</li>
-</ol>
-<hr>
-<h2 id="C-实现"><a href="#C-实现" class="headerlink" title="C++实现"></a>C++实现</h2><hr>
-<h3 id="归并排序-1"><a href="#归并排序-1" class="headerlink" title="归并排序"></a>归并排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//归并排序</span></span><br><span class="line"><span class="comment">//都是实心的，就是front和rear都是有元素的</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span>* arr, <span class="keyword">int</span> * help, <span class="keyword">int</span> front, <span class="keyword">int</span> rear)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (front == rear)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span> ((front + <span class="number">1</span> == rear) &amp;&amp; arr[rear] &lt; arr[front])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> temp = arr[front];</span><br><span class="line">		arr[front] = arr[rear];</span><br><span class="line">		arr[rear] = temp;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	merge_sort(arr, help, front, (front + rear) / <span class="number">2</span>);</span><br><span class="line">	merge_sort(arr, help, (front + rear) / <span class="number">2</span> + <span class="number">1</span>, rear);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> n = rear - front + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> first_ptr = front;</span><br><span class="line">	<span class="keyword">int</span> sec_ptr = (front + rear) / <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (first_ptr &lt;= (front + rear) / <span class="number">2</span> &amp;&amp; (arr[first_ptr] &lt; arr[sec_ptr] || sec_ptr&gt;rear))</span><br><span class="line">		&#123;</span><br><span class="line">			help[i] = arr[first_ptr];</span><br><span class="line">			first_ptr++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			help[i] = arr[sec_ptr];</span><br><span class="line">			sec_ptr++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		arr[i + front] = help[i];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//真正在用的时候应该用这个，上面那个函数是递归的，不好调用</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort_util</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> * help = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">	merge_sort(arr, help, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">delete</span>[] help;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="快速排序-1"><a href="#快速排序-1" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速排序，front和rear这两个都是实心的</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> front, <span class="keyword">int</span> rear)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> standerd = arr[front];</span><br><span class="line">	<span class="keyword">int</span> i = front;</span><br><span class="line">	<span class="keyword">int</span> j = rear;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (arr[j] &gt;=standerd&amp;&amp;i!=j)</span><br><span class="line">			j--;</span><br><span class="line">		<span class="keyword">while</span> (arr[i] &lt;= standerd&amp;&amp;i!=j)</span><br><span class="line">			i++;</span><br><span class="line">		<span class="keyword">if</span> (i == j)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">int</span> temp = arr[i];</span><br><span class="line">		arr[i] = arr[j];</span><br><span class="line">		arr[j] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	arr[front] = arr[i];</span><br><span class="line">	arr[i] = standerd;</span><br><span class="line"><span class="comment">//下面这两个都是递归的，但是就是他们自己来终止</span></span><br><span class="line">	<span class="keyword">if</span>(i<span class="number">-1</span>&gt;front)</span><br><span class="line">		QuickSort(arr, front, i - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span>(i+<span class="number">1</span>&lt;rear)</span><br><span class="line">		QuickSort(arr, i+<span class="number">1</span>,rear);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="基数排序-1"><a href="#基数排序-1" class="headerlink" title="基数排序"></a>基数排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基数排序 lenth为元素的最多位数，这里的DoubleArr是我的自定义二维数组类，</span></span><br><span class="line"><span class="comment">//可以查看我的上一篇博文，我们就把它当做普通的二维数组来用就可以了</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BaseSort</span><span class="params">(<span class="keyword">int</span> * arr, <span class="keyword">int</span> n,<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		DoubleArr&lt;<span class="keyword">int</span>&gt; help(<span class="number">10</span>, n, INT_MAX);</span><br><span class="line">		DoubleArr&lt;<span class="keyword">int</span>&gt; count(<span class="number">1</span>, <span class="number">10</span>, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">int</span> div = <span class="built_in">pow</span>(<span class="number">10</span>, i);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> temp = (arr[j] / div) % <span class="number">10</span>;</span><br><span class="line">			help[temp][count[<span class="number">0</span>][temp]] = arr[j];</span><br><span class="line">			count[<span class="number">0</span>][temp]++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; count[<span class="number">0</span>][j]; k++)</span><br><span class="line">			&#123;</span><br><span class="line">				arr[index] = help[j][k];</span><br><span class="line">				index++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="计数排序-1"><a href="#计数排序-1" class="headerlink" title="计数排序"></a>计数排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最简单版的计数排序,数组元素的取值范围为0-k</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CountSort</span><span class="params">(<span class="keyword">int</span>* arr,<span class="keyword">int</span> n,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> length = k + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span>* count = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">	<span class="keyword">int</span> *help = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">	<span class="built_in">memset</span>(count, <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*(length));<span class="comment">//初始化数组为0</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; n; i++)</span><br><span class="line">		count[arr[i]]++;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>; i &lt; length; i++)</span><br><span class="line">		count[i] += count[i - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (i = n<span class="number">-1</span>; i &gt;=<span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		help[count[arr[i]] - <span class="number">1</span>] = arr[i];</span><br><span class="line">		count[arr[i]]--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		arr[i] = help[i];</span><br><span class="line">	<span class="keyword">delete</span>[] help;</span><br><span class="line">	<span class="keyword">delete</span>[] count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="冒泡排序-1"><a href="#冒泡排序-1" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//冒泡排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span> * arr, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> temp = arr[j];</span><br><span class="line">				arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">				arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="插入排序和希尔排序"><a href="#插入排序和希尔排序" class="headerlink" title="插入排序和希尔排序"></a>插入排序和希尔排序</h3><p>​    由于希尔排序和直接插入排序实际上只有初始增量因子之间的差别，所以我们在实现的时候只要实现一般形式，当初始增量因子为n/2时，排序为希尔排序，当初始增量因子为1时排序为直接插入排序。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//希尔插入排序的一般形式,当factcor为1时为直接插入排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HillInsertSort</span><span class="params">(<span class="keyword">int</span> * arr, <span class="keyword">int</span> n, <span class="keyword">int</span> factor)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (factor &lt; <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; factor; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> sorted = i;</span><br><span class="line">		<span class="keyword">for</span> (sorted = i; sorted &lt; n - factor; sorted += factor)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> j = sorted + factor;</span><br><span class="line">			<span class="keyword">int</span> sentinel = arr[j];</span><br><span class="line">			<span class="keyword">while</span> (sentinel &lt; arr[j - factor] &amp;&amp; j &gt;= factor)</span><br><span class="line">			&#123;</span><br><span class="line">				arr[j] = arr[j - factor];</span><br><span class="line">				j -= factor;</span><br><span class="line">			&#125;</span><br><span class="line">			arr[j] = sentinel;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	HillInsertSort(arr, n, factor - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接插入排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertSort</span><span class="params">(<span class="keyword">int</span> * arr,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	HillInsertSort(arr, n, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//希尔排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HillSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> inc_factor = n / <span class="number">2</span>;<span class="comment">//初始化增量因子</span></span><br><span class="line">	HillInsertSort(arr, n, inc_factor);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="堆排序-1"><a href="#堆排序-1" class="headerlink" title="堆排序"></a>堆排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调整堆，这里做的事情实际上只是把当前索引为parent的节点向下调整，放到它应该在的地方</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapAdjust</span><span class="params">(<span class="keyword">int</span>* arr, <span class="keyword">int</span>  parent, <span class="keyword">int</span> length)</span><span class="comment">//默写出来还行</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp = arr[parent];<span class="comment">//暂存parent节点的值，省的一直交换</span></span><br><span class="line">	<span class="keyword">while</span> (parent * <span class="number">2</span>+<span class="number">1</span> &lt; length)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = parent * <span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (j + <span class="number">1</span> &lt; length&amp;&amp;arr[j + <span class="number">1</span>] &gt; arr[j])<span class="comment">//如果右孩子存在，而且还比左孩子大,那么就把j++</span></span><br><span class="line">			j++;</span><br><span class="line">		<span class="comment">//上面这步之后，arr[j]代表的是parent的两个孩子中最大的那个</span></span><br><span class="line">		<span class="keyword">if</span> (arr[j] &gt; temp)</span><br><span class="line">		&#123;</span><br><span class="line">			arr[parent] = arr[j];</span><br><span class="line">			parent = j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="comment">//这个else的意思就是如果两个孩子最大的都没有它自己大，那就没什么必要换了，这就是他的位置</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	arr[parent] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span> * arr, <span class="keyword">int</span> length)</span><span class="comment">//堆排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化大顶堆，才能从小到大</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = length / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		HeapAdjust(arr, i, length);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//取出堆顶元素，放到堆长度后面一格，然后将所谓的i--，这里i指的是堆的大小</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> temp = arr[i];</span><br><span class="line">		arr[i] = arr[<span class="number">0</span>];</span><br><span class="line">		arr[<span class="number">0</span>] = temp;</span><br><span class="line">		HeapAdjust(arr, <span class="number">0</span>, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="树形选择排序-1"><a href="#树形选择排序-1" class="headerlink" title="树形选择排序"></a>树形选择排序</h3><p>　　告辞</p>
-
-          
+          <p>　　2017年即将要过去了，今天复习了一下数据结构关于排序的这块，自己用C++实现了大部分算法,做个记录。唯一辣眼睛的就是树形选择排序算法，我选择死亡。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/31/sort/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -610,80 +464,14 @@
 
       
         
-          
-            <h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><ul>
-<li>Internet Download Manager（配合Firefox食用）</li>
-<li>迅雷9精简版（迅雷下载BT的速度还可以，但是奈何广告太多，浏览器太大）</li>
-</ul>
-<h2 id="办公软件"><a href="#办公软件" class="headerlink" title="办公软件"></a>办公软件</h2><ul>
-<li>Office 2016</li>
-<li>iSkysoft Pdf Editor6 Pro</li>
-<li>Adobe PhotoShop CC 2017</li>
-<li>Evernote</li>
-</ul>
-<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
-<li>PotPlayer</li>
-<li>网易云音乐</li>
-<li>2345看图王精简版</li>
-</ul>
-<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
-<li>Firefox Developer Edition</li>
-</ul>
-<h2 id="版本控制系统"><a href="#版本控制系统" class="headerlink" title="版本控制系统"></a>版本控制系统</h2><ul>
-<li>git  （有些东西还是得在命令行下做）</li>
-<li>Tortoise git（日常的提交，推送的什么的图形化还还是快些）</li>
-</ul>
-<h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><ul>
-<li>Startisback （win10 状态栏美化）</li>
-<li>Rain Meter （桌面美化）</li>
-</ul>
-<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><ul>
-<li>广告拦截器 （拦截桌面弹窗，比如说QQ，迅雷，福昕，不过这三个我好像都没有）</li>
-<li>ShadowSocks （你懂的）</li>
-<li>WinHotkey （快捷键）</li>
-<li>CCleaner （系统清理工具）</li>
-</ul>
-<h2 id="压缩软件"><a href="#压缩软件" class="headerlink" title="压缩软件"></a>压缩软件</h2><ul>
-<li>Bandzip （第一感觉是漂亮）</li>
-</ul>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
-<li>Everything(用来搜索文件名，速度很快)</li>
-<li>Docfetcher(用来搜索文件内容，需要建索引)</li>
-</ul>
-<h2 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h2><ul>
-<li>网易邮箱大师</li>
-<li>TIM（QQ的弹窗很烦）</li>
-</ul>
-<h2 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h2><ul>
-<li>Pycharm</li>
-<li>Android Studio</li>
-<li>web storm</li>
-<li>Visual Studio</li>
-<li>IntelliJ IDEA Community</li>
-<li>MATLAB</li>
-</ul>
-<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ul>
-<li>Atom(不怎么用)</li>
-<li>Visual studio code</li>
-<li>Notepad++ // 用来替代</li>
-<li>Typora 用来写markdown的，这篇文章就是用它写的，蛋疼死我了</li>
-</ul>
-<h2 id="编程字体"><a href="#编程字体" class="headerlink" title="编程字体"></a>编程字体</h2><ul>
-<li>思源黑体（安卓开发的时候）</li>
-<li>苹方（其他时候）</li>
-<li>Monaco（下面那几个看心情了）</li>
-<li>Consolas</li>
-<li>Unbuntu </li>
-<li>monofur</li>
-</ul>
-<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
-<li>夜神模拟器（安卓模拟器）</li>
-<li>TeamViewer（最近几次老是连接不上，不知道为什么）</li>
-<li>Xshell（本来是是用来连接vps的，现在vps过期了）</li>
-<li>VMware workstation （虚拟机）</li>
-</ul>
-
-          
+          <p>　　一些我电脑里用的一些软件，感觉很好用哦，觉得要记录一下，也分享给大家</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/31/mycomputer/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -807,10 +595,14 @@
 
       
         
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Name：Two Dimensional Array</span></span><br><span class="line"><span class="comment">Auther：Elliott Zheng XMU </span></span><br><span class="line"><span class="comment">Date: 2017.12.8</span></span><br><span class="line"><span class="comment">自封装的二维数组，做图相关的题目应该比较方便</span></span><br><span class="line"><span class="comment">应该是不会内存泄露吧,毕竟经过了vld.h的测试</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">DoubleArr</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	T** pointer;</span><br><span class="line">	<span class="keyword">int</span> rows;</span><br><span class="line">	<span class="keyword">int</span> cols;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">clean</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!pointer)</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++)</span><br><span class="line">			<span class="keyword">delete</span>[] pointer[i];</span><br><span class="line">		<span class="keyword">delete</span>[] pointer;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 行数，列数(可不填，默认为与行数相同) 把整个数组初始化为一个值</span></span><br><span class="line">	DoubleArr( <span class="keyword">int</span> row,<span class="keyword">int</span> col) :pointer(<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Resize(row,col);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	DoubleArr(<span class="keyword">int</span> row, <span class="keyword">int</span> col,T ori) :pointer(<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Resize(row, col);</span><br><span class="line">		SetAllTo(ori);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//拷贝构造函数</span></span><br><span class="line">	DoubleArr(DoubleArr&amp; other):pointer(<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Copy(other);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//移动构造函数</span></span><br><span class="line">	DoubleArr(DoubleArr&amp;&amp; other):rows(other.rows)</span><br><span class="line">	&#123;</span><br><span class="line">		pointer = other.pointer;</span><br><span class="line">		other.pointer = <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//拷贝other</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Copy</span><span class="params">(DoubleArr&amp; other)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (&amp;other == <span class="keyword">this</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		clean();</span><br><span class="line">		rows = other.rows;</span><br><span class="line">		cols = other.cols;</span><br><span class="line">		pointer = <span class="keyword">new</span>   <span class="keyword">int</span>*[rows];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;rows; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			pointer[i] = <span class="keyword">new</span>   <span class="keyword">int</span>[cols];</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; cols; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				pointer[i][j] = other.pointer[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//行数，列数，还有一个可选参数初值</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Resize</span><span class="params">(<span class="keyword">int</span> row,<span class="keyword">int</span> col)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		clean();</span><br><span class="line">		<span class="keyword">if</span> (row &lt;= <span class="number">0</span> || col &lt;= <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">std</span>::<span class="built_in">cerr</span> &lt;&lt; <span class="string">"ERROR:你输入的行数或者列数不对，没有意义,已自动置为1"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		rows = row&lt;=<span class="number">0</span>? <span class="number">1</span>:row;</span><br><span class="line">		cols = col &lt;= <span class="number">0</span> ? <span class="number">1</span>: col;</span><br><span class="line">		<span class="comment">//防止出现说行数列数为o 或负数</span></span><br><span class="line">		pointer = <span class="keyword">new</span>   <span class="keyword">int</span>*[rows];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;rows; i++)</span><br><span class="line">			pointer[i] = <span class="keyword">new</span>  <span class="keyword">int</span>[cols];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//行数，列数，初值</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Resize</span><span class="params">(<span class="keyword">int</span> row, <span class="keyword">int</span> col, T ori)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Resize(row, col);</span><br><span class="line">		SetAllTo(ori);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//将所有元素设置为ori</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">SetAllTo</span><span class="params">(T ori)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; cols; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				pointer[i][j] = ori;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span>  <span class="title">get_rows</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> rows;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span>  <span class="title">get_cols</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> cols;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//比较不推荐，但是你懂我意思吧，其实如果你想要程序跑得通，那这两个函数都不应该出问题，但是数组出问题是很正常的啊</span></span><br><span class="line">	T* <span class="keyword">operator</span>[](<span class="keyword">const</span> <span class="keyword">int</span> row) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (row &gt;= rows || row &lt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cerr</span> &lt;&lt; <span class="string">"ERROR:数组访问越界,已自动返回空指针"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> pointer[row];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//推荐使用函数操作符访问二维数组元素</span></span><br><span class="line">	<span class="function">T&amp; <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> row, <span class="keyword">const</span> <span class="keyword">int</span> col)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (row &gt;= rows || row &lt; <span class="number">0</span>||col&gt;=cols||col&lt;<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cerr</span> &lt;&lt; <span class="string">"ERROR:数组访问越界,已自动返回数组元素[0][0]的引用，请检查程序是否出错"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> pointer[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> pointer[row][col];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//析构函数</span></span><br><span class="line">	~DoubleArr()</span><br><span class="line">	&#123;</span><br><span class="line">		clean();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">friend</span> <span class="built_in">std</span>::ostream&amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream&amp; out, DoubleArr&lt;T&gt;&amp; s)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.rows; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; s.cols; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				out &lt;&lt; s[i][j] &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			out &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> out;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	DoubleArr&lt;T&gt;&amp; <span class="keyword">operator</span>=(DoubleArr&lt;T&gt;&amp; other)</span><br><span class="line">	&#123;</span><br><span class="line">		Copy(other);</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
+          <p>　　做数据结构的图的作业，感觉每次都要自己去管理动态二维数组，就特地封装了一个二维数组类，实现了一些基本的接口</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/29/DoubleArr/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -934,28 +726,15 @@
 
       
         
-          
-            <p>最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。</p>
-<p>今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。</p>
-<p>我们首先看一下Box类的getAll函数的说明，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.util.<span class="function">List <span class="title">getAll</span><span class="params">()</span></span></span><br><span class="line"><span class="function">Returns all stored Objects in <span class="keyword">this</span> Box.</span></span><br></pre></td></tr></table></figure>
-<p>以Lists的形式返回box中的所有对象。<br>我很自然地加了一个检验是否返回为null的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;StockInfo&gt; stockInfoList=stockInfoBox.getAll();<span class="comment">//getAll函数你要判断是不是一个emptylist</span></span><br><span class="line"><span class="keyword">if</span>(stockInfoList!=<span class="keyword">null</span>)</span><br><span class="line">   <span class="keyword">return</span> stockInfoList;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;StockInfo&gt;();</span><br></pre></td></tr></table></figure>
-<p>结果当表为空的时候，我要往stockInfoList里面添加数据时，程序瞬间崩溃了，其中最关键的log告诉我</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.RuntimeException: Failure delivering result ResultInfo&#123;who=<span class="keyword">null</span>, request=<span class="number">65537</span>, result=<span class="number">3</span>, data=Intent &#123; (has extras) &#125;&#125; to activity &#123;com.elliott.zheng.xica/com.elliott.zheng.xica.Activity.MainActivity&#125;: </span><br><span class="line">java.lang.UnsupportedOperationException at android.app.ActivityThread.deliverResults(ActivityThread.java:<span class="number">3769</span>)</span><br></pre></td></tr></table></figure>
-<p>UnsupportedOperationException 也就是由于不支持的操作导致的异常。</p>
-<p>经过一番痛苦的调试，查看下列getAll函数源码，<strong>发现当box为空时，getAll函数返回的不是null而是Collections.emptyList()</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns all stored Objects in this Box.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;T&gt; <span class="title">getAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Cursor&lt;T&gt; cursor = getReader();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            T first = cursor.first();</span><br><span class="line">            <span class="keyword">if</span> (first == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> Collections.emptyList();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ArrayList&lt;T&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                list.add(first);</span><br><span class="line">                <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">                    T next = cursor.next();</span><br><span class="line">                    <span class="keyword">if</span> (next != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        list.add(next);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> list;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            releaseReader(cursor);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>这个东西非常神奇，它的长度为空，不支持add操作，而且它不等于null，所以上面我那个语句判断&nbsp;stockInfoList!=null 为true而</p>
-<p>直接将这个Collection.emptyList()生成的对象直接返回，而当我试图往里面add元素时，程序直接崩溃，因为这个对象不允许进行add()操作，一旦进行添加操作，会直接抛出异常，</p>
-<p>说不支持这种操作，导致程序崩溃。</p>
-<p><strong>解决办法：判断getAll函数返回值是否等于Collections.EMPTY_LIST</strong>(这里判断返回值是否为null，没有用)，即</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;StockInfo&gt; stockInfoList=stockInfoBox.getAll();<span class="comment">//getAll函数返回值应判断是不是一个emptylist</span></span><br><span class="line"><span class="keyword">if</span>(stockInfoList!=Collections.EMPTY_LIST)</span><br><span class="line">    <span class="keyword">return</span> stockInfoList;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;StockInfo&gt;();</span><br></pre></td></tr></table></figure>
-<p>让我疑惑不解的是，在Collections类的定义中，EMPTY_LIST好像就是定义为null啊。。。。，但是将返回值和null比较又不相等。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> List EMPTY_LIST = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
-<p>知道的朋友希望能够在评论区指出，如果文章有错误欢迎在评论区讨论，共同进步。</p>
-
-          
+          <p>　　最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。</p>
+<p>　　今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/28/Objectbox/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
