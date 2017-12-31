@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="分类按照排序方式分 插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序 计数排序  按照算法复杂度分 O(n)   计数排序     O(n+h) 基数排序     O(n)   O(n log(n))   归并排序 快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2）） 堆排序 树形选择排序 希尔排序（下界是O">
+<meta name="description" content="分类按照排序方式分 插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序 树形选择排序   交换排序 冒泡排序 快速排序   归并排序 基数排序 计数排序  按照算法复杂度分 O(n)   计数排序     O(n+h) 基数排序     O(n)   O(n log(n))   归并排序 快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2）） 堆排序 树形选择排序 希尔">
 <meta name="keywords" content="数据结构,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构复习-九种排序思想及实现">
+<meta property="og:title" content="数据结构复习-十种种排序思想及实现">
 <meta property="og:url" content="www.hypercube.top/2017/12/31/sort/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="分类按照排序方式分 插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序 计数排序  按照算法复杂度分 O(n)   计数排序     O(n+h) 基数排序     O(n)   O(n log(n))   归并排序 快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2）） 堆排序 树形选择排序 希尔排序（下界是O">
+<meta property="og:description" content="分类按照排序方式分 插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序 树形选择排序   交换排序 冒泡排序 快速排序   归并排序 基数排序 计数排序  按照算法复杂度分 O(n)   计数排序     O(n+h) 基数排序     O(n)   O(n log(n))   归并排序 快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2）） 堆排序 树形选择排序 希尔">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-31T09:20:42.597Z">
+<meta property="og:updated_time" content="2017-12-31T09:47:13.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构复习-九种排序思想及实现">
-<meta name="twitter:description" content="分类按照排序方式分 插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序   交换排序 冒泡排序 快速排序   归并排序 基数排序 计数排序  按照算法复杂度分 O(n)   计数排序     O(n+h) 基数排序     O(n)   O(n log(n))   归并排序 快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2）） 堆排序 树形选择排序 希尔排序（下界是O">
+<meta name="twitter:title" content="数据结构复习-十种种排序思想及实现">
+<meta name="twitter:description" content="分类按照排序方式分 插入排序 直接插入排序 希尔排序   选择排序 简单选择排序 堆排序 树形选择排序   交换排序 冒泡排序 快速排序   归并排序 基数排序 计数排序  按照算法复杂度分 O(n)   计数排序     O(n+h) 基数排序     O(n)   O(n log(n))   归并排序 快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2）） 堆排序 树形选择排序 希尔">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>数据结构复习-九种排序思想及实现 | 超立方体</title>
+  <title>数据结构复习-十种种排序思想及实现 | 超立方体</title>
   
 
 
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构复习-九种排序思想及实现</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构复习-十种种排序思想及实现</h1>
         
 
         <div class="post-meta">
@@ -340,6 +340,7 @@
 <li>选择排序<ul>
 <li>简单选择排序</li>
 <li>堆排序</li>
+<li>树形选择排序</li>
 </ul>
 </li>
 <li>交换排序<ul>
@@ -375,13 +376,15 @@
 <p>​</p>
 </li>
 </ul>
-<h3 id="按稳定性分"><a href="#按稳定性分" class="headerlink" title="按稳定性分"></a>按稳定性分</h3><ul>
+<h3 id="按稳定性分"><a href="#按稳定性分" class="headerlink" title="按稳定性分"></a>按稳定性分</h3><p>这边大家看着高兴就好，有人说一种排序方法，如果它不稳定，那么无论你写出什么样的程序来实现它，总会有使之不稳定的实例存在。但是对于稳定的排序，可能有的程序实现算法会不稳定，但是总能写出另一种算法使其稳定。我不保证下面这些是对的。</p>
+<ul>
 <li>稳定排序<ul>
 <li>基数排序(LSD方法)</li>
 <li>直接插入排序</li>
 <li>冒泡排序</li>
 <li>归并排序</li>
 <li>树形选择排序</li>
+<li>简单选择排序</li>
 </ul>
 </li>
 <li>不稳定排序<ul>
@@ -392,12 +395,12 @@
 </ul>
 </li>
 </ul>
-<h2 id="详细讲解"><a href="#详细讲解" class="headerlink" title="详细讲解"></a>详细讲解</h2><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        实际上是希尔排序增量因子初值为1时的情况。将前面的一部分假设为有序，然后取出有序部分之后的第一个无序元素，那么就会出现一个空位，然后我们将空位前移到有序部分它应该在的地方，然后再将元素插入。（之所以原来要把元素取出来，是为了减少交换元素的操作，取出来可以直接赋值，无需交换）</p>
+<h2 id="简单解释"><a href="#简单解释" class="headerlink" title="简单解释"></a>简单解释</h2><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        实际上是希尔排序增量因子初值为1时的情况。将前面的一部分假设为有序，然后取出有序部分之后的第一个无序元素，那么就会出现一个空位，然后我们将空位前移到有序部分它应该在的地方，然后再将元素插入。（之所以原来要把元素取出来，是为了减少交换元素的操作，取出来可以直接赋值，无需交换）</p>
 <h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</p>
-<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><h4 id="算法思想-2"><a href="#算法思想-2" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        1.初始无序序列为整个数组，</p>
+<h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><h4 id="算法思想-2"><a href="#算法思想-2" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        1.初始无序序列为整个数组</p>
 <p>​        2.从无序序列中选出一个最小的，将它和无序序列最前端的元素做交换</p>
 <p>​        3.拓展有序序列</p>
-<p>​        4.重复2,3步骤，直到整个序列均为有序序列。</p>
+<p>​        4.重复2,3步骤，直到整个序列均为有序序列</p>
 <h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><h4 id="算法思想-3"><a href="#算法思想-3" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
 <li>建立一个堆（实际上是从下往上，逐个调整子堆）</li>
 <li>取出堆顶元素</li>
@@ -407,7 +410,7 @@
 <h3 id="树形选择排序"><a href="#树形选择排序" class="headerlink" title="树形选择排序"></a>树形选择排序</h3><h4 id="算法思想-4"><a href="#算法思想-4" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        1.两两比较，将结果存在二叉树当中</p>
 <p>​        2.然后取出最大的，将其置为无穷大，再从原最大元素的子树开始，向上更新二叉树，重新获得最大值。</p>
 <p>​        3.重复2步骤，直到所有元素均为无穷大</p>
-<h4 id="我的想法"><a href="#我的想法" class="headerlink" title="我的想法"></a>我的想法</h4><p>​        请你当场去世，告辞</p>
+<h4 id="我的想法"><a href="#我的想法" class="headerlink" title="我的想法"></a>我的想法</h4><p>​        请你当场去世，谢谢</p>
 <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h4 id="算法思想-5"><a href="#算法思想-5" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
 <li>将递归地调用归并排序将左右两边分别排好序</li>
 <li>合并两个数组</li>
@@ -418,8 +421,7 @@
 <p>​        3.无序序列缩小</p>
 <p>​        4.重复2,3直到无序序列为空</p>
 <h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><h4 id="算法思想-7"><a href="#算法思想-7" class="headerlink" title="算法思想"></a>算法思想</h4><p>​            每次调整将无序序列的第一个元素放到序列中他应该在的位置，然后递归地对前面一半序列，和后面一个序列进行快速排序。</p>
-<p>​            1.</p>
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><h4 id="算法思想-8"><a href="#算法思想-8" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        脱离了低级趣味的排序方法，虽然是O（n）的复杂度，但是系数比较大，至于空间的话其实可以用链表来搞定，会提高空间利用率，像你这样用二维数组当然是很浪费空间的啦。</p>
+<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><h4 id="算法思想-8"><a href="#算法思想-8" class="headerlink" title="算法思想"></a>算法思想</h4><p>&emsp;&emsp;脱离了低级趣味的排序方法，虽然是O（n）的复杂度，但是系数比较大，至于空间的话其实可以用链表来搞定，会提高空间利用率，像你这样用二维数组当然是很浪费空间的啦。</p>
 <h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><h4 id="算法思想-9"><a href="#算法思想-9" class="headerlink" title="算法思想"></a>算法思想</h4><p>​        数组A，大小为n，用来存放待排序数组</p>
 <p>​        辅助数组C ，大小为K+1（K为数列中最大数的大小），C[i]用来记录比i小的元素的个数。</p>
 <p>​        辅助数组B，大小为n，用来暂时存放排好序的数组。</p>
@@ -464,11 +466,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2017/12/31/sort/">数据结构复习-九种排序思想及实现</a></p>
+  <p><span>本文标题:</span><a href="/2017/12/31/sort/">数据结构复习-十种种排序思想及实现</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 郑英林 的个人博客">郑英林</a></p>
   <p><span>发布时间:</span>2017年12月31日 - 17:12</p>
   <p><span>最后更新:</span>2017年12月31日 - 17:12</p>
-  <p><span>原始链接:</span><a href="/2017/12/31/sort/" title="数据结构复习-九种排序思想及实现">www.hypercube.top/2017/12/31/sort/</a>
+  <p><span>原始链接:</span><a href="/2017/12/31/sort/" title="数据结构复习-十种种排序思想及实现">www.hypercube.top/2017/12/31/sort/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="www.hypercube.top/2017/12/31/sort/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
@@ -670,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#按照排序方式分"><span class="nav-number">1.1.</span> <span class="nav-text">按照排序方式分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按照算法复杂度分"><span class="nav-number">1.2.</span> <span class="nav-text">按照算法复杂度分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按稳定性分"><span class="nav-number">1.3.</span> <span class="nav-text">按稳定性分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细讲解"><span class="nav-number">2.</span> <span class="nav-text">详细讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入排序"><span class="nav-number">2.1.</span> <span class="nav-text">直接插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想"><span class="nav-number">2.1.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#希尔排序"><span class="nav-number">2.2.</span> <span class="nav-text">希尔排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单选择排序"><span class="nav-number">2.3.</span> <span class="nav-text">简单选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆排序"><span class="nav-number">2.4.</span> <span class="nav-text">堆排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树形选择排序"><span class="nav-number">2.5.</span> <span class="nav-text">树形选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-4"><span class="nav-number">2.5.1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的想法"><span class="nav-number">2.5.2.</span> <span class="nav-text">我的想法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序"><span class="nav-number">2.6.</span> <span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-5"><span class="nav-number">2.6.1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的想法-1"><span class="nav-number">2.6.2.</span> <span class="nav-text">我的想法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">2.7.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-6"><span class="nav-number">2.7.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">2.8.</span> <span class="nav-text">快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-7"><span class="nav-number">2.8.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基数排序"><span class="nav-number">2.9.</span> <span class="nav-text">基数排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-8"><span class="nav-number">2.9.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数排序"><span class="nav-number">2.10.</span> <span class="nav-text">计数排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-9"><span class="nav-number">2.10.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-实现"><span class="nav-number">3.</span> <span class="nav-text">C++实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序-1"><span class="nav-number">3.1.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序-1"><span class="nav-number">3.2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基数排序-1"><span class="nav-number">3.3.</span> <span class="nav-text">基数排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数排序-1"><span class="nav-number">3.4.</span> <span class="nav-text">计数排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序-1"><span class="nav-number">3.5.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入排序和希尔排序"><span class="nav-number">3.6.</span> <span class="nav-text">插入排序和希尔排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆排序-1"><span class="nav-number">3.7.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树形选择排序-1"><span class="nav-number">3.8.</span> <span class="nav-text">树形选择排序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#按照排序方式分"><span class="nav-number">1.1.</span> <span class="nav-text">按照排序方式分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按照算法复杂度分"><span class="nav-number">1.2.</span> <span class="nav-text">按照算法复杂度分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按稳定性分"><span class="nav-number">1.3.</span> <span class="nav-text">按稳定性分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单解释"><span class="nav-number">2.</span> <span class="nav-text">简单解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入排序"><span class="nav-number">2.1.</span> <span class="nav-text">直接插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想"><span class="nav-number">2.1.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#希尔排序"><span class="nav-number">2.2.</span> <span class="nav-text">希尔排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单选择排序"><span class="nav-number">2.3.</span> <span class="nav-text">简单选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆排序"><span class="nav-number">2.4.</span> <span class="nav-text">堆排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-3"><span class="nav-number">2.4.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树形选择排序"><span class="nav-number">2.5.</span> <span class="nav-text">树形选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-4"><span class="nav-number">2.5.1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的想法"><span class="nav-number">2.5.2.</span> <span class="nav-text">我的想法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序"><span class="nav-number">2.6.</span> <span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-5"><span class="nav-number">2.6.1.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我的想法-1"><span class="nav-number">2.6.2.</span> <span class="nav-text">我的想法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">2.7.</span> <span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-6"><span class="nav-number">2.7.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-number">2.8.</span> <span class="nav-text">快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-7"><span class="nav-number">2.8.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基数排序"><span class="nav-number">2.9.</span> <span class="nav-text">基数排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-8"><span class="nav-number">2.9.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数排序"><span class="nav-number">2.10.</span> <span class="nav-text">计数排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法思想-9"><span class="nav-number">2.10.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-实现"><span class="nav-number">3.</span> <span class="nav-text">C++实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序-1"><span class="nav-number">3.1.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序-1"><span class="nav-number">3.2.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基数排序-1"><span class="nav-number">3.3.</span> <span class="nav-text">基数排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数排序-1"><span class="nav-number">3.4.</span> <span class="nav-text">计数排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序-1"><span class="nav-number">3.5.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入排序和希尔排序"><span class="nav-number">3.6.</span> <span class="nav-text">插入排序和希尔排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆排序-1"><span class="nav-number">3.7.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树形选择排序-1"><span class="nav-number">3.8.</span> <span class="nav-text">树形选择排序</span></a></li></ol></li></ol></div>
             
 
           </div>
