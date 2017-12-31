@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="超立方体">
 <meta property="og:description" content="今天是2017年的最后一天，新年快乐啊各位，新的一年也要加油呀！　　今天复习了一下数据结构关于排序的这块，自己用C++实现了大部分算法,做个记录。唯一辣眼睛的就是树形选择排序算法，我选择死亡。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-31T10:50:08.900Z">
+<meta property="og:updated_time" content="2017-12-31T11:34:21.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构复习-十种排序思想及实现">
 <meta name="twitter:description" content="今天是2017年的最后一天，新年快乐啊各位，新的一年也要加油呀！　　今天复习了一下数据结构关于排序的这块，自己用C++实现了大部分算法,做个记录。唯一辣眼睛的就是树形选择排序算法，我选择死亡。">
@@ -362,12 +362,12 @@
 <li>基数排序     O(n)</li>
 </ul>
 </li>
-<li>O(n log(n)) <ul>
+<li>O(n*log(n)) <ul>
 <li>归并排序</li>
-<li>快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2））</li>
+<li>快速排序 （在最坏情况下会退化为冒泡排序）</li>
 <li>堆排序</li>
 <li>树形选择排序</li>
-<li>希尔排序（下界是O(n*log2n),与增量序列的选取有关）</li>
+<li>希尔排序（下界是O(n*log2n),与增量因子序列的选取有关）</li>
 </ul>
 </li>
 <li>O(n^2) <ul>
@@ -400,14 +400,14 @@
 <h2 id="简单解释"><a href="#简单解释" class="headerlink" title="简单解释"></a>简单解释</h2><hr>
 <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　实际上是希尔排序增量因子初值为1时的情况。将前面的一部分假设为有序，然后取出有序部分之后的第一个无序元素，那么就会出现一个空位，然后我们将空位前移到有序部分它应该在的地方，然后再将元素插入。（之所以原来要把元素取出来，是为了减少交换元素的操作，取出来可以直接赋值，无需交换）</p>
 <hr>
-<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。</p>
+<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><h4 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h4><p>　　先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行一次直接插入排序。</p>
 <hr>
 <h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><h4 id="算法思想-2"><a href="#算法思想-2" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
 <li><p>初始无序序列为整个数组</p>
 </li>
 <li><p>从无序序列中选出一个最小的，将它和无序序列最前端的元素做交换</p>
 </li>
-<li><p>拓展有序序列</p>
+<li><p>将原无序序列的最前端的那个元素并入有序序列</p>
 </li>
 <li><p>重复2,3步骤，直到整个序列均为有序序列</p>
 </li>
@@ -424,7 +424,7 @@
 <h3 id="树形选择排序"><a href="#树形选择排序" class="headerlink" title="树形选择排序"></a>树形选择排序</h3><h4 id="算法思想-4"><a href="#算法思想-4" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
 <li><p>两两比较，将结果存在二叉树当中</p>
 </li>
-<li><p>然后取出最大的，将其置为无穷大，再从原最大元素的子树开始，向上更新二叉树，重新获得最大值。</p>
+<li><p>然后取出最大的，将其置为无穷大，再从原最大元素所在的子树开始，向上更新二叉树，重新获得最大值。</p>
 </li>
 <li><p>重复2步骤，直到所有元素均为无穷大</p>
 </li>
@@ -432,10 +432,10 @@
 <h4 id="我的想法-1"><a href="#我的想法-1" class="headerlink" title="我的想法"></a>我的想法</h4><p>　　请你当场去世，谢谢</p>
 <hr>
 <h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h4 id="算法思想-5"><a href="#算法思想-5" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
-<li>将递归地调用归并排序将左右两边分别排好序</li>
+<li>递归地调用归并排序将左右两边分别排好序</li>
 <li>合并两个数组</li>
 </ol>
-<h4 id="我的想法-2"><a href="#我的想法-2" class="headerlink" title="我的想法"></a>我的想法</h4><p>　　这玩意儿好蛋疼啊，辅助数组很艰难，归并的时候很难受的其实，主要是动态申请空间的问题，容易内存泄露。但是我做错了一个东西就是，辅助数组应该是共用的，现在改过来了</p>
+<h4 id="我的想法-2"><a href="#我的想法-2" class="headerlink" title="我的想法"></a>我的想法</h4><p>　　这玩意儿好蛋疼啊，辅助数组很艰难，归并的时候很体验极差，主要是还要额外申请辅助数组，占用额外空间不说，还容易内存泄露。但是我做错了一个东西就是，辅助数组应该是共用的，现在改过来了</p>
 <hr>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h4 id="算法思想-6"><a href="#算法思想-6" class="headerlink" title="算法思想"></a>算法思想</h4><ol>
 <li><p>初始认为整体序列无序</p>
@@ -514,7 +514,7 @@
   <p><span>本文标题:</span><a href="/2017/12/31/sort/">数据结构复习-十种排序思想及实现</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 郑英林 的个人博客">郑英林</a></p>
   <p><span>发布时间:</span>2017年12月31日 - 17:12</p>
-  <p><span>最后更新:</span>2017年12月31日 - 18:12</p>
+  <p><span>最后更新:</span>2017年12月31日 - 19:12</p>
   <p><span>原始链接:</span><a href="/2017/12/31/sort/" title="数据结构复习-十种排序思想及实现">www.hypercube.top/2017/12/31/sort/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="www.hypercube.top/2017/12/31/sort/"  aria-label="复制成功！"></i></span>
   </p>
