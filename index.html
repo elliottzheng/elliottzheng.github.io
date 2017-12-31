@@ -358,14 +358,12 @@
 </ul>
 <hr>
 <h3 id="按照算法复杂度分"><a href="#按照算法复杂度分" class="headerlink" title="按照算法复杂度分"></a>按照算法复杂度分</h3><ul>
-<li><p>O(n) </p>
-<ul>
+<li>O(n) <ul>
 <li>计数排序     O(n+h)</li>
 <li>基数排序     O(n)</li>
 </ul>
 </li>
-<li><p>O(n log(n)) </p>
-<ul>
+<li>O(n log(n)) <ul>
 <li>归并排序</li>
 <li>快速排序 （在最坏情况下会退化为冒泡排序，复杂度为O（n^2））</li>
 <li>堆排序</li>
@@ -373,8 +371,7 @@
 <li>希尔排序（下界是O(n*log2n),与增量序列的选取有关）</li>
 </ul>
 </li>
-<li><p>O(n^2) </p>
-<ul>
+<li>O(n^2) <ul>
 <li>冒泡排序</li>
 <li>插入排序</li>
 </ul>
@@ -487,8 +484,7 @@
 <hr>
 <h3 id="堆排序-1"><a href="#堆排序-1" class="headerlink" title="堆排序"></a>堆排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调整堆，这里做的事情实际上只是把当前索引为parent的节点向下调整，放到它应该在的地方</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapAdjust</span><span class="params">(<span class="keyword">int</span>* arr, <span class="keyword">int</span>  parent, <span class="keyword">int</span> length)</span><span class="comment">//默写出来还行</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp = arr[parent];<span class="comment">//暂存parent节点的值，省的一直交换</span></span><br><span class="line">	<span class="keyword">while</span> (parent * <span class="number">2</span>+<span class="number">1</span> &lt; length)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = parent * <span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (j + <span class="number">1</span> &lt; length&amp;&amp;arr[j + <span class="number">1</span>] &gt; arr[j])<span class="comment">//如果右孩子存在，而且还比左孩子大,那么就把j++</span></span><br><span class="line">			j++;</span><br><span class="line">		<span class="comment">//上面这步之后，arr[j]代表的是parent的两个孩子中最大的那个</span></span><br><span class="line">		<span class="keyword">if</span> (arr[j] &gt; temp)</span><br><span class="line">		&#123;</span><br><span class="line">			arr[parent] = arr[j];</span><br><span class="line">			parent = j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="comment">//这个else的意思就是如果两个孩子最大的都没有它自己大，那就没什么必要换了，这就是他的位置</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	arr[parent] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span> * arr, <span class="keyword">int</span> length)</span><span class="comment">//堆排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初始化大顶堆，才能从小到大</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = length / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		HeapAdjust(arr, i, length);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//取出堆顶元素，放到堆长度后面一格，然后将所谓的i--，这里i指的是堆的大小</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> temp = arr[i];</span><br><span class="line">		arr[i] = arr[<span class="number">0</span>];</span><br><span class="line">		arr[<span class="number">0</span>] = temp;</span><br><span class="line">		HeapAdjust(arr, <span class="number">0</span>, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="树形选择排序-1"><a href="#树形选择排序-1" class="headerlink" title="树形选择排序"></a>树形选择排序</h3><p>​    告辞</p>
-<p>​            </p>
+<h3 id="树形选择排序-1"><a href="#树形选择排序-1" class="headerlink" title="树形选择排序"></a>树形选择排序</h3><p>　　告辞</p>
 
           
         
