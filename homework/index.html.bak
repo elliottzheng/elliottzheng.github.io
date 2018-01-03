@@ -69,7 +69,7 @@
 	var cr = new BMap.CopyrightControl({anchor: BMAP_ANCHOR_TOP_RIGHT});   //设置版权控件位置
 	map.addControl(cr); //添加版权控件
 	var bs = map.getBounds();   //返回地图可视区域
-	cr.addCopyright({id: 1, content: "<a href='http://hypercube.top/' style='font-size:20px;'>Xiamen University Software School Elliott Zheng</a>", bounds: bs});   
+	cr.addCopyright({id: 1, content: "<a href='https://www.cnblogs.com/elliottzheng/' style='font-size:20px;'>Xiamen University Software School Elliott Zheng</a>", bounds: bs});   
 	//Copyright(id,content,bounds)类作为CopyrightControl.addCopyright()方法的参数
 	
 	var market = new Market();
