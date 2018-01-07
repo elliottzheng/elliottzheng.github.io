@@ -1,0 +1,74 @@
+vnote_backup_file_826537664 L:/web/source/about/index.md
+---
+title: 关于超立方体
+date: 2017-12-28 13:57:30
+---
+![Elliott Zheng][1]
+
+# 个人信息
+
+ - Elliott Zheng
+ - 博客园：[ElliottZheng](http://cnblogs/elliottzheng) 
+ - 个人博客:[超立方体](http://hypercube.top)
+ - Github:[http://github.com/agentzheng](http://github.com/agentzheng)
+ - 所在城市：厦门
+ - Email：[elliott.zheng@hypercube.top](mailto:elliott.zheng@hypercube.top)
+
+---
+# 项目经历
+
+-  三维人体重建系统设计及数据集建设 国家级创新训练 成员
+
+-  iRecognizer-基于Tesseract的移动端号码识别系统 组长
+
+- 运筹帷幄股市倍增量化技术及投资应用项目 开发组组长
+
+- 基于JS及OpenCV的晚会奖券生成及抽奖系统
+
+- XMU.Ease小组成员
+
+-  [Mozilla开发者网络](https://developer.mozilla.org/zh-CN/)志愿者
+---
+
+# 开源项目和文章
+
+
+## 开源项目
+
+ - [iRecognizer](https://github.com/agentzheng/iRecognizer) :基于Tesseract的移动端号码检测识别应用
+ - [XICA](https://github.com/agentzheng/xica) : 运筹帷幄股市倍增量化技术及投资应用
+ - [PyShadow](https://github.com/agentzheng/PyShadow) 自动获取iShadowsocks服务器ip，密码，端口并部署到SS客户端的python脚本
+
+## 技术文章
+
+- [数据结构复习-十种排序思想及实现](http://hypercube.top/2017/12/31/sort/)
+- [Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃](http://www.cnblogs.com/elliottzheng/p/8068055.html)
+- [使用opencv实现自定义卷积](http://www.cnblogs.com/elliottzheng/p/6616869.html) 
+- [基于点云几何特征匹配的配准概述](http://www.cnblogs.com/elliottzheng/p/6664218.html)
+- [opencv构建高斯卷积核](http://www.cnblogs.com/elliottzheng/p/6616971.html)
+- [Opencv4android的Android Studio环境配置及项目实例下载](http://www.cnblogs.com/elliottzheng/p/6695446.html)
+- [iRecognizer号码扫描开发实录](http://www.cnblogs.com/elliottzheng/p/6945442.html)
+
+## 翻译文章
+- [Firefox 59 for developers](https://developer.mozilla.org/zh-CN/Firefox/Releases/59)
+- [翻译OpenCV文档:ArUco Marker的检测(Detection of ArUco Markers)](https://www.cnblogs.com/elliottzheng/p/8227576.html)
+---
+
+# 兴趣
+
+以下均为我所感兴趣的方面
+
+- 计算机视觉：OpenCV / Point Cloud Library
+- 编程语言：C++/Python/Android/Javascript
+- 开发工具：Visual Studio/Chrome/Notepad++
+- 数据库相关：Objectbox
+- 版本管理、文档和自动化部署工具：Git
+- 云和开放平台：阿里云/BAE/七牛云/酷安应用市场/应用宝/微信小程序
+
+---
+
+# 致谢
+感谢您花时间阅读我的简介，期待能有机会和您共事。
+
+
+  [1]: http://onhdz331f.bkt.clouddn.com/0a8b5c42446b6647d4b0a44487ec36a2.png
