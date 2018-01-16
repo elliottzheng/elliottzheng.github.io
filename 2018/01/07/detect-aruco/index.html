@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="OpenCV,计算机视觉,翻译," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="英文原文链接:Detection of ArUco Markers">
+<meta name="keywords" content="OpenCV,计算机视觉,翻译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）">
+<meta property="og:url" content="www.hypercube.top/2018/01/07/detect-aruco/index.html">
+<meta property="og:site_name" content="超立方体">
+<meta property="og:description" content="英文原文链接:Detection of ArUco Markers">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111501831-1740094017.png">
+<meta property="og:image" content="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111523331-1541707263.png">
+<meta property="og:image" content="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111541503-1053201170.png">
+<meta property="og:image" content="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111601174-1153778029.png">
+<meta property="og:image" content="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111623659-861630281.png">
+<meta property="og:image" content="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111648284-1179111455.png">
+<meta property="og:updated_time" content="2018-01-07T03:41:53.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）">
+<meta name="twitter:description" content="英文原文链接:Detection of ArUco Markers">
+<meta name="twitter:image" content="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111501831-1740094017.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.hypercube.top/2018/01/07/detect-aruco/"/>
+
+
+
+
+
+  <title>翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers） | 超立方体</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+    <a href="https://github.com/agentzheng" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">超立方体</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Hypercube</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-数据结构大作业">
+          <a href="/homework/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-map"></i> <br />
+            
+            数据结构大作业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-so.hypercube">
+          <a href="https://so.hypercube.top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            So.Hypercube
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="www.hypercube.top/2018/01/07/detect-aruco/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elliott Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://onhdz331f.bkt.clouddn.com/0a8b5c42446b6647d4b0a44487ec36a2.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="超立方体">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T11:38:46+08:00">
+                2018-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>英文原文链接:<a href="https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html" target="_blank" rel="noopener">Detection of ArUco Markers</a><br><a id="more"></a><br>  姿态估计（Pose estimation）在计算机视觉领域扮演着十分重要的角色：机器人导航、增强现实以及其它。这一过程的基础是找到现实世界和图像投影之间的对应点。这通常是很困难的一步，因此我们常常用自己制作的或基本的Marker来让这一切变得更容易。<br>  最为流行的一个途径是基于二进制平方的标记。这种Marker的主要便利之处在于，一个Marker提供了足够多的对应（四个角）来获取相机的信息。同样的，内部的二进制编码使得算法非常健壮，使得应用错误检测和校正技术成为可能。<br>aruco模块基于ArUco库，这是一个检测二进制marker的非常流行的库，是由Rafael Muñoz和Sergio Garrido完成的。<br>aruco的函数包含在<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/aruco.hpp&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Marker和字典"><a href="#Marker和字典" class="headerlink" title="Marker和字典"></a>Marker和字典</h2><p>一个ArUco marker是一个二进制平方标记，它由一个宽的黑边和一个内部的二进制矩阵组成，内部的矩阵决定了它们的id。黑色的边界有利于快速检测到图像，二进制编码可以验证id，并且可以应用错误检测和校正技术。marker的大小决定了内部矩阵的大小。例如，一个4x4的marker由16位组成。</p>
+<p><img src="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111501831-1740094017.png" alt="一些ArUco markers的例子"></p>
+<p>应当注意到，我们能够检测到一个Marker在空间中发生了旋转，但是，检测的过程需要确定它的初始旋转，所以每个角点都应该是清晰可见的，确定的，不能有歧义，这也是通过二进制编码来做的。<br>markers的字典是在一个特殊应用中使用到的marker的集合。这仅仅是每个marker的二进制编码的链表。</p>
+<ul>
+<li>字典的主要性质是字典的大小和Marker的大小：</li>
+<li>字典的大小是指组程字典的marker的数量</li>
+<li>marker的大小是这些marker的尺寸（位的个数）</li>
+<li>aruco模块包含了一些预定义的字典，这些字典涵盖了一系列的字典大小和Marker尺寸。</li>
+</ul>
+<p>有些人可能会认为marker的id是通过将二进制编码转换成十进制获得的。但是这实际上是不可能的，因为尺寸大的marker的位数会很大，管理如此多的数据并不现实。事实上，一个marker的id仅仅是marker在它所在的字典的下标。例如，一个字典里的五个marker的id是：0,1,2,3和4。<br>更多有关字典的信息在“Selecting a dictionary”部分提及。</p>
+<h2 id="创建Marker"><a href="#创建Marker" class="headerlink" title="创建Marker"></a>创建Marker</h2><p>在检测之前，markers需要被打印出来，以把它们放到环境中。marker的图像可以使用<code>drawMarker()</code>函数生成。<br>举个例子，让我们分析一下如下的调用：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cv::Mat markerImage;</span><br><span class="line">cv::Ptr&lt;cv::aruco::Dictionary&gt; dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);</span><br><span class="line">cv::aruco::drawMarker(dictionary, <span class="number">23</span>, <span class="number">200</span>, markerImage, <span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
+<p>首先，通过选择aruco模块中一个预定义好的字典来创建一个Dictionary对象。就当前例子而言，这个字典是由250个marker组成的，每个marker的大小为6x6位(<code>DICT_6X6_250</code>)<br>drawMarker的参数如下：</p>
+<ul>
+<li>第一个参数是之前创建的Dictionary对象。</li>
+<li>第二个参数是marker的id，在这个例子中选择的是字典<code>DICT_6X6_250</code> 的第23个marker。注意到每个字典是由不同数目的Marker组成的，在这个例子中的字典中，有效的Id数字范围是0到249。不在有效区间的特定id将会产生异常。</li>
+<li>第三个参数，200，是输出Marker图像的大小。在这个例子中，输出的图像将是200x200像素大小。注意到这一参数需要满足能够存储特定字典 的所有位。举例来说，你不能为6x6大小的marker生成一个5x5图像（这还没有考虑到Marker的边界）。除此之外，为了避免变形，这一参数最好和位数+边界的大小成正比，或者至少要比marker的大小大得多（如这个例子中的200)，这样变形就不显著了。</li>
+<li>第四个参数是输出的图像。</li>
+<li>最终，最后一个参数是一个可选的参数，它指定了Marer黑色边界的大小。这一大小与位数数目成正比。例如，值为2意味着边界的宽度将会是2的倍数。默认的值为1。<br> 生成的图像如下：</li>
+</ul>
+<p><img src="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111523331-1541707263.png" alt="生成的marker"></p>
+<p>详细的例子在模块示例文件夹中的<code>create_marker.cpp</code></p>
+<h2 id="检测Marker"><a href="#检测Marker" class="headerlink" title="检测Marker"></a>检测Marker</h2><p>给定一个可以看见ArUco marker的图像，检测程序应当返回检测到的marker的列表。每个检测到的marker包括：</p>
+<ul>
+<li>图像四个角的位置（按照原始的顺序）</li>
+<li>marker的ID<br>marker检测过程由以下两个主要步骤构成：<ol>
+<li>检测候选marker。在这一阶段我们分析图像，以找到那些可能是marker的方形。首先要做的是利用自适应性阈值来分割marker，然后从阈值化的图像中提取外形轮廓，并且舍弃那些非凸多边形的，以及那些不是方形的。我们还使用了一些额外的滤波（来剔除那些过小或者过大的轮廓，过于相近的凸多边形，等）</li>
+<li>检测完marker候选之后，我们有必要分析它的内部编码来确定它们是否确实是marker。此步骤首先提取每个标记的标记位。为了达到这个目的，首先，我们需要对图像进行透视变换，来得到它规范的形态（正视图）。然后，对规范的图像用Ossu阈值化以分离白色和黑色位。这一图像根据marker大小和边界大小被分为许多不同格子，我们通过统计落在每个格子中的黑白像素数目来决定这是黑色还是白色的位。最终，我们分析这些位来决定这个marker是属于哪个特定字典的，如果有必要的话，需要对错误进行检测。</li>
+</ol>
+</li>
+</ul>
+<p>对于如下图像：</p>
+<p><img src="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111541503-1053201170.png" alt="带有marker的原始图像"></p>
+<p>这些是检测出来的marker（用绿色标记）：</p>
+<p><img src="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111601174-1153778029.png" alt="检测出来的marker"></p>
+<p>以下是识别阶段被剔除的Marker候选（用红色标记）：</p>
+<p><img src="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111623659-861630281.png" alt=" Image with rejected candidates"></p>
+<p>在aruco模块，检测是由<code>detectMarkers()</code>函数完成的，这一函数是这个模块中最重要的函数，因为剩下的所有函数操作都基于<code>detectMarkers()</code>返回的检测出的markers。<br>一个marker检测的例子：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cv::Mat inputImage;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; markerIds;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;cv::Point2f&gt;&gt; markerCorners, rejectedCandidates;</span><br><span class="line">cv::Ptr&lt;cv::aruco::DetectorParameters&gt; parameters;</span><br><span class="line">cv::Ptr&lt;cv::aruco::Dictionary&gt; dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);</span><br><span class="line">cv::aruco::detectMarkers(inputImage, dictionary, markerCorners, markerIds, parameters, rejectedCandidates);</span><br></pre></td></tr></table></figure></p>
+<p>detectMarkers 的参数为：</p>
+<ul>
+<li>第一个参数是待检测marker的图像。</li>
+<li>第二个参数是字典对象，在这一例子中是预先定义的字典 (<code>DICT_6X6_250</code>).<br>检测出的markers存储在<code>markerCorners</code>和<code>markerIds</code>结构中：</li>
+<li><code>markerCorners</code>是检测出的图像的角点的列表。对于每个marker，将返回按照原始顺序排列的四个角（从左上角开始顺时针旋转）。因此，第一个点是左上角的角，然后是右上角、右下角和左下角。<br>-<code>markerIds</code>是在<code>markerCorners</code>检测出的所有maker的ID列表.注意返回的<code>markerCorners</code>和<code>markerIds</code>的vetcor具有相同的大小。</li>
+<li>第四个参数是类型的对象 <code>DetectionParameters</code>. 这一对象包含了检测过程中的所有可以定制的参数。这一参数将在 下一章节详细介绍。</li>
+<li>最后一个参数, <code>rejectedCandidates</code>, 是返回的所有marker候选, 例如， 那些被检测出来但不是有效编码的方形。每个候选同样由它的四个角定义，形式和<code>markerCorners</code>的参数一样。这一参数可以被省略，它仅仅用于debug阶段，或是用于“再次寻找”策略（详见<code>refineDetectedMarkers()</code>）</li>
+</ul>
+<p><code>detectMarkers()</code>之后，接下来你想要做的事情可能是检查你的marker是否被正确地检测出来了。幸运的是，aruco模块提供了一个函数，它能在输入图像中来绘制检测出来的markers，这个函数就是<code>drawDetectedMarkers()</code> ,例子如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cv::Mat outputImage;</span><br><span class="line">cv::aruco::drawDetectedMarkers(image, markerCorners, markerIds);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>image是输入/输出图像，程序将在这张图上绘制marker。（它通常就是检测marker的那张图像）</li>
+<li><code>markerCorners</code> 和 <code>markerIds</code> 是检测出marker的结构，它们的格式和<code>detectMarkers()</code>函数提供的一样。</li>
+</ul>
+<p><img src="http://images2017.cnblogs.com/blog/1129935/201801/1129935-20180107111648284-1179111455.png" alt="Image with detected markers"></p>
+<p>请注意这个函数仅仅用于可视化，而没有别的什么用途。<br>使用这两个函数我们完成了基本的marker识别步骤，我们可以从相机中检测出Marker了。</p>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
+      
+    </div>
+    
+    
+    
+
+    
+    
+      <div>
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+
+
+      </div>
+    
+    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/01/07/detect-aruco/">翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
+  <p><span>发布时间:</span>2018年01月07日 - 11:01</p>
+  <p><span>最后更新:</span>2018年01月07日 - 11:01</p>
+  <p><span>原始链接:</span><a href="/2018/01/07/detect-aruco/" title="翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）">www.hypercube.top/2018/01/07/detect-aruco/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="www.hypercube.top/2018/01/07/detect-aruco/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OpenCV/" rel="tag"><i class="fa fa-tag"></i> OpenCV</a>
+          
+            <a href="/tags/计算机视觉/" rel="tag"><i class="fa fa-tag"></i> 计算机视觉</a>
+          
+            <a href="/tags/翻译/" rel="tag"><i class="fa fa-tag"></i> 翻译</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/31/sort/" rel="next" title="数据结构复习-十种排序思想及实现">
+                <i class="fa fa-chevron-left"></i> 数据结构复习-十种排序思想及实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://onhdz331f.bkt.clouddn.com/0a8b5c42446b6647d4b0a44487ec36a2.png"
+                alt="Elliott Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Elliott Zheng</p>
+              <p class="site-description motion-element" itemprop="description">脱离三维空间的异想天开</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/agentzheng" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://cnblogs.com/elliottzheng" target="_blank" title="Cnblogs">
+                    
+                      <i class="fa fa-fw fa-rss-square"></i>Cnblogs</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:elliott.zheng@foxmail.com" target="_blank" title="E-mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Marker和字典"><span class="nav-number">1.</span> <span class="nav-text">Marker和字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Marker"><span class="nav-number">2.</span> <span class="nav-text">创建Marker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测Marker"><span class="nav-number">3.</span> <span class="nav-text">检测Marker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">4.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Elliott Zheng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="http://hypercube.top">超立方体</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
