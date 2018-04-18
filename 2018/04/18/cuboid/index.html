@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="​    提出一种给定空间长方体的八个点的坐标，求取长宽高对应向量的方法。">
+<meta name="description" content="​    给定空间长方体的八个顶点坐标，求取长宽高对应向量的方法。">
 <meta name="keywords" content="计算机视觉">
 <meta property="og:type" content="article">
 <meta property="og:title" content="空间长方体长宽高的判定">
 <meta property="og:url" content="www.hypercube.top/2018/04/18/cuboid/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="​    提出一种给定空间长方体的八个点的坐标，求取长宽高对应向量的方法。">
+<meta property="og:description" content="​    给定空间长方体的八个顶点坐标，求取长宽高对应向量的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-18T09:29:22.034Z">
+<meta property="og:updated_time" content="2018-04-18T09:33:52.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="空间长方体长宽高的判定">
-<meta name="twitter:description" content="​    提出一种给定空间长方体的八个点的坐标，求取长宽高对应向量的方法。">
+<meta name="twitter:description" content="​    给定空间长方体的八个顶点坐标，求取长宽高对应向量的方法。">
 
 
 
@@ -341,9 +341,9 @@
       
 
       
-        <p>​    提出一种给定空间长方体的八个点的坐标，求取长宽高对应向量的方法。</p>
+        <p>​    给定空间长方体的八个顶点坐标，求取长宽高对应向量的方法。</p>
 <a id="more"></a>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>​    最近有一个需求，给定OBB(Orient Bounding Box,最小包围盒)的八个顶点后，这八个顶点是无序的，我们要找出其长，宽，高对应的向量。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>​    最近有一个需求，给定OBB(Orient Bounding Box,最小包围盒)的八个顶点后，这八个顶点是无序的，我们要找出其长，宽，高对应的向量。</p>
 <h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h2><ol>
 <li><p>首先，定义：<br> 长为长方体的最长边，宽高为较短的两条边。</p>
 </li>
@@ -351,9 +351,9 @@
 <ol>
 <li><p>随便选取八个顶点中的一个,在本算法，初始顶点的选取并没有什么限制，为了下面表示方便，我们直接选取V<sub>7</sub>。</p>
 </li>
-<li><p>令V[7] 与其他七个顶点V[j] (j∈[0,6])分别相差，得到向量 <strong>D<sub>j</sub></strong>(j∈[0,6]);</p>
+<li><p>令V<sub>7</sub> 与其他七个顶点V<sub>j</sub> (j∈[0,6])分别相差，得到向量 <strong>D<sub>j</sub></strong>(j∈[0,6]);</p>
 </li>
-<li><p>对D按照向量模进行升序排序,得到N，<strong>N<sub>0</sub></strong>模最小，<strong>N<sub>6</sub></strong>模最大。</p>
+<li><p>对<strong>D</strong>按照向量模进行升序排序,得到<strong>N</strong>，<strong>N<sub>0</sub></strong>模最小，<strong>N<sub>6</sub></strong>模最大。</p>
 </li>
 <li><p>那么模最小的两个向量<strong>N<sub>0</sub></strong>,<strong>N<sub>1</sub></strong>,这两个向量对应的就是长方体的宽和高。</p>
 </li>
@@ -362,11 +362,8 @@
 </ol>
 </li>
 </ol>
-<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compareNorm</span><span class="params">(Eigen::Vector3d i,Eigen::Vector3d j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> i.norm() &lt; j.norm();</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">cuboid</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span> Eigen::Vector3d length;</span><br><span class="line">    <span class="keyword">private</span> Eigen::Vector3d height;</span><br><span class="line">    <span class="keyword">private</span> Eigen::Vector3d width;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">computeNormals</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Eigen::Vector3d&gt;&amp; vertices)</span><span class="comment">//八个顶点</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        assert(vertices.size() == <span class="number">8</span>);</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Eigen::Vector3d&gt; N;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            N.push_back(vertices[i] - vertices[<span class="number">7</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">std</span>::sort(tris.begin(), tris.end(), compareNorm);<span class="comment">//对这些向量按照模进行升序排序</span></span><br><span class="line"></span><br><span class="line">        width = N[<span class="number">0</span>]; <span class="comment">//最短的那两个向量肯定一个是宽，一个是高</span></span><br><span class="line">        height = N[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//面对角线</span></span><br><span class="line">        Eigen::Vector3d L = width-height;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这边判断第三短的向量到底是面对角线还是长，</span></span><br><span class="line">        <span class="comment">//如果面对角线比第三短的向量长，那么第三短的向量就是 长，如果没有的话 第四短才是 长</span></span><br><span class="line">        length = L.norm() - tris[<span class="number">2</span>].norm() &gt; <span class="number">0.01</span> ? tris[<span class="number">2</span>] : tris[<span class="number">3</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compareNorm</span><span class="params">(Eigen::Vector3d i,Eigen::Vector3d j)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i.norm() &lt; j.norm();</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">cuboid</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span> Eigen::Vector3d length;</span><br><span class="line">    <span class="keyword">private</span> Eigen::Vector3d height;</span><br><span class="line">    <span class="keyword">private</span> Eigen::Vector3d width;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">computeNormals</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Eigen::Vector3d&gt;&amp; vertices)</span><span class="comment">//八个顶点</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        assert(vertices.size() == <span class="number">8</span>);</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Eigen::Vector3d&gt; N;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">7</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            N.push_back(vertices[i] - vertices[<span class="number">7</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">std</span>::sort(tris.begin(), tris.end(), compareNorm);<span class="comment">//对这些向量按照模进行升序排序</span></span><br><span class="line"></span><br><span class="line">        width = N[<span class="number">0</span>]; <span class="comment">//最短的那两个向量肯定一个是宽，一个是高</span></span><br><span class="line">        height = N[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//面对角线</span></span><br><span class="line">        Eigen::Vector3d L = width-height;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这边判断第三短的向量到底是面对角线还是长，</span></span><br><span class="line">        <span class="comment">//如果面对角线比第三短的向量长，那么第三短的向量就是 长，如果没有的话 第四短才是 长</span></span><br><span class="line">        length = L.norm() - tris[<span class="number">2</span>].norm() &gt; <span class="number">0.01</span> ? tris[<span class="number">2</span>] : tris[<span class="number">3</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-​
-</code></pre>
       
     </div>
     
@@ -597,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法描述"><span class="nav-number">2.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法实现"><span class="nav-number">3.</span> <span class="nav-text">算法实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法描述"><span class="nav-number">2.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法实现"><span class="nav-number">3.</span> <span class="nav-text">算法实现</span></a></li></ol></div>
             
 
           </div>
