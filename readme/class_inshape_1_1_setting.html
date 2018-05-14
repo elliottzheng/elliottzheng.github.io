@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Inshaping: Inshape::Setting Class Reference                    Inshaping    &amp;#160;0.1                    InshapeSetting         Public Member Functions &amp;#124; Public Attributes &amp;#124; List of a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="超立方体">
+<meta property="og:url" content="www.hypercube.top/readme/class_inshape_1_1_setting.html">
+<meta property="og:site_name" content="超立方体">
+<meta property="og:description" content="Inshaping: Inshape::Setting Class Reference                    Inshaping    &amp;#160;0.1                    InshapeSetting         Public Member Functions &amp;#124; Public Attributes &amp;#124; List of a">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="www.hypercube.top/readme/class_inshape_1_1_setting.png">
+<meta property="og:image" content="www.hypercube.top/readme/closed.png">
+<meta property="og:image" content="www.hypercube.top/readme/doxygen.png">
+<meta property="og:updated_time" content="2018-05-14T00:26:22.732Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="超立方体">
+<meta name="twitter:description" content="Inshaping: Inshape::Setting Class Reference                    Inshaping    &amp;#160;0.1                    InshapeSetting         Public Member Functions &amp;#124; Public Attributes &amp;#124; List of a">
+<meta name="twitter:image" content="www.hypercube.top/readme/class_inshape_1_1_setting.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.hypercube.top/readme/class_inshape_1_1_setting.html"/>
+
+
+
+
+
+  <title> | 超立方体</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+    <a href="https://github.com/agentzheng" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">超立方体</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Hypercube</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-数据结构大作业">
+          <a href="/homework/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-map"></i> <br />
+            
+            数据结构大作业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-so.hypercube">
+          <a href="https://so.hypercube.top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            So.Hypercube
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta name="generator" content="Doxygen 1.8.14">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inshaping: Inshape::Setting Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Inshaping
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_inshape.html">Inshape</a></li><li class="navelem"><a class="el" href="class_inshape_1_1_setting.html">Setting</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="class_inshape_1_1_setting-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">Inshape::Setting Class Reference<div class="ingroups"><a class="el" href="group___data_structure.html">DataStructure</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_setting_8h_source.html">Setting.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Inshape::Setting:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_inshape_1_1_setting.png" usemap="#Inshape::Setting_map" alt="">
+  <map id="Inshape::Setting_map" name="Inshape::Setting_map">
+<area href="class_anyarg.html" title="Use this class to define program options and parse command line arguments. " alt="Anyarg" shape="rect" coords="0,0,100,24">
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac1f6ce1fcec3ec73c6246393d9b06340"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#ac1f6ce1fcec3ec73c6246393d9b06340">readInputTemplate</a> (std::string filename)</td></tr>
+<tr class="separator:ac1f6ce1fcec3ec73c6246393d9b06340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55506c48dd44b5ff0b39fb55cd6ff87b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a55506c48dd44b5ff0b39fb55cd6ff87b">readMatch</a> (std::string filename)</td></tr>
+<tr class="separator:a55506c48dd44b5ff0b39fb55cd6ff87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab68140dc6dc28a93e48ded890f7556bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#ab68140dc6dc28a93e48ded890f7556bb">readParam</a> (std::string filename)</td></tr>
+<tr class="separator:ab68140dc6dc28a93e48ded890f7556bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d2d8fdcfdab5b3d0300d5996aeb6fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a60d2d8fdcfdab5b3d0300d5996aeb6fa">Setting</a> ()</td></tr>
+<tr class="separator:a60d2d8fdcfdab5b3d0300d5996aeb6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5581cd6659472f6b781ad98ab986ae4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a5581cd6659472f6b781ad98ab986ae4d">parse_argv</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a5581cd6659472f6b781ad98ab986ae4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_anyarg"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_anyarg')"><img src="closed.png" alt="-">&#160;Public Member Functions inherited from <a class="el" href="class_anyarg.html">Anyarg</a></td></tr>
+<tr class="memitem:a6d4bbf6e762e77d89ffa7756359b6a62 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a6d4bbf6e762e77d89ffa7756359b6a62">Anyarg</a> ()</td></tr>
+<tr class="memdesc:a6d4bbf6e762e77d89ffa7756359b6a62 inherit pub_methods_class_anyarg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_anyarg.html" title="Use this class to define program options and parse command line arguments. ">Anyarg</a> object.  <a href="class_anyarg.html#a6d4bbf6e762e77d89ffa7756359b6a62">More...</a><br></td></tr>
+<tr class="separator:a6d4bbf6e762e77d89ffa7756359b6a62 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab38a13c5d241224bb14d8e474bbe70de inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ab38a13c5d241224bb14d8e474bbe70de">parse_argv</a> (int argc, char **argv)</td></tr>
+<tr class="separator:ab38a13c5d241224bb14d8e474bbe70de inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad119956ecc3cbe16897afe103e5ba539 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ad119956ecc3cbe16897afe103e5ba539">get_argc</a> () const</td></tr>
+<tr class="separator:ad119956ecc3cbe16897afe103e5ba539 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a8abe871b786a41001f6f8e8b90d98 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#aa5a8abe871b786a41001f6f8e8b90d98">get_arg</a> (int i) const</td></tr>
+<tr class="separator:aa5a8abe871b786a41001f6f8e8b90d98 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a929320f782247f63f712f2fb26e7bdbf inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a929320f782247f63f712f2fb26e7bdbf">auto_usage</a> ()</td></tr>
+<tr class="separator:a929320f782247f63f712f2fb26e7bdbf inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15625aae27eac8deb3b8b6fd1adf70c4 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a15625aae27eac8deb3b8b6fd1adf70c4">add_flag</a> (const char *name, char letter, const char *desc)</td></tr>
+<tr class="separator:a15625aae27eac8deb3b8b6fd1adf70c4 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d325be34ce29d29d890e240b3f592b inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ab3d325be34ce29d29d890e240b3f592b">add_flag</a> (char letter, const char *desc)</td></tr>
+<tr class="separator:ab3d325be34ce29d29d890e240b3f592b inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97ec66af7ef981b51baa6d16655f3f2 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ad97ec66af7ef981b51baa6d16655f3f2">add_option_str</a> (const char *name, char letter, const char *v0, const char *desc)</td></tr>
+<tr class="separator:ad97ec66af7ef981b51baa6d16655f3f2 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a910a657d64f414ae3a97f1e2c88ff22c inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a910a657d64f414ae3a97f1e2c88ff22c">add_option_str</a> (char letter, const char *v0, const char *desc)</td></tr>
+<tr class="separator:a910a657d64f414ae3a97f1e2c88ff22c inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf10dd45f72141ac538bc36d8c90e3e inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a8bf10dd45f72141ac538bc36d8c90e3e">add_option_int</a> (char letter, int v0, const char *desc)</td></tr>
+<tr class="separator:a8bf10dd45f72141ac538bc36d8c90e3e inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4202a063412042e9bcde266b78df741 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ad4202a063412042e9bcde266b78df741">add_option_int</a> (const char *name, char letter, int v0, const char *desc)</td></tr>
+<tr class="separator:ad4202a063412042e9bcde266b78df741 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616fa92a586900e277bfc6222428f544 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a616fa92a586900e277bfc6222428f544">add_option_double</a> (char letter, double v0, const char *desc)</td></tr>
+<tr class="separator:a616fa92a586900e277bfc6222428f544 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f726956b9525fce547f359bbdcddfc inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ad5f726956b9525fce547f359bbdcddfc">add_option_double</a> (const char *name, char letter, double v0, const char *desc)</td></tr>
+<tr class="separator:ad5f726956b9525fce547f359bbdcddfc inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92fef14ba5e16f138ac811489193e17 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#aa92fef14ba5e16f138ac811489193e17">is_true</a> (const char *name) const</td></tr>
+<tr class="separator:aa92fef14ba5e16f138ac811489193e17 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c8f38ad00ed8cb78e25889e747d164b inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a9c8f38ad00ed8cb78e25889e747d164b">is_true</a> (char letter) const</td></tr>
+<tr class="separator:a9c8f38ad00ed8cb78e25889e747d164b inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672e7513f790bf096e18aaad6f3c28ae inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a672e7513f790bf096e18aaad6f3c28ae">get_value_str</a> (const char *name) const</td></tr>
+<tr class="separator:a672e7513f790bf096e18aaad6f3c28ae inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4229b1f38551a455fdcf8e80e772c5c inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ac4229b1f38551a455fdcf8e80e772c5c">get_value_str</a> (char letter) const</td></tr>
+<tr class="separator:ac4229b1f38551a455fdcf8e80e772c5c inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76cc508ef0e88a56660d454ade4faa68 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a76cc508ef0e88a56660d454ade4faa68">get_value_int</a> (const char *name) const</td></tr>
+<tr class="separator:a76cc508ef0e88a56660d454ade4faa68 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61b1604340e6bce10361e831e57f7c1 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#ae61b1604340e6bce10361e831e57f7c1">get_value_int</a> (char letter) const</td></tr>
+<tr class="separator:ae61b1604340e6bce10361e831e57f7c1 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bbf5a2041d3c3ce807f17eb79bda720 inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a7bbf5a2041d3c3ce807f17eb79bda720">get_value_double</a> (const char *name) const</td></tr>
+<tr class="separator:a7bbf5a2041d3c3ce807f17eb79bda720 inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06388d8c3dd5c328835fba20ef61849a inherit pub_methods_class_anyarg"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anyarg.html#a06388d8c3dd5c328835fba20ef61849a">get_value_double</a> (char letter) const</td></tr>
+<tr class="separator:a06388d8c3dd5c328835fba20ef61849a inherit pub_methods_class_anyarg"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a169563b74f34421824b564f8d243771a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a169563b74f34421824b564f8d243771a">headFilename</a></td></tr>
+<tr class="separator:a169563b74f34421824b564f8d243771a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fd91024eb67546899563254eb693c49"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a7fd91024eb67546899563254eb693c49">faceFilename</a></td></tr>
+<tr class="separator:a7fd91024eb67546899563254eb693c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6aab33e629138f2ab6c0887f914524"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a0c6aab33e629138f2ab6c0887f914524">bodyFilename</a></td></tr>
+<tr class="separator:a0c6aab33e629138f2ab6c0887f914524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb5bbd0dcb41ad1b8942825c038d5cde"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#adb5bbd0dcb41ad1b8942825c038d5cde">outputFilename</a></td></tr>
+<tr class="separator:adb5bbd0dcb41ad1b8942825c038d5cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3c1a33ffcb467c11616a475fd59ca7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a0b3c1a33ffcb467c11616a475fd59ca7">subHead</a></td></tr>
+<tr class="separator:a0b3c1a33ffcb467c11616a475fd59ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce3b9074597021c1253d6645957d656"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a1ce3b9074597021c1253d6645957d656">subBody</a></td></tr>
+<tr class="separator:a1ce3b9074597021c1253d6645957d656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d160085fe440915cd09825ea575a4bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_inshape_1_1_param.html">Param</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a0d160085fe440915cd09825ea575a4bc">param</a></td></tr>
+<tr class="separator:a0d160085fe440915cd09825ea575a4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18becb4c1f015faa4458cdfbba20d0c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a18becb4c1f015faa4458cdfbba20d0c0">preAligned</a></td></tr>
+<tr class="separator:a18becb4c1f015faa4458cdfbba20d0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7915af8b77798c5796483d6f639a4d8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#a7915af8b77798c5796483d6f639a4d8a">outputIntermediate</a></td></tr>
+<tr class="separator:a7915af8b77798c5796483d6f639a4d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7eb892dc7f3566136b0950c97f768e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html#ae7eb892dc7f3566136b0950c97f768e7">useMatch</a></td></tr>
+<tr class="separator:ae7eb892dc7f3566136b0950c97f768e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a60d2d8fdcfdab5b3d0300d5996aeb6fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60d2d8fdcfdab5b3d0300d5996aeb6fa">&#9670;&nbsp;</a></span>Setting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Inshape::Setting::Setting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5581cd6659472f6b781ad98ab986ae4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5581cd6659472f6b781ad98ab986ae4d">&#9670;&nbsp;</a></span>parse_argv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Inshape::Setting::parse_argv </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1f6ce1fcec3ec73c6246393d9b06340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f6ce1fcec3ec73c6246393d9b06340">&#9670;&nbsp;</a></span>readInputTemplate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Inshape::Setting::readInputTemplate </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55506c48dd44b5ff0b39fb55cd6ff87b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55506c48dd44b5ff0b39fb55cd6ff87b">&#9670;&nbsp;</a></span>readMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Inshape::Setting::readMatch </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab68140dc6dc28a93e48ded890f7556bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab68140dc6dc28a93e48ded890f7556bb">&#9670;&nbsp;</a></span>readParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Inshape::Setting::readParam </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0c6aab33e629138f2ab6c0887f914524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6aab33e629138f2ab6c0887f914524">&#9670;&nbsp;</a></span>bodyFilename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Inshape::Setting::bodyFilename</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7fd91024eb67546899563254eb693c49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fd91024eb67546899563254eb693c49">&#9670;&nbsp;</a></span>faceFilename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Inshape::Setting::faceFilename</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a169563b74f34421824b564f8d243771a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169563b74f34421824b564f8d243771a">&#9670;&nbsp;</a></span>headFilename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Inshape::Setting::headFilename</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb5bbd0dcb41ad1b8942825c038d5cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5bbd0dcb41ad1b8942825c038d5cde">&#9670;&nbsp;</a></span>outputFilename</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Inshape::Setting::outputFilename</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7915af8b77798c5796483d6f639a4d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7915af8b77798c5796483d6f639a4d8a">&#9670;&nbsp;</a></span>outputIntermediate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Inshape::Setting::outputIntermediate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d160085fe440915cd09825ea575a4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d160085fe440915cd09825ea575a4bc">&#9670;&nbsp;</a></span>param</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_inshape_1_1_param.html">Param</a> Inshape::Setting::param</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18becb4c1f015faa4458cdfbba20d0c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18becb4c1f015faa4458cdfbba20d0c0">&#9670;&nbsp;</a></span>preAligned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Inshape::Setting::preAligned</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ce3b9074597021c1253d6645957d656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce3b9074597021c1253d6645957d656">&#9670;&nbsp;</a></span>subBody</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Inshape::Setting::subBody</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b3c1a33ffcb467c11616a475fd59ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3c1a33ffcb467c11616a475fd59ca7">&#9670;&nbsp;</a></span>subHead</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Inshape::Setting::subHead</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7eb892dc7f3566136b0950c97f768e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7eb892dc7f3566136b0950c97f768e7">&#9670;&nbsp;</a></span>useMatch</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Inshape::Setting::useMatch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr>The documentation for this class was generated from the following file:<ul>
+<li>include/<a class="el" href="_setting_8h_source.html">Setting.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html" target="_blank" rel="noopener">
+<img class="footer" src="doxygen.png" alt="doxygen">
+</a> 1.8.14
+</small></address>
+</body>
+</html>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://onhdz331f.bkt.clouddn.com/0a8b5c42446b6647d4b0a44487ec36a2.png"
+                alt="Elliott Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Elliott Zheng</p>
+              <p class="site-description motion-element" itemprop="description">脱离三维空间的异想天开</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/agentzheng" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://cnblogs.com/elliottzheng" target="_blank" title="Cnblogs">
+                    
+                      <i class="fa fa-fw fa-rss-square"></i>Cnblogs</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:elliott.zheng@foxmail.com" target="_blank" title="E-mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">
+Public Member Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">
+Public Attributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Constructor &amp; Destructor Documentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">◆ Setting()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">Member Function Documentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">◆ parse_argv()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">◆ readInputTemplate()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">◆ readMatch()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">◆ readParam()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">Member Data Documentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">◆ bodyFilename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">◆ faceFilename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">◆ headFilename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">14.</span> <span class="nav-text">◆ outputFilename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">15.</span> <span class="nav-text">◆ outputIntermediate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">16.</span> <span class="nav-text">◆ param</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">17.</span> <span class="nav-text">◆ preAligned</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">18.</span> <span class="nav-text">◆ subBody</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">19.</span> <span class="nav-text">◆ subHead</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">20.</span> <span class="nav-text">◆ useMatch</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Elliott Zheng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="http://hypercube.top">超立方体</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

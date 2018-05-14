@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Inshaping: Inshape Namespace Reference                    Inshaping    &amp;#160;0.1                     Namespaces &amp;#124; Classes &amp;#124; Typedefs &amp;#124; Functions      Inshape Namespace Reference">
+<meta property="og:type" content="website">
+<meta property="og:title" content="超立方体">
+<meta property="og:url" content="www.hypercube.top/readme/namespace_inshape.html">
+<meta property="og:site_name" content="超立方体">
+<meta property="og:description" content="Inshaping: Inshape Namespace Reference                    Inshaping    &amp;#160;0.1                     Namespaces &amp;#124; Classes &amp;#124; Typedefs &amp;#124; Functions      Inshape Namespace Reference">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="www.hypercube.top/readme/doxygen.png">
+<meta property="og:updated_time" content="2018-05-14T00:26:22.509Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="超立方体">
+<meta name="twitter:description" content="Inshaping: Inshape Namespace Reference                    Inshaping    &amp;#160;0.1                     Namespaces &amp;#124; Classes &amp;#124; Typedefs &amp;#124; Functions      Inshape Namespace Reference">
+<meta name="twitter:image" content="www.hypercube.top/readme/doxygen.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="www.hypercube.top/readme/namespace_inshape.html"/>
+
+
+
+
+
+  <title> | 超立方体</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+    <a href="https://github.com/agentzheng" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">超立方体</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Hypercube</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-数据结构大作业">
+          <a href="/homework/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-map"></i> <br />
+            
+            数据结构大作业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-so.hypercube">
+          <a href="https://so.hypercube.top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            So.Hypercube
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta name="generator" content="Doxygen 1.8.14">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inshaping: Inshape Namespace Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Inshaping
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.8.14 -->
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Inshape Namespace Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespace_inshape_1_1_convert"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape_1_1_convert.html">Convert</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_inshape_1_1_convex_hull"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape_1_1_convex_hull.html">ConvexHull</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_bounding_box.html">BoundingBox</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_cutter.html">Cutter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_inshaper.html">Inshaper</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_normal_estimation_plus.html">NormalEstimationPlus</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_inshape_1_1_param.html">Param</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_inshape_1_1_param_item.html">ParamItem</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_plane.html">Plane</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_poisson.html">Poisson</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_setting.html">Setting</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_inshape_1_1tri.html">tri</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_inshape_1_1_tri_sparse.html">TriSparse</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a14f01419a2b82a69c6e5c5422d8dfc04"><td class="memItemLeft" align="right" valign="top">typedef OpenMesh::PolyMesh_ArrayKernelT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape.html#a14f01419a2b82a69c6e5c5422d8dfc04">MyMesh</a></td></tr>
+<tr class="separator:a14f01419a2b82a69c6e5c5422d8dfc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef8121bbd69e0ce3ca1b1154cf3119e"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="namespace_inshape.html#a14f01419a2b82a69c6e5c5422d8dfc04">MyMesh</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape.html#a9ef8121bbd69e0ce3ca1b1154cf3119e">MyMeshPtr</a></td></tr>
+<tr class="separator:a9ef8121bbd69e0ce3ca1b1154cf3119e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d8f61a59e700d4d3650d042a143b5e"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; CCLib::SimpleMesh &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape.html#ae7d8f61a59e700d4d3650d042a143b5e">SimpleMeshPtr</a></td></tr>
+<tr class="separator:ae7d8f61a59e700d4d3650d042a143b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga9a80f553f7d0627011d5adb774fdfb18"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___benchmark.html#ga9a80f553f7d0627011d5adb774fdfb18">avgE1</a> (<a class="el" href="class_inshape_1_1_tri_sparse.html">TriSparse</a> &amp;triSprase)</td></tr>
+<tr class="separator:ga9a80f553f7d0627011d5adb774fdfb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f160cc16c556ae0b957c9e442b412f5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___benchmark.html#ga2f160cc16c556ae0b957c9e442b412f5">avgE3</a> (<a class="el" href="class_inshape_1_1_tri_sparse.html">TriSparse</a> &amp;triSprase)</td></tr>
+<tr class="separator:ga2f160cc16c556ae0b957c9e442b412f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec773994b9b98efc6d093f95a5cc02c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___utils.html#gaec773994b9b98efc6d093f95a5cc02c3">compareNorm</a> (<a class="el" href="struct_inshape_1_1tri.html">tri</a> i, <a class="el" href="struct_inshape_1_1tri.html">tri</a> j)</td></tr>
+<tr class="separator:gaec773994b9b98efc6d093f95a5cc02c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece645c57e7e9df225083e627a9663e5"><td class="memItemLeft" align="right" valign="top">pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape.html#aece645c57e7e9df225083e627a9663e5">hyperToPointCloud</a> (<a class="el" href="class_c_c_lib_1_1_hyper_cloud.html#afdf0386d5b9cfc6dd1dd2aef3718bb18">CCLib::HyperCloud::Ptr</a> &amp;hyper)</td></tr>
+<tr class="separator:aece645c57e7e9df225083e627a9663e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a994015b3e7e8593902307005ff6afc64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_c_lib_1_1_hyper_cloud.html#afdf0386d5b9cfc6dd1dd2aef3718bb18">CCLib::HyperCloud::Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape.html#a994015b3e7e8593902307005ff6afc64">cloudToHyper</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt; &amp;cloud)</td></tr>
+<tr class="separator:a994015b3e7e8593902307005ff6afc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf24ba683794748c3d2edcd560b92719"><td class="memItemLeft" align="right" valign="top">pcl::PolygonMesh::Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape.html#abf24ba683794748c3d2edcd560b92719">getConvexHull</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;cloud)</td></tr>
+<tr class="separator:abf24ba683794748c3d2edcd560b92719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb0b2e80fd775dd54a6331151b905602"><td class="memItemLeft" align="right" valign="top">pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_inshape.html#abb0b2e80fd775dd54a6331151b905602">filterWithHull</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;bodyshead, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;head, double threshold)</td></tr>
+<tr class="separator:abb0b2e80fd775dd54a6331151b905602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5b27a9d75e0d1010a725f0a5c8b1d2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_o.html#gac5b27a9d75e0d1010a725f0a5c8b1d2d">readPly</a> (const std::string &amp;filename, pcl::PointCloud&lt; pcl::PointXYZ &gt; &amp;cloud)</td></tr>
+<tr class="separator:gac5b27a9d75e0d1010a725f0a5c8b1d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga838700b647669fabbca10632705070ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_o.html#ga838700b647669fabbca10632705070ff">savePly</a> (const std::string &amp;filename, pcl::PointCloud&lt; pcl::PointXYZ &gt; &amp;cloud)</td></tr>
+<tr class="separator:ga838700b647669fabbca10632705070ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6208b212a4be3528bce281bd0f10bf46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_o.html#ga6208b212a4be3528bce281bd0f10bf46">savePolygonMesh</a> (std::string filename, pcl::PolygonMesh &amp;mesh)</td></tr>
+<tr class="separator:ga6208b212a4be3528bce281bd0f10bf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf82dfff42dedcfaf672b8e29014b714a"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___rigsteration.html#gaf82dfff42dedcfaf672b8e29014b714a">ICPRigsteration</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;data, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;model)</td></tr>
+<tr class="separator:gaf82dfff42dedcfaf672b8e29014b714a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad65d5c8c5e700dd86a241eb63bec633d"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___rigsteration.html#gad65d5c8c5e700dd86a241eb63bec633d">NICPRigsteration</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;data, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;model)</td></tr>
+<tr class="separator:gad65d5c8c5e700dd86a241eb63bec633d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf91e7b8ca51aab7b866a8d893b5e21f6"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___rigsteration.html#gaf91e7b8ca51aab7b866a8d893b5e21f6">SVDRegistration</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;sub_data, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;sub_model)</td></tr>
+<tr class="separator:gaf91e7b8ca51aab7b866a8d893b5e21f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf370f820440e40b8fee702b2b7feef44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___rigsteration.html#gaf370f820440e40b8fee702b2b7feef44">AlignWithFace</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;body, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;head_cloud, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;face)</td></tr>
+<tr class="separator:gaf370f820440e40b8fee702b2b7feef44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8c1d3b1f409f2c5a53acb7b2b940e9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___rigsteration.html#gae8c1d3b1f409f2c5a53acb7b2b940e9e">rigidRigsterWithoutMatch</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;body, <a class="el" href="namespace_inshape.html#a14f01419a2b82a69c6e5c5422d8dfc04">MyMesh</a> &amp;head_mesh, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;face)</td></tr>
+<tr class="separator:gae8c1d3b1f409f2c5a53acb7b2b940e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga067c036f7344828f073a18bf42a0cedf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___rigsteration.html#ga067c036f7344828f073a18bf42a0cedf">rigidRigsterWithMatch</a> (pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;body, <a class="el" href="namespace_inshape.html#a14f01419a2b82a69c6e5c5422d8dfc04">MyMesh</a> &amp;head_mesh, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;face, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;sub_head, pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;sub_body)</td></tr>
+<tr class="separator:ga067c036f7344828f073a18bf42a0cedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a14f01419a2b82a69c6e5c5422d8dfc04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14f01419a2b82a69c6e5c5422d8dfc04">&#9670;&nbsp;</a></span>MyMesh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef OpenMesh::PolyMesh_ArrayKernelT <a class="el" href="namespace_inshape.html#a14f01419a2b82a69c6e5c5422d8dfc04">Inshape::MyMesh</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ef8121bbd69e0ce3ca1b1154cf3119e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef8121bbd69e0ce3ca1b1154cf3119e">&#9670;&nbsp;</a></span>MyMeshPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="namespace_inshape.html#a14f01419a2b82a69c6e5c5422d8dfc04">MyMesh</a>&gt; <a class="el" href="namespace_inshape.html#a9ef8121bbd69e0ce3ca1b1154cf3119e">Inshape::MyMeshPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7d8f61a59e700d4d3650d042a143b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d8f61a59e700d4d3650d042a143b5e">&#9670;&nbsp;</a></span>SimpleMeshPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::shared_ptr&lt;CCLib::SimpleMesh&gt; <a class="el" href="namespace_inshape.html#ae7d8f61a59e700d4d3650d042a143b5e">Inshape::SimpleMeshPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a994015b3e7e8593902307005ff6afc64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a994015b3e7e8593902307005ff6afc64">&#9670;&nbsp;</a></span>cloudToHyper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_c_lib_1_1_hyper_cloud.html#afdf0386d5b9cfc6dd1dd2aef3718bb18">CCLib::HyperCloud::Ptr</a> Inshape::cloudToHyper </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointXYZ &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb0b2e80fd775dd54a6331151b905602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb0b2e80fd775dd54a6331151b905602">&#9670;&nbsp;</a></span>filterWithHull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcl::PointCloud&lt;pcl::PointXYZ&gt;::Ptr Inshape::filterWithHull </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;&#160;</td>
+          <td class="paramname"><em>bodyshead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>threshold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf24ba683794748c3d2edcd560b92719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf24ba683794748c3d2edcd560b92719">&#9670;&nbsp;</a></span>getConvexHull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcl::PolygonMesh::Ptr Inshape::getConvexHull </td>
+          <td>(</td>
+          <td class="paramtype">pcl::PointCloud&lt; pcl::PointXYZ &gt;::Ptr &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aece645c57e7e9df225083e627a9663e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece645c57e7e9df225083e627a9663e5">&#9670;&nbsp;</a></span>hyperToPointCloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcl::PointCloud&lt;pcl::PointXYZ&gt;::Ptr Inshape::hyperToPointCloud </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c_c_lib_1_1_hyper_cloud.html#afdf0386d5b9cfc6dd1dd2aef3718bb18">CCLib::HyperCloud::Ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>hyper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html" target="_blank" rel="noopener">
+<img class="footer" src="doxygen.png" alt="doxygen">
+</a> 1.8.14
+</small></address>
+</body>
+</html>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://onhdz331f.bkt.clouddn.com/0a8b5c42446b6647d4b0a44487ec36a2.png"
+                alt="Elliott Zheng" />
+            
+              <p class="site-author-name" itemprop="name">Elliott Zheng</p>
+              <p class="site-description motion-element" itemprop="description">脱离三维空间的异想天开</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/agentzheng" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://cnblogs.com/elliottzheng" target="_blank" title="Cnblogs">
+                    
+                      <i class="fa fa-fw fa-rss-square"></i>Cnblogs</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:elliott.zheng@foxmail.com" target="_blank" title="E-mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">
+Namespaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">
+Classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">
+Typedefs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">
+Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">Typedef Documentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">◆ MyMesh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">7.</span> <span class="nav-text">◆ MyMeshPtr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">8.</span> <span class="nav-text">◆ SimpleMeshPtr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">9.</span> <span class="nav-text">Function Documentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">10.</span> <span class="nav-text">◆ cloudToHyper()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">11.</span> <span class="nav-text">◆ filterWithHull()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">12.</span> <span class="nav-text">◆ getConvexHull()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">13.</span> <span class="nav-text">◆ hyperToPointCloud()</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Elliott Zheng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="http://hypercube.top">超立方体</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

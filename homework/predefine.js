@@ -88,44 +88,7 @@ function Market(){
 
 var Floyd =function (e,ee,marker){
     var i=0;
-    for(;i<Point_Set.length;i++)
-    {
-        if(map.getDistance(Point_Set[i],marker.getPosition())<10)
-            break;
-    }
-    sum=0;
-    for(var j=0;j<N;j++)
-    {
-        sum+=Dist[i][j];
-    }
-    alert(sum);
-}
-
-
-
-var removeMarker = function(e,ee,marker){
-    map.removeOverlay(marker);
-}
-
-var Find_Market=function(){
-    //初始化两个矩阵
-    if(!flag_floyd)
-    {   
-        for(var i=0;i<N;i++)
-        {
-            for(var j=0;j<N;j++)
-            {
-                    Path[i][j]=j;
-                    Dist[i][j]=Edge_Weight[i][j];
-            }
-            
-        }
-        for (var k = 0; k < N; k++) {
-            for (var row = 0; row < N; row++) {
-                for (var col = 0; col < N; col++) {
-                    //为了防止溢出，所以需要引入一个select值
-                    select = Dist[row][k] + Dist[k][col];
-                    if (Dist[row][col] > select) {
+    for(;i<point_set.length;i++) {="" if(map.getdistance(point_set[i],marker.getposition())<10)="" break;="" }="" sum="0;" for(var="" j="0;j<N;j++)" sum+="Dist[i][j];" alert(sum);="" var="" removemarker="function(e,ee,marker){" map.removeoverlay(marker);="" find_market="function(){" 初始化两个矩阵="" if(!flag_floyd)="" i="0;i<N;i++)" path[i][j]="j;" dist[i][j]="Edge_Weight[i][j];" for="" (var="" k="0;" <="" n;="" k++)="" row="0;" row++)="" col="0;" col++)="" 为了防止溢出，所以需要引入一个select值="" select="Dist[row][k]" +="" dist[k][col];="" if="" (dist[row][col]=""> select) {
                         //更新我们的D矩阵
                         Dist[row][col] = select;
                         //更新我们的P矩阵
@@ -139,22 +102,4 @@ var Find_Market=function(){
 
     var minsum=7199254740992;
     var min_j=0;
-    for(var j =0;j<N;j++)
-    {
-        var sum=0;
-        for(var i=0;i<N;i++)
-        {
-            sum+=Dist[i][j];
-        }
-        if(sum<minsum)
-        {
-            min_j=j;
-            minsum=sum;
-        }
-    }
-    
-    var content = Point_info[min_j][2]+"是当前条件下最适合建超市的地方";
-    showinfo(Point_Set[min_j],content);
-
-    
-}
+    for(var j =0;j</point_set.length;i++)>
