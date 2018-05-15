@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://hypercube.top/2018/05/15/task2/</loc>
-    <lastmod>2018-05-15T05:58:22.572Z</lastmod>
+    <lastmod>2018-05-15T23:28:10.849Z</lastmod>
     <data>
         <display>
         <title>Task2</title>
@@ -22,7 +22,7 @@
     
   <url>
     <loc>https://hypercube.top/2018/05/13/task1/</loc>
-    <lastmod>2018-05-15T04:26:08.327Z</lastmod>
+    <lastmod>2018-05-15T23:28:01.350Z</lastmod>
     <data>
         <display>
         <title>Task1</title>
@@ -82,9 +82,9 @@
         <title>翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）</title>
         <pubTime>2018-01-07T03:38:46.000Z</pubTime>
         
-        <tag>OpenCV</tag>
-         
         <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
          
         <tag>翻译</tag>
          
