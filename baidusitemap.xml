@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://hypercube.top/2018/05/16/gauss/</loc>
-    <lastmod>2018-05-16T00:43:29.274Z</lastmod>
+    <lastmod>2018-05-16T00:56:36.745Z</lastmod>
     <data>
         <display>
         <title>opencv构建高斯卷积核</title>
@@ -23,29 +23,8 @@
 
     
   <url>
-    <loc>https://hypercube.top/2018/05/16/opencv4android/</loc>
-    <lastmod>2018-05-16T00:41:35.719Z</lastmod>
-    <data>
-        <display>
-        <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
-        <pubTime>2018-05-16T00:36:56.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>计算机视觉</tag>
-         
-        <tag>OpenCV</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hypercube.top/2018/05/16/filter/</loc>
-    <lastmod>2018-05-16T00:34:06.478Z</lastmod>
+    <lastmod>2018-05-16T00:56:02.751Z</lastmod>
     <data>
         <display>
         <title>使用OpenCV实现自定义卷积</title>
@@ -64,7 +43,7 @@
     
   <url>
     <loc>https://hypercube.top/2018/05/16/register/</loc>
-    <lastmod>2018-05-16T00:14:14.851Z</lastmod>
+    <lastmod>2018-05-16T00:55:26.126Z</lastmod>
     <data>
         <display>
         <title>基于点云几何特征匹配的配准概述</title>
@@ -75,6 +54,27 @@
         <tag>点云处理</tag>
          
         <tag>算法</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hypercube.top/2018/05/16/opencv4android/</loc>
+    <lastmod>2018-05-16T00:53:48.251Z</lastmod>
+    <data>
+        <display>
+        <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
+        <pubTime>2018-05-16T00:36:56.000Z</pubTime>
+        
+        <tag>计算机视觉</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>OpenCV</tag>
          
          
            
