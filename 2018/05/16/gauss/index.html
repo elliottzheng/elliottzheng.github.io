@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="计算机视觉,点云处理,算法," />
+  <meta name="keywords" content="计算机视觉,OpenCV," />
 
 
 
@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。   事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定">
-<meta name="keywords" content="计算机视觉,点云处理,算法">
+<meta name="description" content="关于高斯核函数可以参见阮一峰老师的日志：高斯模糊的算法 如何使用高斯核进行高斯模糊可以参见我的另一篇日志：opencv构建自定义卷积 12345678910111213141516 1 Mat Gaussian_kernal(int kernel_size, int sigma) 2 &amp;#123; 3     const double PI = 3.14159265358979323846; 4">
+<meta name="keywords" content="计算机视觉,OpenCV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于点云几何特征匹配的配准概述">
-<meta property="og:url" content="https://hypercube.top/2018/05/16/register/index.html">
+<meta property="og:title" content="opencv构建高斯卷积核">
+<meta property="og:url" content="https://hypercube.top/2018/05/16/gauss/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。   事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定">
+<meta property="og:description" content="关于高斯核函数可以参见阮一峰老师的日志：高斯模糊的算法 如何使用高斯核进行高斯模糊可以参见我的另一篇日志：opencv构建自定义卷积 12345678910111213141516 1 Mat Gaussian_kernal(int kernel_size, int sigma) 2 &amp;#123; 3     const double PI = 3.14159265358979323846; 4">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-16T00:14:14.851Z">
+<meta property="og:updated_time" content="2018-05-16T00:34:24.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于点云几何特征匹配的配准概述">
-<meta name="twitter:description" content="在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。   事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定">
+<meta name="twitter:title" content="opencv构建高斯卷积核">
+<meta name="twitter:description" content="关于高斯核函数可以参见阮一峰老师的日志：高斯模糊的算法 如何使用高斯核进行高斯模糊可以参见我的另一篇日志：opencv构建自定义卷积 12345678910111213141516 1 Mat Gaussian_kernal(int kernel_size, int sigma) 2 &amp;#123; 3     const double PI = 3.14159265358979323846; 4">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://hypercube.top/2018/05/16/register/"/>
+  <link rel="canonical" href="https://hypercube.top/2018/05/16/gauss/"/>
 
 
 
 
 
-  <title>基于点云几何特征匹配的配准概述 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>opencv构建高斯卷积核 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/register/">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/gauss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elliott Zheng">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于点云几何特征匹配的配准概述</h1>
+          <h1 class="post-title" itemprop="name headline">opencv构建高斯卷积核</h1>
         
 
         <div class="post-meta">
@@ -303,7 +303,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T08:08:58+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T08:22:34+08:00">
                 2018-05-16
               </time>
             
@@ -341,13 +341,9 @@
       
 
       
-        <p>  在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。</p>
-<p>  事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定能够找到最佳的变换，但是这个计算量是一个天文数字，在实际应用当中是不太可能的。所以人们想出了各种方法试图在减少计算量的同时又尽量保证配准的精度。</p>
-<p>  现在比较成熟的点云配准基本分为两部分，首先进行粗配准，粗配准的算法多样，也是我觉得在点云配准当中最重要也是最值得研究的部分，说是粗配准，但是要求要有较高的精度，粗配准的主要作用是为后续的精准配准ICP算法提供较好的迭代初始位置。经过粗配准之后，这两个点云的重合程度已经很高了，若要进一步提高，就需要后续的精准配准，现在一般都是采用ICP(迭代最近点)算法或者其变种来进行的，通过多次迭代，可以进一步提高配准的精度，但是若是没有粗配准提供较好的迭代初始位置，ICP算法往往会陷入局部区域的最优解，而得不到全局的最优解。</p>
-<p>  本文主要关注基于点云几何特征匹配的粗配准。无论什么方法，点云粗配准的关键其实就是找出尽可能多而准确的对应点，然后再利用这些对应点求取刚体变换矩阵。</p>
-<p>  首先是利用点云的曲率不变性，通过k邻域法以及最小二乘法拟合两点云的每一点的所在曲面，然后算出其法向量，进一步求取该点的曲率，然后通过曲率以及其他的一些手段，进一步将两点云分别简化为特征点云（例如曲率的极值点云），之后再循环遍历，寻找两点云特征点的的对应点，最终使用这些对应点计算出相应的旋转平移变换矩阵。</p>
-<p>  4PCS算法同样是使用了点云的几何特征来提取对应点，不同的是该算法使用了另一个特征—平面四边形的仿射不变性，来寻找对应点，使得复杂度大大减少（O(n<sup>3</sup>) -&gt;O(n<sup>2</sup>)，n为点的数量）。</p>
-<p>  未完待续。。。。。。这是个人学习的感想，如有错误还希望能够指出</p>
+        <p>关于<strong>高斯核函数</strong>可以参见阮一峰老师的日志：<a href="http://www.ruanyifeng.com/blog/2012/11/gaussian_blur.html" target="_blank" rel="noopener">高斯模糊的算法</a></p>
+<p>如何使用高斯核进行<strong>高斯模糊</strong>可以参见我的另一篇日志：<a href="http://www.cnblogs.com/elliottzheng/p/6616869.html" target="_blank" rel="noopener">opencv构建自定义卷积</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="function">Mat <span class="title">Gaussian_kernal</span><span class="params">(<span class="keyword">int</span> kernel_size, <span class="keyword">int</span> sigma)</span></span></span><br><span class="line"><span class="function"> 2 </span>&#123;</span><br><span class="line"> <span class="number">3</span>     <span class="keyword">const</span> <span class="keyword">double</span> PI = <span class="number">3.14159265358979323846</span>;</span><br><span class="line"> <span class="number">4</span>     <span class="keyword">int</span> m = kernel_size / <span class="number">2</span>;</span><br><span class="line"> <span class="number">5</span>     <span class="function">Mat <span class="title">kernel</span><span class="params">(kernel_size, kernel_size, CV_32FC1)</span></span>;</span><br><span class="line"> <span class="number">6</span>     <span class="keyword">float</span> s = <span class="number">2</span> * sigma*sigma;</span><br><span class="line"> <span class="number">7</span>     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; kernel_size; i++)</span><br><span class="line"> <span class="number">8</span>     &#123;</span><br><span class="line"> <span class="number">9</span>         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; kernel_size; j++)</span><br><span class="line"><span class="number">10</span>         &#123;</span><br><span class="line"><span class="number">11</span>             <span class="keyword">int</span> x = i - m, y=j - m;</span><br><span class="line"><span class="number">12</span>             kernel.ptr&lt;<span class="keyword">float</span>&gt;(i)[j] = <span class="built_in">exp</span>(-(x*x + y*y) / s) / (PI*s);</span><br><span class="line"><span class="number">13</span>         &#125;</span><br><span class="line"><span class="number">14</span>     &#125;</span><br><span class="line"><span class="number">15</span>     <span class="keyword">return</span> kernel;</span><br><span class="line"><span class="number">16</span> &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -375,12 +371,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/05/16/register/">基于点云几何特征匹配的配准概述</a></p>
+  <p><span>本文标题:</span><a href="/2018/05/16/gauss/">opencv构建高斯卷积核</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
   <p><span>发布时间:</span>2018年05月16日 - 08:05</p>
   <p><span>最后更新:</span>2018年05月16日 - 08:05</p>
-  <p><span>原始链接:</span><a href="/2018/05/16/register/" title="基于点云几何特征匹配的配准概述">https://hypercube.top/2018/05/16/register/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/05/16/register/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2018/05/16/gauss/" title="opencv构建高斯卷积核">https://hypercube.top/2018/05/16/gauss/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/05/16/gauss/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
 </div>
@@ -413,9 +409,7 @@
           
             <a href="/tags/计算机视觉/" rel="tag"><i class="fa fa-tag"></i> 计算机视觉</a>
           
-            <a href="/tags/点云处理/" rel="tag"><i class="fa fa-tag"></i> 点云处理</a>
-          
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+            <a href="/tags/OpenCV/" rel="tag"><i class="fa fa-tag"></i> OpenCV</a>
           
         </div>
       
@@ -428,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/15/task2/" rel="next" title="Task2">
-                <i class="fa fa-chevron-left"></i> Task2
+              <a href="/2018/05/16/register/" rel="next" title="基于点云几何特征匹配的配准概述">
+                <i class="fa fa-chevron-left"></i> 基于点云几何特征匹配的配准概述
               </a>
             
           </div>
@@ -438,8 +432,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/16/gauss/" rel="prev" title="opencv构建高斯卷积核">
-                opencv构建高斯卷积核 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/16/filter/" rel="prev" title="使用OpenCV实现自定义卷积">
+                使用OpenCV实现自定义卷积 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

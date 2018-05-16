@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="计算机视觉,点云处理,算法," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -78,18 +78,16 @@
 
 
 
-<meta name="description" content="在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。   事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定">
-<meta name="keywords" content="计算机视觉,点云处理,算法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="基于点云几何特征匹配的配准概述">
-<meta property="og:url" content="https://hypercube.top/2018/05/16/register/index.html">
+<meta name="description" content="脱离三维空间的异想天开">
+<meta property="og:type" content="website">
+<meta property="og:title" content="超立方体">
+<meta property="og:url" content="https://hypercube.top/page/2/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。   事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定">
+<meta property="og:description" content="脱离三维空间的异想天开">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-16T00:14:14.851Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于点云几何特征匹配的配准概述">
-<meta name="twitter:description" content="在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。   事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定">
+<meta name="twitter:title" content="超立方体">
+<meta name="twitter:description" content="脱离三维空间的异想天开">
 
 
 
@@ -119,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="https://hypercube.top/2018/05/16/register/"/>
+  <link rel="canonical" href="https://hypercube.top/page/2/"/>
 
 
 
 
 
-  <title>基于点云几何特征匹配的配准概述 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -144,7 +142,8 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
+  page-home">
     <div class="headband">
     <a href="https://github.com/agentzheng" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     </div>
@@ -259,9 +258,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -274,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/register/">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2017/12/29/DoubleArr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elliott Zheng">
@@ -291,7 +290,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于点云几何特征匹配的配准概述</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/29/DoubleArr/" itemprop="url">C++自封装矩阵类Matrix</a></h1>
         
 
         <div class="post-meta">
@@ -303,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T08:08:58+08:00">
-                2018-05-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T23:59:12+08:00">
+                2017-12-29
               </time>
             
 
@@ -341,14 +342,16 @@
       
 
       
-        <p>  在点云数据只有三维坐标时进行配准，这个时候，我们所能提取到的就只有点云的几何特征，常用的特征包括，点云的曲率，点云中平面四边形的仿射不变性等特征。</p>
-<p>  事实上不管是什么配准方法，都是基于特征匹配的原理。无论是从图像当中获取额外的辅助的信息，或者只是从三维点云当中提取的几何特征，都是为了更好得抽象出点云的特征以及两个点云之间的对应点。毫无疑问，如果我们能够通过遍历点云的各个点基所对应的变换，肯定能够找到最佳的变换，但是这个计算量是一个天文数字，在实际应用当中是不太可能的。所以人们想出了各种方法试图在减少计算量的同时又尽量保证配准的精度。</p>
-<p>  现在比较成熟的点云配准基本分为两部分，首先进行粗配准，粗配准的算法多样，也是我觉得在点云配准当中最重要也是最值得研究的部分，说是粗配准，但是要求要有较高的精度，粗配准的主要作用是为后续的精准配准ICP算法提供较好的迭代初始位置。经过粗配准之后，这两个点云的重合程度已经很高了，若要进一步提高，就需要后续的精准配准，现在一般都是采用ICP(迭代最近点)算法或者其变种来进行的，通过多次迭代，可以进一步提高配准的精度，但是若是没有粗配准提供较好的迭代初始位置，ICP算法往往会陷入局部区域的最优解，而得不到全局的最优解。</p>
-<p>  本文主要关注基于点云几何特征匹配的粗配准。无论什么方法，点云粗配准的关键其实就是找出尽可能多而准确的对应点，然后再利用这些对应点求取刚体变换矩阵。</p>
-<p>  首先是利用点云的曲率不变性，通过k邻域法以及最小二乘法拟合两点云的每一点的所在曲面，然后算出其法向量，进一步求取该点的曲率，然后通过曲率以及其他的一些手段，进一步将两点云分别简化为特征点云（例如曲率的极值点云），之后再循环遍历，寻找两点云特征点的的对应点，最终使用这些对应点计算出相应的旋转平移变换矩阵。</p>
-<p>  4PCS算法同样是使用了点云的几何特征来提取对应点，不同的是该算法使用了另一个特征—平面四边形的仿射不变性，来寻找对应点，使得复杂度大大减少（O(n<sup>3</sup>) -&gt;O(n<sup>2</sup>)，n为点的数量）。</p>
-<p>  未完待续。。。。。。这是个人学习的感想，如有错误还希望能够指出</p>
-
+        
+          <p>　　做数据结构的图的作业，感觉每次都要自己去管理动态二维数组，就特地封装了一个矩阵类，实现了一些基本的接口。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/29/DoubleArr/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -357,47 +360,8 @@
 
     
     
-      <div>
-        
-<div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-
-
-
-      </div>
-    
     
     <div>
-      
-        
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/05/16/register/">基于点云几何特征匹配的配准概述</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
-  <p><span>发布时间:</span>2018年05月16日 - 08:05</p>
-  <p><span>最后更新:</span>2018年05月16日 - 08:05</p>
-  <p><span>原始链接:</span><a href="/2018/05/16/register/" title="基于点云几何特征匹配的配准概述">https://hypercube.top/2018/05/16/register/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/05/16/register/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-      $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({   
-          title: "",   
-          text: '复制成功',
-          icon: "success", 
-          showConfirmButton: true
-          });
-        });
-    });  
-</script>
-
       
     </div>
 
@@ -409,44 +373,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/计算机视觉/" rel="tag"><i class="fa fa-tag"></i> 计算机视觉</a>
-          
-            <a href="/tags/点云处理/" rel="tag"><i class="fa fa-tag"></i> 点云处理</a>
-          
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/05/15/task2/" rel="next" title="Task2">
-                <i class="fa fa-chevron-left"></i> Task2
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/16/gauss/" rel="prev" title="opencv构建高斯卷积核">
-                opencv构建高斯卷积核 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -456,11 +390,146 @@
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2017/12/28/Objectbox/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elliott Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="超立方体">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/28/Objectbox/" itemprop="url">Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T08:07:18+08:00">
+                2017-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>　　最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。</p>
+<p>　　今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/28/Objectbox/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -468,8 +537,6 @@
 
 
           
-  
-
 
         </div>
         
@@ -690,32 +757,11 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -761,6 +807,43 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 

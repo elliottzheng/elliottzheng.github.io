@@ -273,6 +273,421 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/opencv4android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elliott Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="超立方体">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/opencv4android/" itemprop="url">OpenCV4android的Android Studio环境配置及项目实例下载</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T08:36:56+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>因为软件竞赛的项目会用到OpenCV for Android，所以就研究了一下如何在Android Studio上配置OpenCV4Android</p>
+<p>环境概述：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Android Studio 2.3</span><br><span class="line"></span><br><span class="line">OpenCV-2.4.11-android-sdk</span><br></pre></td></tr></table></figure>
+<p>接下来主要是详细的讲解每一步的配置，然后再最后我会放上我做的一个示例项目</p>
+<p><strong>1.首先是下载OpenCV-2.4.11-android-sdk</strong></p>
+<p>不知道为什么之前上Opencv官网发现Android部分挂了，找了半天没找着下载的地方，最后终于在SourceForge上找到了，所以为了方便大家不用到处找，我把文件传到七牛云了</p>
+<p><a href="https://onhdz331f.bkt.clouddn.com/OpenCV-2.4.11-android-sdk.zip" target="_blank" rel="noopener">https://onhdz331f.bkt.clouddn.com/OpenCV-2.4.11-android-sdk.zip</a></p>
+<p>如果不放心的话，大家也可以到opencv官网上去下载这个sdk。</p>
+<p><strong>2.依据博友gloomyfish的文章进行配置，博主的视频当中的操作是对的，但是他的文章有些错误，会导致配置失败，或者说的不太清楚的的地方，我下面会补充讲下</strong></p>
+<p><a href="https://blog.csdn.net/jia20003/article/details/53126321" target="_blank" rel="noopener">OpenCV On Android开发 - Android Studio上环境配置</a></p>
+<p>(1)<strong>错误更正</strong>  <strong>“SDK下面native文件下所有的文件都copy到你创建好的项目libs目录下”这句话有错，应该改为SDK\native\libs文件下所有的文件都copy到项目libs目录下,这样问题解决</strong></p>
+<p>(2)<strong>错误更正</strong>  <strong>最后要加到build.gradle(Module:app)的那句</strong></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">"$buildDir/native-libs"</span>, <span class="keyword">include</span>: <span class="string">'native-libs.jar'</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>应该是要放到build.gradle(Module:app)中的dependencies{}里面，而且不是像他所说的第一行，而是应该放在第二行，也就是这句</strong></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">fileTree</span>(<span class="keyword">include</span>: [<span class="string">'*.jar'</span>], dir: <span class="string">'libs'</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>的下一行。</strong></p>
+<p><strong>(3)说得不太清楚的</strong>：要放到build.gradle(Module:app)的这部分代码，是直接加在dependencies{}后面的。</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="keyword">task</span> nativeLibsToJar(type: Jar, <span class="keyword">description</span>: <span class="string">'create a jar archive of the native libs'</span>) &#123;</span><br><span class="line"> <span class="number">2</span>     <span class="keyword">destinationDir</span> <span class="keyword">file</span>(<span class="string">"$buildDir/native-libs"</span>)</span><br><span class="line"> <span class="number">3</span>     baseName <span class="string">'native-libs'</span></span><br><span class="line"> <span class="number">4</span>     <span class="keyword">from</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: <span class="string">'**/*.so'</span>)</span><br><span class="line"> <span class="number">5</span>     <span class="keyword">into</span> <span class="string">'lib/'</span></span><br><span class="line"> <span class="number">6</span> &#125;</span><br><span class="line"> <span class="number">7</span> </span><br><span class="line"> <span class="number">8</span> tasks.withType(JavaCompile) &#123;</span><br><span class="line"> <span class="number">9</span>     compileTask -&gt; compileTask.dependsOn(nativeLibsToJar)</span><br><span class="line"><span class="number">10</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>下面给出完整的build.gradle(Module:app)文件，并加上了注释，表现了应该如何更改</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"> <span class="number">2</span> </span><br><span class="line"> <span class="number">3</span> android &#123;</span><br><span class="line"> <span class="number">4</span>     compileSdkVersion <span class="number">25</span><span class="comment">//在不同的android版本中，sdk版本不同</span></span><br><span class="line"> <span class="number">5</span>     buildToolsVersion <span class="string">"25.0.2"</span></span><br><span class="line"> <span class="number">6</span>     defaultConfig &#123;</span><br><span class="line"> <span class="number">7</span>         applicationId <span class="string">"com.example.a18350.opencvtest"</span></span><br><span class="line"> <span class="number">8</span>         minSdkVersion <span class="number">19</span></span><br><span class="line"> <span class="number">9</span>         targetSdkVersion <span class="number">25</span></span><br><span class="line"><span class="number">10</span>         versionCode <span class="number">1</span></span><br><span class="line"><span class="number">11</span>         versionName <span class="string">"1.0"</span></span><br><span class="line"><span class="number">12</span>         testInstrumentationRunner <span class="string">"android.support.test.runner.AndroidJUnitRunner"</span></span><br><span class="line"><span class="number">13</span>     &#125;</span><br><span class="line"><span class="number">14</span>     buildTypes &#123;</span><br><span class="line"><span class="number">15</span>         release &#123;</span><br><span class="line"><span class="number">16</span>             minifyEnabled <span class="keyword">false</span></span><br><span class="line"><span class="number">17</span>             proguardFiles getDefaultProguardFile(<span class="string">'proguard-android.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line"><span class="number">18</span>         &#125;</span><br><span class="line"><span class="number">19</span>     &#125;</span><br><span class="line"><span class="number">20</span> &#125;</span><br><span class="line"><span class="number">21</span> </span><br><span class="line"><span class="number">22</span> <span class="keyword">dependencies</span> &#123;</span><br><span class="line"><span class="number">23</span>     <span class="keyword">compile</span> <span class="keyword">fileTree</span>(<span class="keyword">include</span>: [<span class="string">'*.jar'</span>], dir: <span class="string">'libs'</span>)</span><br><span class="line"><span class="number">24</span>     <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">"$buildDir/native-libs"</span>, <span class="keyword">include</span>: <span class="string">'native-libs.jar'</span>)<span class="comment">//那句话是加在这里的，而不是加在第一行</span></span><br><span class="line"><span class="number">25</span>     androidTestCompile(<span class="string">'com.android.support.test.espresso:espresso-core:2.2.2'</span>, &#123;</span><br><span class="line"><span class="number">26</span>         <span class="keyword">exclude</span> <span class="keyword">group</span>: <span class="string">'com.android.support'</span>, module: <span class="string">'support-annotations'</span></span><br><span class="line"><span class="number">27</span>     &#125;)</span><br><span class="line"><span class="number">28</span>     <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:25.3.1'</span></span><br><span class="line"><span class="number">29</span>     <span class="keyword">compile</span> <span class="string">'com.android.support.constraint:constraint-layout:1.0.2'</span></span><br><span class="line"><span class="number">30</span>     testCompile <span class="string">'junit:junit:4.12'</span></span><br><span class="line"><span class="number">31</span>     <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':openCVLibrary2411'</span>)</span><br><span class="line"><span class="number">32</span> &#125;</span><br><span class="line"><span class="number">33</span> <span class="comment">//请将两个task放在这里，也就是dependencies后面</span></span><br><span class="line"><span class="number">34</span> <span class="keyword">task</span> nativeLibsToJar(type: Jar, <span class="keyword">description</span>: <span class="string">'create a jar archive of the native libs'</span>) &#123;</span><br><span class="line"><span class="number">35</span>     <span class="keyword">destinationDir</span> <span class="keyword">file</span>(<span class="string">"$buildDir/native-libs"</span>)</span><br><span class="line"><span class="number">36</span>     baseName <span class="string">'native-libs'</span></span><br><span class="line"><span class="number">37</span>     <span class="keyword">from</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: <span class="string">'**/*.so'</span>)</span><br><span class="line"><span class="number">38</span>     <span class="keyword">into</span> <span class="string">'lib/'</span></span><br><span class="line"><span class="number">39</span> &#125;</span><br><span class="line"><span class="number">40</span> </span><br><span class="line"><span class="number">41</span> tasks.withType(JavaCompile) &#123;</span><br><span class="line"><span class="number">42</span>     compileTask -&gt; compileTask.dependsOn(nativeLibsToJar)</span><br><span class="line"><span class="number">43</span> &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>(4)</strong>请注意，<strong>还应该要更新build.gradle(module:OpenCVLibrary2411)信息</strong>，打开build.gradle(module:OpenCVLibrary2411)，修改文件中的</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　1）compileSdkVersion</span><br><span class="line"></span><br><span class="line">　　2）buildToolsVersion</span><br><span class="line"></span><br><span class="line">　　3） minSdkVersion</span><br><span class="line"></span><br><span class="line">　　4）targetSdkVersion</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p>将<strong>其内容与build.gradle(Module:app)中信息相一致</strong>,这里做的事情其实是调整sdk的版本，使得编译opencv的sdk，构建工具的版本和app相同。</p>
+<p><img src="https://s1.ax2x.com/2018/05/16/xbaOR.png" alt="img"></p>
+<p> 大功告成，这里放上运行成功的项目地址</p>
+<p><a href="https://git.oschina.net/ylzheng/opencv4android_example" target="_blank" rel="noopener">https://git.oschina.net/ylzheng/opencv4android_example</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/filter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elliott Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="超立方体">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/filter/" itemprop="url">使用OpenCV实现自定义卷积</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T08:29:17+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>对图像进行卷积是图像处理的基本操作，最近在研究图像滤波，经常要用到自定义卷积，所以实现了一下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/imgproc/imgproc.hpp"</span></span></span><br><span class="line"> <span class="number">2</span> <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/highgui/highgui.hpp"</span></span></span><br><span class="line"> <span class="number">3</span> </span><br><span class="line"> <span class="number">4</span> <span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"> <span class="number">5</span> </span><br><span class="line"> <span class="number">6</span> <span class="function">Mat <span class="title">get_blur_kernel</span><span class="params">(<span class="keyword">int</span> kernel_size)</span></span>;<span class="comment">//获得归一化滤波的卷积核</span></span><br><span class="line"> <span class="number">7</span> </span><br><span class="line"> <span class="number">8</span> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> ** argv)</span></span></span><br><span class="line"><span class="function"> 9 </span>&#123;</span><br><span class="line"><span class="number">10</span>     Mat src, dst;</span><br><span class="line"><span class="number">11</span>     Point anchor;</span><br><span class="line"><span class="number">12</span>     <span class="keyword">double</span> delta;</span><br><span class="line"><span class="number">13</span>     <span class="keyword">int</span> ddepth;</span><br><span class="line"><span class="number">14</span>     <span class="keyword">int</span> kernel_size = <span class="number">5</span>;</span><br><span class="line"><span class="number">15</span>     <span class="comment">// 生成一个掩模核 大小为kernel_size*kernel_size,这里我们用归一化块滤波的卷积核做示例</span></span><br><span class="line"><span class="number">16</span>     Mat kernel = get_blur_kernel(kernel_size);</span><br><span class="line"><span class="number">17</span>     <span class="comment">// 载入一张图片</span></span><br><span class="line"><span class="number">18</span>     src = imread(<span class="string">"a.jpg"</span>);</span><br><span class="line"><span class="number">19</span>     <span class="keyword">if</span> (!src.data)</span><br><span class="line"><span class="number">20</span>         <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"><span class="number">21</span> </span><br><span class="line"><span class="number">22</span>     <span class="comment">// 创建窗口</span></span><br><span class="line"><span class="number">23</span>     imshow(<span class="string">"before"</span>,src);</span><br><span class="line"><span class="number">24</span>     waitKey(<span class="number">500</span>);</span><br><span class="line"><span class="number">25</span>     <span class="comment">// 初始化滤波器参数</span></span><br><span class="line"><span class="number">26</span>     anchor = Point(<span class="number">-1</span>, <span class="number">-1</span>);</span><br><span class="line"><span class="number">27</span>     delta = <span class="number">0</span>;</span><br><span class="line"><span class="number">28</span>     ddepth = <span class="number">-1</span>;</span><br><span class="line"><span class="number">29</span>     <span class="comment">//将核设置好之后，使用函数 filter2D 就可以生成滤波器：</span></span><br><span class="line"><span class="number">30</span>     filter2D(src, dst, ddepth, kernel, anchor, delta, BORDER_DEFAULT);</span><br><span class="line"><span class="number">31</span> </span><br><span class="line"><span class="number">32</span>     imshow(<span class="string">"after"</span>, dst);</span><br><span class="line"><span class="number">33</span>     waitKey(<span class="number">0</span>);</span><br><span class="line"><span class="number">34</span>     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="number">35</span> &#125;</span><br><span class="line"><span class="number">36</span> </span><br><span class="line"><span class="number">37</span> <span class="comment">//生成归一化滤波的卷积核,通过对kernel.ptr(i)[j]的操作来进行</span></span><br><span class="line"><span class="number">38</span> <span class="function">Mat <span class="title">get_blur_kernel</span><span class="params">(<span class="keyword">int</span> kernel_size)</span></span></span><br><span class="line"><span class="function">39 </span>&#123;</span><br><span class="line"><span class="number">40</span>     Mat kernel = (Mat_&lt;<span class="keyword">float</span>&gt;(kernel_size, kernel_size));</span><br><span class="line"><span class="number">41</span>     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; kernel_size; i++)</span><br><span class="line"><span class="number">42</span>     &#123;</span><br><span class="line"><span class="number">43</span>         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; kernel_size; j++)</span><br><span class="line"><span class="number">44</span>             kernel.ptr&lt;<span class="keyword">float</span>&gt;(i)[j] = <span class="number">1.0</span> / (kernel_size*kernel_size);</span><br><span class="line"><span class="number">45</span>     &#125;</span><br><span class="line"><span class="number">46</span>     <span class="keyword">return</span> kernel;</span><br><span class="line"><span class="number">47</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>卷积核<code>kernel</code>其实也是一个<code>Mat</code>对象，我们可以通过<code>kernel.ptr(i)[j]</code>实现对矩阵元素的直接操作，将核设置好之后，使用OpenCV提供的函数 <code>filter2D</code> 就可以生成滤波器：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filter2D(src, dst, ddepth, kernel, anchor, delta, BORDER_DEFAULT);</span><br></pre></td></tr></table></figure>
+<p>其中各参数含义如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">src : 源图像</span><br><span class="line">dst : 目标图像</span><br><span class="line">ddepth : dst 的深度。若为负值（如 - <span class="number">1</span> ），则表示其深度与源图像相等。</span><br><span class="line">kernel : 用来遍历图像的核</span><br><span class="line">anchor : 核的锚点的相对位置，其中心点默认为(<span class="number">-1</span>, <span class="number">-1</span>) 。</span><br><span class="line">delta : 在卷积过程中，该值会加到每个像素上。默认情况下，这个值为 <span class="number">0</span> 。</span><br><span class="line">BORDER_DEFAULT : 这里我们保持其默认值，更多细节将在其他教程中详解</span><br></pre></td></tr></table></figure></p>
+<p>只需改变卷积核，我们就可以使用类似的方法创造自定义滤波了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/gauss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elliott Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="超立方体">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/gauss/" itemprop="url">opencv构建高斯卷积核</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T08:22:34+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关于<strong>高斯核函数</strong>可以参见阮一峰老师的日志：<a href="http://www.ruanyifeng.com/blog/2012/11/gaussian_blur.html" target="_blank" rel="noopener">高斯模糊的算法</a></p>
+<p>如何使用高斯核进行<strong>高斯模糊</strong>可以参见我的另一篇日志：<a href="http://www.cnblogs.com/elliottzheng/p/6616869.html" target="_blank" rel="noopener">opencv构建自定义卷积</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="function">Mat <span class="title">Gaussian_kernal</span><span class="params">(<span class="keyword">int</span> kernel_size, <span class="keyword">int</span> sigma)</span></span></span><br><span class="line"><span class="function"> 2 </span>&#123;</span><br><span class="line"> <span class="number">3</span>     <span class="keyword">const</span> <span class="keyword">double</span> PI = <span class="number">3.14159265358979323846</span>;</span><br><span class="line"> <span class="number">4</span>     <span class="keyword">int</span> m = kernel_size / <span class="number">2</span>;</span><br><span class="line"> <span class="number">5</span>     <span class="function">Mat <span class="title">kernel</span><span class="params">(kernel_size, kernel_size, CV_32FC1)</span></span>;</span><br><span class="line"> <span class="number">6</span>     <span class="keyword">float</span> s = <span class="number">2</span> * sigma*sigma;</span><br><span class="line"> <span class="number">7</span>     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; kernel_size; i++)</span><br><span class="line"> <span class="number">8</span>     &#123;</span><br><span class="line"> <span class="number">9</span>         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; kernel_size; j++)</span><br><span class="line"><span class="number">10</span>         &#123;</span><br><span class="line"><span class="number">11</span>             <span class="keyword">int</span> x = i - m, y=j - m;</span><br><span class="line"><span class="number">12</span>             kernel.ptr&lt;<span class="keyword">float</span>&gt;(i)[j] = <span class="built_in">exp</span>(-(x*x + y*y) / s) / (PI*s);</span><br><span class="line"><span class="number">13</span>         &#125;</span><br><span class="line"><span class="number">14</span>     &#125;</span><br><span class="line"><span class="number">15</span>     <span class="keyword">return</span> kernel;</span><br><span class="line"><span class="number">16</span> &#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/register/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1186,272 +1601,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2017/12/29/DoubleArr/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Elliott Zheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="超立方体">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/29/DoubleArr/" itemprop="url">C++自封装矩阵类Matrix</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T23:59:12+08:00">
-                2017-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>　　做数据结构的图的作业，感觉每次都要自己去管理动态二维数组，就特地封装了一个矩阵类，实现了一些基本的接口。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/29/DoubleArr/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2017/12/28/Objectbox/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Elliott Zheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="超立方体">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/28/Objectbox/" itemprop="url">Objectbox Box的getAll() 函数返回emptylist() 未判断导致崩溃</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T08:07:18+08:00">
-                2017-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>　　最近使用了Objectbox作为新项目的数据库后台，Greendao开发团队新力作，但是Objectbox算是比较新的一个东西，现在资料也不多。</p>
-<p>　　今天跟大家分享一个关于Box类的getAll()函数的遇到的一点坑。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/28/Objectbox/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1499,7 +1655,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
