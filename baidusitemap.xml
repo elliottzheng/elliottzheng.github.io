@@ -4,15 +4,13 @@
 
     
   <url>
-    <loc>https://hypercube.top/2018/05/16/opencv4android/</loc>
-    <lastmod>2018-05-16T00:41:35.719Z</lastmod>
+    <loc>https://hypercube.top/2018/05/16/gauss/</loc>
+    <lastmod>2018-05-16T00:43:29.274Z</lastmod>
     <data>
         <display>
-        <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
-        <pubTime>2018-05-16T00:36:56.000Z</pubTime>
+        <title>opencv构建高斯卷积核</title>
+        <pubTime>2018-05-16T00:22:34.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>计算机视觉</tag>
          
         <tag>OpenCV</tag>
@@ -25,13 +23,15 @@
 
     
   <url>
-    <loc>https://hypercube.top/2018/05/16/gauss/</loc>
-    <lastmod>2018-05-16T00:34:24.540Z</lastmod>
+    <loc>https://hypercube.top/2018/05/16/opencv4android/</loc>
+    <lastmod>2018-05-16T00:41:35.719Z</lastmod>
     <data>
         <display>
-        <title>opencv构建高斯卷积核</title>
-        <pubTime>2018-05-16T00:22:34.000Z</pubTime>
+        <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
+        <pubTime>2018-05-16T00:36:56.000Z</pubTime>
         
+        <tag>Android</tag>
+         
         <tag>计算机视觉</tag>
          
         <tag>OpenCV</tag>
