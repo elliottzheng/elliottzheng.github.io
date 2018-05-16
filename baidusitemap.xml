@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>https://hypercube.top/2018/05/16/gauss/</loc>
     <lastmod>2018-05-16T00:56:36.745Z</lastmod>
@@ -11,9 +12,9 @@
         <title>opencv构建高斯卷积核</title>
         <pubTime>2018-05-16T00:22:34.000Z</pubTime>
         
-        <tag>计算机视觉</tag>
-         
         <tag>OpenCV</tag>
+         
+        <tag>计算机视觉</tag>
          
          
            
@@ -30,9 +31,9 @@
         <title>使用OpenCV实现自定义卷积</title>
         <pubTime>2018-05-16T00:29:17.000Z</pubTime>
         
-        <tag>计算机视觉</tag>
-         
         <tag>OpenCV</tag>
+         
+        <tag>计算机视觉</tag>
          
          
            
@@ -70,11 +71,11 @@
         <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
         <pubTime>2018-05-16T00:36:56.000Z</pubTime>
         
-        <tag>计算机视觉</tag>
-         
         <tag>Android</tag>
          
         <tag>OpenCV</tag>
+         
+        <tag>计算机视觉</tag>
          
          
            
@@ -134,7 +135,6 @@
     </url>
 
     
-    
   <url>
     <loc>https://hypercube.top/2017/12/29/DoubleArr/</loc>
     <lastmod>2018-01-16T02:32:06.435Z</lastmod>
@@ -162,9 +162,9 @@
         <title>翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）</title>
         <pubTime>2018-01-07T03:38:46.000Z</pubTime>
         
-        <tag>计算机视觉</tag>
-         
         <tag>OpenCV</tag>
+         
+        <tag>计算机视觉</tag>
          
         <tag>翻译</tag>
          

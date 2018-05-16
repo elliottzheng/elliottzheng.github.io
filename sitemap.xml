@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hypercube.top/about/index.html</loc>
+    
+    <lastmod>2018-05-16T23:54:47.477Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hypercube.top/2018/05/16/gauss/</loc>
     
     <lastmod>2018-05-16T00:56:36.745Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://hypercube.top/2018/04/18/cuboid/</loc>
     
     <lastmod>2018-05-14T01:35:19.556Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hypercube.top/about/index.html</loc>
-    
-    <lastmod>2018-04-17T10:15:48.740Z</lastmod>
     
   </url>
   
