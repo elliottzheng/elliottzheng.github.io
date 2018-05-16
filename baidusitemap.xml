@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>https://hypercube.top/2018/05/16/register/</loc>
+    <lastmod>2018-05-16T00:14:14.851Z</lastmod>
+    <data>
+        <display>
+        <title>基于点云几何特征匹配的配准概述</title>
+        <pubTime>2018-05-16T00:08:58.000Z</pubTime>
+        
+        <tag>计算机视觉</tag>
+         
+        <tag>算法</tag>
+         
+        <tag>点云处理</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hypercube.top/2018/05/15/task2/</loc>
     <lastmod>2018-05-15T23:28:10.849Z</lastmod>
     <data>
@@ -82,9 +103,9 @@
         <title>翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）</title>
         <pubTime>2018-01-07T03:38:46.000Z</pubTime>
         
-        <tag>OpenCV</tag>
-         
         <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
          
         <tag>翻译</tag>
          
