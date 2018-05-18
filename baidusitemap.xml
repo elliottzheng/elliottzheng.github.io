@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
-    <lastmod>2018-05-18T21:50:16.558Z</lastmod>
+    <lastmod>2018-05-18T21:57:20.627Z</lastmod>
     <data>
         <display>
         <title>CopyTranslator</title>
@@ -69,9 +69,9 @@
         
         <tag>计算机视觉</tag>
          
-        <tag>点云处理</tag>
-         
         <tag>算法</tag>
+         
+        <tag>点云处理</tag>
          
          
            
@@ -88,11 +88,11 @@
         <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
         <pubTime>2018-05-16T00:36:56.000Z</pubTime>
         
+        <tag>Android</tag>
+         
         <tag>计算机视觉</tag>
          
         <tag>OpenCV</tag>
-         
-        <tag>Android</tag>
          
          
            
