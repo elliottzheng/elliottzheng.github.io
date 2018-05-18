@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="计算机视觉,OpenCV,Android," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -78,20 +78,26 @@
 
 
 
-<meta name="description" content="因为软件竞赛的项目会用到OpenCV for Android，所以就研究了一下如何在Android Studio上配置OpenCV4Android">
-<meta name="keywords" content="计算机视觉,OpenCV,Android">
+<meta name="description" content="Copy, Translate, and Paste with Google translate API">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenCV4android的Android Studio环境配置及项目实例下载">
-<meta property="og:url" content="https://hypercube.top/2018/05/16/opencv4android/index.html">
+<meta property="og:title" content="CopyTranslator">
+<meta property="og:url" content="https://hypercube.top/2018/05/19/CopyTranslator/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="因为软件竞赛的项目会用到OpenCV for Android，所以就研究了一下如何在Android Studio上配置OpenCV4Android">
+<meta property="og:description" content="Copy, Translate, and Paste with Google translate API">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s1.ax2x.com/2018/05/16/xbaOR.png">
-<meta property="og:updated_time" content="2018-05-16T00:53:48.251Z">
+<meta property="og:image" content="https://img.shields.io/badge/language-python-blue.svg">
+<meta property="og:image" content="https://img.shields.io/badge/license-MPL2.0-000000.svg">
+<meta property="og:image" content="https://badge.fury.io/py/CopyTranslator.svg">
+<meta property="og:image" content="https://img.shields.io/badge/platform-linux|windows|osx-lightgrey.svg">
+<meta property="og:image" content="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg">
+<meta property="og:image" content="https://s1.ax2x.com/2018/05/19/xxdb9.png">
+<meta property="og:image" content="https://s1.ax2x.com/2018/05/19/xxW9u.png">
+<meta property="og:updated_time" content="2018-05-18T21:50:16.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenCV4android的Android Studio环境配置及项目实例下载">
-<meta name="twitter:description" content="因为软件竞赛的项目会用到OpenCV for Android，所以就研究了一下如何在Android Studio上配置OpenCV4Android">
-<meta name="twitter:image" content="https://s1.ax2x.com/2018/05/16/xbaOR.png">
+<meta name="twitter:title" content="CopyTranslator">
+<meta name="twitter:description" content="Copy, Translate, and Paste with Google translate API">
+<meta name="twitter:image" content="https://img.shields.io/badge/language-python-blue.svg">
 
 
 
@@ -121,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://hypercube.top/2018/05/16/opencv4android/"/>
+  <link rel="canonical" href="https://hypercube.top/2018/05/19/CopyTranslator/"/>
 
 
 
 
 
-  <title>OpenCV4android的Android Studio环境配置及项目实例下载 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>CopyTranslator | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -276,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/16/opencv4android/">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/19/CopyTranslator/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elliott Zheng">
@@ -293,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OpenCV4android的Android Studio环境配置及项目实例下载</h1>
+          <h1 class="post-title" itemprop="name headline">CopyTranslator</h1>
         
 
         <div class="post-meta">
@@ -305,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T08:36:56+08:00">
-                2018-05-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T13:47:00+08:00">
+                2018-05-19
               </time>
             
 
@@ -343,40 +349,38 @@
       
 
       
-        <p>因为软件竞赛的项目会用到OpenCV for Android，所以就研究了一下如何在Android Studio上配置OpenCV4Android<br><a id="more"></a></p>
-<p>环境概述：</p>
-<ol>
-<li>Android Studio 2.3</li>
-<li>OpenCV-2.4.11-android-sdk</li>
-</ol>
-<p>接下来主要是详细的讲解每一步的配置，然后再最后我会放上我做的一个示例项目</p>
-<p><strong>1.首先是下载OpenCV-2.4.11-android-sdk</strong></p>
-<p>不知道为什么之前上Opencv官网发现Android部分挂了，找了半天没找着下载的地方，最后终于在SourceForge上找到了，所以为了方便大家不用到处找，我把文件传到七牛云了</p>
-<p><a href="https://onhdz331f.bkt.clouddn.com/OpenCV-2.4.11-android-sdk.zip" target="_blank" rel="noopener">https://onhdz331f.bkt.clouddn.com/OpenCV-2.4.11-android-sdk.zip</a></p>
-<p>如果不放心的话，大家也可以到opencv官网上去下载这个sdk。</p>
-<p><strong>2.依据博友gloomyfish的文章进行配置，博主的视频当中的操作是对的，但是他的文章有些错误，会导致配置失败，或者说的不太清楚的的地方，我下面会补充讲下</strong></p>
-<p><a href="https://blog.csdn.net/jia20003/article/details/53126321" target="_blank" rel="noopener">OpenCV On Android开发 - Android Studio上环境配置</a></p>
-<p>(1)<strong>错误更正</strong>  <strong>“SDK下面native文件下所有的文件都copy到你创建好的项目libs目录下”这句话有错，应该改为SDK\native\libs文件下所有的文件都copy到项目libs目录下,这样问题解决</strong></p>
-<p>(2)<strong>错误更正</strong>  <strong>最后要加到build.gradle(Module:app)的那句</strong></p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">"$buildDir/native-libs"</span>, <span class="keyword">include</span>: <span class="string">'native-libs.jar'</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>应该是要放到build.gradle(Module:app)中的dependencies{}里面，而且不是像他所说的第一行，而是应该放在第二行，也就是这句</strong></p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="keyword">fileTree</span>(<span class="keyword">include</span>: [<span class="string">'*.jar'</span>], dir: <span class="string">'libs'</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>的下一行。</strong></p>
-<p><strong>(3)说得不太清楚的</strong>：要放到build.gradle(Module:app)的这部分代码，是直接加在dependencies{}后面的。</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">task</span> nativeLibsToJar(type: Jar, <span class="keyword">description</span>: <span class="string">'create a jar archive of the native libs'</span>) &#123;</span><br><span class="line">    <span class="keyword">destinationDir</span> <span class="keyword">file</span>(<span class="string">"$buildDir/native-libs"</span>)</span><br><span class="line">    baseName <span class="string">'native-libs'</span></span><br><span class="line">    <span class="keyword">from</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: <span class="string">'**/*.so'</span>)</span><br><span class="line">    <span class="keyword">into</span> <span class="string">'lib/'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.withType(JavaCompile) &#123;</span><br><span class="line">    compileTask -&gt; compileTask.dependsOn(nativeLibsToJar)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下面给出完整的build.gradle(Module:app)文件，并加上了注释，表现了应该如何更改</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">25</span><span class="comment">//在不同的android版本中，sdk版本不同</span></span><br><span class="line">    buildToolsVersion <span class="string">"25.0.2"</span></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">"com.example.a18350.opencvtest"</span></span><br><span class="line">        minSdkVersion <span class="number">19</span></span><br><span class="line">        targetSdkVersion <span class="number">25</span></span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">"1.0"</span></span><br><span class="line">        testInstrumentationRunner <span class="string">"android.support.test.runner.AndroidJUnitRunner"</span></span><br><span class="line">    &#125;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">'proguard-android.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(<span class="keyword">include</span>: [<span class="string">'*.jar'</span>], dir: <span class="string">'libs'</span>)</span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">"$buildDir/native-libs"</span>, <span class="keyword">include</span>: <span class="string">'native-libs.jar'</span>)<span class="comment">//那句话是加在这里的，而不是加在第一行</span></span><br><span class="line">    androidTestCompile(<span class="string">'com.android.support.test.espresso:espresso-core:2.2.2'</span>, &#123;</span><br><span class="line">        <span class="keyword">exclude</span> <span class="keyword">group</span>: <span class="string">'com.android.support'</span>, module: <span class="string">'support-annotations'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:25.3.1'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support.constraint:constraint-layout:1.0.2'</span></span><br><span class="line">    testCompile <span class="string">'junit:junit:4.12'</span></span><br><span class="line">    <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':openCVLibrary2411'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//请将两个task放在这里，也就是dependencies后面</span></span><br><span class="line"><span class="keyword">task</span> nativeLibsToJar(type: Jar, <span class="keyword">description</span>: <span class="string">'create a jar archive of the native libs'</span>) &#123;</span><br><span class="line">    <span class="keyword">destinationDir</span> <span class="keyword">file</span>(<span class="string">"$buildDir/native-libs"</span>)</span><br><span class="line">    baseName <span class="string">'native-libs'</span></span><br><span class="line">    <span class="keyword">from</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: <span class="string">'**/*.so'</span>)</span><br><span class="line">    <span class="keyword">into</span> <span class="string">'lib/'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.withType(JavaCompile) &#123;</span><br><span class="line">    compileTask -&gt; compileTask.dependsOn(nativeLibsToJar)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>(4)</strong>请注意，<strong>还应该要更新build.gradle(module:OpenCVLibrary2411)信息</strong>，打开build.gradle(module:OpenCVLibrary2411)，修改文件中的</p>
-<ol>
-<li>compileSdkVersion</li>
-<li>buildToolsVersion</li>
-<li>minSdkVersion</li>
-<li>targetSdkVersion</li>
-</ol>
-<p>将<strong>其内容与build.gradle(Module:app)中信息相一致</strong>,这里做的事情其实是调整sdk的版本，使得编译opencv的sdk，构建工具的版本和app相同。</p>
-<p><img src="https://s1.ax2x.com/2018/05/16/xbaOR.png" alt="img"></p>
-<p> 大功告成，这里放上运行成功的项目地址</p>
-<p><a href="https://git.oschina.net/ylzheng/opencv4android_example" target="_blank" rel="noopener">https://git.oschina.net/ylzheng/opencv4android_example</a></p>
+        <p><img src="https://img.shields.io/badge/language-python-blue.svg" alt=""> <img src="https://img.shields.io/badge/license-MPL2.0-000000.svg" alt="">  <a href="https://badge.fury.io/py/CopyTranslator" target="_blank" rel="noopener"><img src="https://badge.fury.io/py/CopyTranslator.svg" alt="PyPI version"></a>  <img src="https://img.shields.io/badge/platform-linux|windows|osx-lightgrey.svg" alt=""> <a href="https://saythanks.io/to/agentzheng" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg" alt="Say Thanks!"></a></p>
+<p>Copy, Translate, and Paste with Google translate API<br><a id="more"></a></p>
+<h2 id="Get-started"><a href="#Get-started" class="headerlink" title="Get started"></a>Get started</h2><h3 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h3><ul>
+<li><p>Python 2.7 or Python 3 and higher</p>
+<h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h3><p><strong>Only windows can automatically install <code>wxpython</code> using <code>pip</code>, in other OS you need to install <code>wxpython</code> manually.</strong></p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4></li>
+<li><p>pip </p>
+</li>
+</ul>
+<p>In windows, pip can help install all the install requirements.</p>
+<h4 id="Unbuntu-or-other-Linux-release-with-GUI"><a href="#Unbuntu-or-other-Linux-release-with-GUI" class="headerlink" title="Unbuntu or other Linux release with GUI"></a>Unbuntu or other Linux release with GUI</h4><ul>
+<li>pip</li>
+<li>wxpython</li>
+<li>xclip</li>
+</ul>
+<p>In linux, <code>wxpython</code> can’t be installed using pip, and we need <code>xclip</code> to help <code>pyperclip</code> work.</p>
+<p>Here are the example in Unbuntu to install the requirements<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-wxtools </span><br><span class="line">sudo apt-get install xclip</span><br></pre></td></tr></table></figure></p>
+<p>For more information, refer to the installation of <code>wxpython</code> and <code>pyperclip</code></p>
+<h4 id="OS-X"><a href="#OS-X" class="headerlink" title="OS X"></a>OS X</h4><ul>
+<li>wxpython</li>
+<li>pip</li>
+</ul>
+<p>In OS X, <code>wxpython</code> can’t be installed using pip.</p>
+<p>Please refer to the installation of <code>wxpython</code>.</p>
+<p>It has not been tested yet. If someone had tried, please create a PR to help improve the documentation.</p>
+<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>Install this Application using <code>pip</code>:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install CopyTranslator</span><br></pre></td></tr></table></figure></p>
+<h2 id="Example-usage"><a href="#Example-usage" class="headerlink" title="Example usage"></a>Example usage</h2><p>Run shell command<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CopyTranslator</span><br></pre></td></tr></table></figure></p>
+<h2 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h2><h3 id="Windows-10"><a href="#Windows-10" class="headerlink" title="Windows 10"></a>Windows 10</h3><p><img src="https://s1.ax2x.com/2018/05/19/xxdb9.png" alt="xxdb9.png"></p>
+<h3 id="Unbuntu"><a href="#Unbuntu" class="headerlink" title="Unbuntu"></a>Unbuntu</h3><p><img src="https://s1.ax2x.com/2018/05/19/xxW9u.png" alt="xxW9u.png"></p>
+<h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><p><a href="https://github.com/agentzheng/CopyTranslator" target="_blank" rel="noopener">https://github.com/agentzheng/CopyTranslator</a></p>
+<h2 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h2><p>Thanks to the developers of <a href="https://wxpython.org/" target="_blank" rel="noopener">wxpython</a>, <a href="https://github.com/ssut/py-googletrans" target="_blank" rel="noopener">googletrans</a>, <a href="https://github.com/asweigart/pyperclip" target="_blank" rel="noopener">pyperclip</a>. </p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>The code is licensed under Mozilla Public License 2.0.</p>
 
       
     </div>
@@ -404,12 +408,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/05/16/opencv4android/">OpenCV4android的Android Studio环境配置及项目实例下载</a></p>
+  <p><span>本文标题:</span><a href="/2018/05/19/CopyTranslator/">CopyTranslator</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
-  <p><span>发布时间:</span>2018年05月16日 - 08:05</p>
-  <p><span>最后更新:</span>2018年05月16日 - 08:05</p>
-  <p><span>原始链接:</span><a href="/2018/05/16/opencv4android/" title="OpenCV4android的Android Studio环境配置及项目实例下载">https://hypercube.top/2018/05/16/opencv4android/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/05/16/opencv4android/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年05月19日 - 13:05</p>
+  <p><span>最后更新:</span>2018年05月19日 - 05:05</p>
+  <p><span>原始链接:</span><a href="/2018/05/19/CopyTranslator/" title="CopyTranslator">https://hypercube.top/2018/05/19/CopyTranslator/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/05/19/CopyTranslator/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
 </div>
@@ -440,11 +444,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计算机视觉/" rel="tag"><i class="fa fa-tag"></i> 计算机视觉</a>
-          
-            <a href="/tags/OpenCV/" rel="tag"><i class="fa fa-tag"></i> OpenCV</a>
-          
-            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -457,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/16/filter/" rel="next" title="使用OpenCV实现自定义卷积">
-                <i class="fa fa-chevron-left"></i> 使用OpenCV实现自定义卷积
+              <a href="/2018/05/16/opencv4android/" rel="next" title="OpenCV4android的Android Studio环境配置及项目实例下载">
+                <i class="fa fa-chevron-left"></i> OpenCV4android的Android Studio环境配置及项目实例下载
               </a>
             
           </div>
@@ -466,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/19/CopyTranslator/" rel="prev" title="CopyTranslator">
-                CopyTranslator <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -597,6 +602,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-started"><span class="nav-number">1.</span> <span class="nav-text">Get started</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Environment"><span class="nav-number">1.1.</span> <span class="nav-text">Environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows"><span class="nav-number">1.2.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unbuntu-or-other-Linux-release-with-GUI"><span class="nav-number">1.2.2.</span> <span class="nav-text">Unbuntu or other Linux release with GUI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS-X"><span class="nav-number">1.2.3.</span> <span class="nav-text">OS X</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup"><span class="nav-number">1.3.</span> <span class="nav-text">Setup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-usage"><span class="nav-number">2.</span> <span class="nav-text">Example usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screenshots"><span class="nav-number">3.</span> <span class="nav-text">Screenshots</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-10"><span class="nav-number">3.1.</span> <span class="nav-text">Windows 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unbuntu"><span class="nav-number">3.2.</span> <span class="nav-text">Unbuntu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source"><span class="nav-number">4.</span> <span class="nav-text">Source</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Acknowledgements"><span class="nav-number">5.</span> <span class="nav-text">Acknowledgements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">6.</span> <span class="nav-text">License</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
