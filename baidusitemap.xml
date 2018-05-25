@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
+    <lastmod>2018-05-25T13:10:27.110Z</lastmod>
+    <data>
+        <display>
+        <title>CopyTranslator</title>
+        <pubTime>2018-05-19T05:47:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://hypercube.top/2018/05/15/task2/</loc>
     <lastmod>2018-05-19T07:51:20.200Z</lastmod>
     <data>
@@ -19,24 +37,6 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
-    <lastmod>2018-05-18T21:59:36.916Z</lastmod>
-    <data>
-        <display>
-        <title>CopyTranslator</title>
-        <pubTime>2018-05-19T05:47:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>https://hypercube.top/2018/05/16/gauss/</loc>
@@ -86,9 +86,9 @@
         
         <tag>计算机视觉</tag>
          
-        <tag>点云处理</tag>
-         
         <tag>算法</tag>
+         
+        <tag>点云处理</tag>
          
          
            
@@ -105,11 +105,11 @@
         <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
         <pubTime>2018-05-16T00:36:56.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>计算机视觉</tag>
          
         <tag>OpenCV</tag>
+         
+        <tag>Android</tag>
          
          
            
