@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://hypercube.top/2018/05/28/PointCNN/</loc>
+    <lastmod>2018-05-28T08:47:08.826Z</lastmod>
+    <data>
+        <display>
+        <title>PointCNN 论文翻译解析</title>
+        <pubTime>2018-05-28T07:25:46.000Z</pubTime>
+        
+        <tag>深度学习</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
     <lastmod>2018-05-28T08:43:03.916Z</lastmod>
     <data>
@@ -66,11 +83,11 @@
         <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
         <pubTime>2017-04-11T00:36:56.000Z</pubTime>
         
+        <tag>Android</tag>
+         
         <tag>计算机视觉</tag>
          
         <tag>OpenCV</tag>
-         
-        <tag>Android</tag>
          
          
            
@@ -92,23 +109,6 @@
         <tag>点云处理</tag>
          
         <tag>算法</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hypercube.top/2018/05/28/PointCNN/</loc>
-    <lastmod>2018-05-28T08:38:09.041Z</lastmod>
-    <data>
-        <display>
-        <title>PointCNN 论文翻译解析</title>
-        <pubTime>2018-05-28T07:25:46.000Z</pubTime>
-        
-        <tag>深度学习</tag>
          
          
            

@@ -78,13 +78,13 @@
 
 
 
-<meta name="description" content="1. 概述 如Fig1，传统的卷积作用在二维图像上。在图像中数据是结构化存储的。直接对图像应用卷积核 就能从这种二维空间结构中获取信息。而点云数据是无序集，如果直接使用卷积会出现(1)中ii,iii,iv的情况如上图所示，由于卷积操作的性质，在所有情况下$f_{ii}$与$f_{iii}$的计算结果是相等的，而$f_{iii}$与$f_{iv}$的计算结果在大多数情况是不相等的。很显然，直接卷积会">
+<meta name="description" content="概述 如Fig1，传统的卷积作用在二维图像上。在图像中数据是结构化存储的。直接对图像应用卷积核 就能从这种二维空间结构中获取信息。而点云数据是无序集，如果直接使用卷积会出现(1)中ii,iii,iv的情况如上图所示，由于卷积操作的性质，在所有情况下$f_{ii}$与$f_{iii}$的计算结果是相等的，而$f_{iii}$与$f_{iv}$的计算结果在大多数情况是不相等的。很显然，直接卷积会导致形">
 <meta name="keywords" content="深度学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PointCNN 论文翻译解析">
 <meta property="og:url" content="https://hypercube.top/2018/05/28/PointCNN/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="1. 概述 如Fig1，传统的卷积作用在二维图像上。在图像中数据是结构化存储的。直接对图像应用卷积核 就能从这种二维空间结构中获取信息。而点云数据是无序集，如果直接使用卷积会出现(1)中ii,iii,iv的情况如上图所示，由于卷积操作的性质，在所有情况下$f_{ii}$与$f_{iii}$的计算结果是相等的，而$f_{iii}$与$f_{iv}$的计算结果在大多数情况是不相等的。很显然，直接卷积会">
+<meta property="og:description" content="概述 如Fig1，传统的卷积作用在二维图像上。在图像中数据是结构化存储的。直接对图像应用卷积核 就能从这种二维空间结构中获取信息。而点云数据是无序集，如果直接使用卷积会出现(1)中ii,iii,iv的情况如上图所示，由于卷积操作的性质，在所有情况下$f_{ii}$与$f_{iii}$的计算结果是相等的，而$f_{iii}$与$f_{iv}$的计算结果在大多数情况是不相等的。很显然，直接卷积会导致形">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s1.ax2x.com/2018/05/28/7BhmG.png">
 <meta property="og:image" content="https://s1.ax2x.com/2018/05/28/7BvZn.png">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="https://s1.ax2x.com/2018/05/28/7Bcb2.png">
 <meta property="og:image" content="https://s1.ax2x.com/2018/05/28/7BrKa.png">
 <meta property="og:image" content="https://s1.ax2x.com/2018/05/28/7BCoz.png">
-<meta property="og:updated_time" content="2018-05-28T08:38:09.041Z">
+<meta property="og:updated_time" content="2018-05-28T08:47:08.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PointCNN 论文翻译解析">
-<meta name="twitter:description" content="1. 概述 如Fig1，传统的卷积作用在二维图像上。在图像中数据是结构化存储的。直接对图像应用卷积核 就能从这种二维空间结构中获取信息。而点云数据是无序集，如果直接使用卷积会出现(1)中ii,iii,iv的情况如上图所示，由于卷积操作的性质，在所有情况下$f_{ii}$与$f_{iii}$的计算结果是相等的，而$f_{iii}$与$f_{iv}$的计算结果在大多数情况是不相等的。很显然，直接卷积会">
+<meta name="twitter:description" content="概述 如Fig1，传统的卷积作用在二维图像上。在图像中数据是结构化存储的。直接对图像应用卷积核 就能从这种二维空间结构中获取信息。而点云数据是无序集，如果直接使用卷积会出现(1)中ii,iii,iv的情况如上图所示，由于卷积操作的性质，在所有情况下$f_{ii}$与$f_{iii}$的计算结果是相等的，而$f_{iii}$与$f_{iv}$的计算结果在大多数情况是不相等的。很显然，直接卷积会导致形">
 <meta name="twitter:image" content="https://s1.ax2x.com/2018/05/28/7BhmG.png">
 
 
@@ -349,7 +349,7 @@
       
 
       
-        <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p><img src="https://s1.ax2x.com/2018/05/28/7BhmG.png" alt="Fig1"></p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><img src="https://s1.ax2x.com/2018/05/28/7BhmG.png" alt="Fig1"></p>
 <p>如Fig1，传统的卷积作用在二维图像上。在图像中数据是结构化存储的。直接对图像应用卷积核 就能从这种二维空间结构中获取信息。而点云数据是无序集，如果直接使用卷积会出现(1)中ii,iii,iv的情况<br><img src="https://s1.ax2x.com/2018/05/28/7BvZn.png" alt="直接卷积"><br>如上图所示，由于卷积操作的性质，在所有情况下$f_{ii}$与$f_{iii}$的计算结果是相等的，而$f_{iii}$与$f_{iv}$的计算结果在大多数情况是不相等的。很显然，直接卷积会导致形状信息的变形并且使卷积结果对于顺序敏感。</p>
 <p>而PointCNN里采用的是这样的策略：</p>
 <p>从前一层的数据中取K个候选点$(p_1,p_2,…p_K)$，使用MLP(多层感知器)来学习一个$K×K$ 的变换矩阵（X-transformation，X变换）也就是说$X=MLP(p_1,p_2,…p_K)$，然后用它同时对输入特征进行加权和置换，最后对经过变换的特征应用典型卷积。我们称这个过程为X-Conv，它是PointCNN的基本构建模块。</p>
@@ -360,7 +360,7 @@
 <p>从Fig1 中的例子分析可以看出，当X-Conv 搭配 <strong><u>理想的X变换</u></strong> 时，能够在考虑点集形状的同时，不依赖于输入点的顺序。</p>
 <p>在实验中，我们发现学习到的X变换并不是很理想，特别是在排序等价性方面。</p>
 <p>尽管如此，使用X-Conv构建的PointCNN仍然明显优于直接对点云应用传统卷积，相比为点云数据设计的最先进的非卷积神经网络（例如，PointNet ++）有着相近甚至更好的表现。</p>
-<h2 id="2-Hierarchical-Convolution-分层卷积"><a href="#2-Hierarchical-Convolution-分层卷积" class="headerlink" title="2. Hierarchical Convolution 分层卷积"></a>2. Hierarchical Convolution 分层卷积</h2><p>类比图像CNN的卷积，图像CNN的输入是$R_1×R_1×C_1$，而卷积核的大小是$K×K×C_1×C_2$,从前一层$F_1$中大小为$K×K× C_1$的区域生成$F_2$形状大小为$R_2×R_2×C_2$的特征。</p>
+<h2 id="分层卷积"><a href="#分层卷积" class="headerlink" title="分层卷积"></a>分层卷积</h2><p>类比图像CNN的卷积，图像CNN的输入是$R_1×R_1×C_1$，而卷积核的大小是$K×K×C_1×C_2$,从前一层$F_1$中大小为$K×K× C_1$的区域生成$F_2$形状大小为$R_2×R_2×C_2$的特征。</p>
 <p>而PointCNN的输入点集$F_1 = \{ ({p_{1,i} , f_{1,i} ) : i = 1,2,…, N_1}\}$， 其中$\{p_{1,i}:p_{1,i}\in R^D\}$是点的$D$维坐标(这里是三维)，$\{f_{1,i}:f_{1,i}\in R^{C_1}\}$是点集对应的特征。</p>
 <p>对$F1$应用 X-Conv（就是带X变换的卷积）得到$F_2 =\{(p_{2,i} , f_{2,i} ) : f_{2,i} ∈ R^{C_2} , i =1, 2, …, N_2\}$。$\{p_ {2,i}\}$是$\{p_ {1,i} \}$的一个代表点集合。但请注意，$\{p_ {2，i}\}$不需要是$\{p_ {1,i} \}$的真子集。</p>
 <p>若$N_2<n_1$, $c_2="">C_1$， 则随着一层一层的映射，点的数量会越来越少，但是每个点的特征却越来越丰富。</n_1$,></p>
@@ -372,7 +372,7 @@
 <li>对分类问题：$p_2$是$p_1$的随机下采样。</li>
 <li>对语义分割问题：$p_2$是$p_1$的最远点采样。  </li>
 </ul>
-<h2 id="3-X-Conv算子"><a href="#3-X-Conv算子" class="headerlink" title="3. X-Conv算子"></a>3. X-Conv算子</h2><p>为了实现与图像卷积类似的空间局部相关性，X-Conv只作用于局部区域。</p>
+<h2 id="X-Conv算子"><a href="#X-Conv算子" class="headerlink" title="X-Conv算子"></a>X-Conv算子</h2><p>为了实现与图像卷积类似的空间局部相关性，X-Conv只作用于局部区域。</p>
 <p>在$F_2$中的任何一个点$p$, 其在$F_1$中的$K$近邻点集称作$N$。</p>
 <p>所以每一个X-Conv针对$p$的输入是$S = \{(p_i , f_i ) : p_i ∈ N\}$, $S$为一个无序集合。不失一般性，$S$可以分开表示为$K×D$的坐标矩阵$P = (p_1,p_1, …,p_K )^T$ 和$K×C_1$的特征矩阵$F = (f_1, f_2, …, f_K)^T$。所以X-Conv的参数有$K × (C_1 + C_δ ) × C_2$个。</p>
 <h3 id="X-Conv-算子"><a href="#X-Conv-算子" class="headerlink" title="X-Conv 算子"></a>X-Conv 算子</h3><p><img src="https://s1.ax2x.com/2018/05/28/7Bcb2.png" alt="算法"></p>
@@ -391,18 +391,18 @@
 </li>
 </ol>
 <p>   <img src="https://s1.ax2x.com/2018/05/28/7BrKa.png" alt="Fig3"></p>
-<h2 id="4-PointCNN-架构"><a href="#4-PointCNN-架构" class="headerlink" title="4. PointCNN 架构"></a>4. PointCNN 架构</h2><p>从图2中我们可以看出，图像CNN中的卷积层和PointCNN中的X-Conv层仅在两个方面有所不同：</p>
+<h2 id="PointCNN-架构"><a href="#PointCNN-架构" class="headerlink" title="PointCNN 架构"></a>PointCNN 架构</h2><p>从图2中我们可以看出，图像CNN中的卷积层和PointCNN中的X-Conv层仅在两个方面有所不同：</p>
 <ol>
 <li>提取局部区域的方式(图像CNN中的K×K区域 与 PointCNN中代表点周围的K个邻近点)</li>
 <li>对于局部区域的信息学习方式(图像CNN的Conv 与PointCNN中的X-Conv)。</li>
 </ol>
 <p>除此之外，与图像CNN中的卷积层相比，用X-Conv层组装的深度网络没有多大区别。</p>
 <p><img src="https://s1.ax2x.com/2018/05/28/7BCoz.png" alt="Fig4"></p>
-<h3 id="4-1-分类任务"><a href="#4-1-分类任务" class="headerlink" title="4.1 分类任务"></a>4.1 分类任务</h3><p>在Fig4(a)中，我们展示了一个简单的PointCNN，带有两个X-Conv层，逐渐将输入点(带有或不带有特征)转换为较少的代表点，但每个点都具有更丰富的特征。<br>在第二个X-Conv层之后，只剩下一个代表点，它从前一层的所有点接收信息。</p>
+<h3 id="分类任务"><a href="#分类任务" class="headerlink" title="分类任务"></a>分类任务</h3><p>在Fig4(a)中，我们展示了一个简单的PointCNN，带有两个X-Conv层，逐渐将输入点(带有或不带有特征)转换为较少的代表点，但每个点都具有更丰富的特征。<br>在第二个X-Conv层之后，只剩下一个代表点，它从前一层的所有点接收信息。</p>
 <p>在PointCNN中，我们可以将每个代表点的<strong>感受野</strong>粗略地定义为比率K / N，其中K是相邻点的数目，N是前一层中的点的数目。通过这个定义，最后一个剩下的点“看到”来自上一层的所有点，因此具有接受域1.0  — 它具有整个形状的全局视图，因此它的特征为形状的语义理解提供了信息。<br>我们可以在最后一个X -conv层输出的顶部增加一些完全连接的层，然后是用于训练网络的损失。<br>请注意，Fig4(a)中PointCNN的顶层X-Conv层的训练样本数量迅速下降，使得彻底训练顶层X-Conv层的效率很差。</p>
 <p>为了解决这个问题，我们提出了Fig4(b)中的PointCNN，其中更多的代表点被保留在X-Conv层中。但是，我们希望保持网络的深度，同时保持感受野的增长率，使得更深层的代表点“看到”整个形状的越来越大的部分。我们通过将图像CNN中的<a href="https://www.zhihu.com/question/54149221" target="_blank" rel="noopener">空洞卷积</a>思想应用到PointCNN中来实现这一目标。我们可以不总是以$K$个邻近点作为输入，而是从K×D个邻近点对K个输入点进行均匀采样，其中D是膨胀率。在这种情况下，感受野从$K / N$增加到$(K×D)/N$，而不增加实际相邻点数量，也不增加内核大小。</p>
 <p>在Fig4(b)中的PointCNN的第二个X-Conv层中，使用了膨胀率D = 2，因此剩下的所有四个代表点“看到”整个形状，并且它们都适合做出预测。请注意，通过这种方式，与Fig4(a)的PointCNN相比，我们可以更彻底地训练顶层X-Conv层，因为网络涉及更多的连接。在测试时间内，多个代表点的输出在sof tmax之前进行平均，以稳定预测结果。这种设计非常类似于网络中[Lin et al]的网络。我们的分类任务使用的是密度更高的PointCNN(Fig4(b))。</p>
-<h3 id="4-2-分割任务"><a href="#4-2-分割任务" class="headerlink" title="4.2 分割任务"></a>4.2 分割任务</h3><p>对于分割任务，需要高分辨率逐点输出，这可以通过在Conv-<a href="https://www.zhihu.com/question/43609045" target="_blank" rel="noopener">DeConv</a>之后构建PointCNN来实现[Noh et al. 2015]架构，DeConv部分负责将全局信息传播到高分辨率预测中(见Fig4(c))。</p>
+<h3 id="分割任务"><a href="#分割任务" class="headerlink" title="分割任务"></a>分割任务</h3><p>对于分割任务，需要高分辨率逐点输出，这可以通过在Conv-<a href="https://www.zhihu.com/question/43609045" target="_blank" rel="noopener">DeConv</a>之后构建PointCNN来实现[Noh et al. 2015]架构，DeConv部分负责将全局信息传播到高分辨率预测中(见Fig4(c))。</p>
 <p>请注意，PointCNN分段网络中的“Conv”和“DeConv”都是相同的X-Conv算子。对于“DeConv”图层，与“Conv”图层唯一的区别在于，输出中的点数比输入点中的点数多，但特征通道少。“DeConv”层的更高分辨率点从早期的“Conv”层转发，遵循U-Net的设计[Ronneberger et al.2015年]。</p>
 <p>$ELU$ [Clevert et al. 2016]是PointCNN中使用的非线性激活函数，因为我们发现它比ReLU更稳定并且性能更好些。在$P’$，$F_p$和FC层输出（除了最后的FC层的输出）上应用<strong>Batch Normalization</strong> [loffe和Szegedy 2015]以减少<strong>内部协变量偏移（Internal covariate shift）</strong>。要注意，<strong>Batch Normalization</strong>不应该应用于$MLP_δ$和$MLP$，因为$F_*$和$X$，特别是$X$，对于特定代表点来说应该是的相当具体的。对于算法1第6行的Conv，可用<a href="https://zhuanlan.zhihu.com/p/29367273" target="_blank" rel="noopener">分离卷积(Separable convolution )</a>替代传统卷积来减少参数数量和计算量。在PointCNN的训练中，我们使用ADAM优化器，初始学习率为0.01。</p>
 <p>在最后完全连接的层之前施加Dropout以减少过拟合。我们还采用了Qi等人的“子体积监督（Subvolume supervision）”理念来解决过拟合问题。在最后的X-Conv层中，<strong>感受野</strong> 被设置为小于1，使得最后的X-Conv层中的代表点仅“看到”部分信息。在训练时促使网络更加深入了解局部信息，并在测试时表现更好。</p>
@@ -645,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-number">1.</span> <span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Hierarchical-Convolution-分层卷积"><span class="nav-number">2.</span> <span class="nav-text">2. Hierarchical Convolution 分层卷积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-X-Conv算子"><span class="nav-number">3.</span> <span class="nav-text">3. X-Conv算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#X-Conv-算子"><span class="nav-number">3.1.</span> <span class="nav-text">X-Conv 算子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-PointCNN-架构"><span class="nav-number">4.</span> <span class="nav-text">4. PointCNN 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-分类任务"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 分类任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-分割任务"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 分割任务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#致谢"><span class="nav-number">5.</span> <span class="nav-text">致谢</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分层卷积"><span class="nav-number">2.</span> <span class="nav-text">分层卷积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-Conv算子"><span class="nav-number">3.</span> <span class="nav-text">X-Conv算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#X-Conv-算子"><span class="nav-number">3.1.</span> <span class="nav-text">X-Conv 算子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PointCNN-架构"><span class="nav-number">4.</span> <span class="nav-text">PointCNN 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类任务"><span class="nav-number">4.1.</span> <span class="nav-text">分类任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分割任务"><span class="nav-number">4.2.</span> <span class="nav-text">分割任务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#致谢"><span class="nav-number">5.</span> <span class="nav-text">致谢</span></a></li></ol></div>
             
 
           </div>
@@ -781,7 +781,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -827,6 +827,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
