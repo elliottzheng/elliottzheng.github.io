@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s1.ax2x.com/2018/05/19/xxdb9.png">
 <meta property="og:image" content="https://s1.ax2x.com/2018/05/19/xxW9u.png">
-<meta property="og:updated_time" content="2018-05-25T13:10:27.110Z">
+<meta property="og:updated_time" content="2018-05-28T08:43:03.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CopyTranslator">
 <meta name="twitter:description" content="Copy, Translate, and Paste with Google translate API">
@@ -359,7 +359,7 @@
 <li>xclip</li>
 </ul>
 <p>In linux, <code>wxpython</code> can’t be installed using pip, and we need <code>xclip</code> to help <code>pyperclip</code> work.</p>
-<p>Here are the example in Unbuntu to install the requirements<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-wxtools </span><br><span class="line">sudo apt-get install xclip</span><br></pre></td></tr></table></figure></p>
+<p>Here are the example to install the requirements<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-wxtools </span><br><span class="line">sudo apt-get install xclip</span><br></pre></td></tr></table></figure></p>
 <p>For more information, refer to the installation of <code>wxpython</code> and <code>pyperclip</code></p>
 <h4 id="OS-X"><a href="#OS-X" class="headerlink" title="OS X"></a>OS X</h4><ul>
 <li>wxpython</li>
@@ -367,9 +367,18 @@
 </ul>
 <p>In OS X, <code>wxpython</code> can’t be installed using pip.</p>
 <p>Please refer to the installation of <code>wxpython</code>.</p>
-<p>It has not been tested yet. If someone had tried, please create a PR to help improve the documentation.</p>
-<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>Install this Application using <code>pip</code>:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install CopyTranslator</span><br></pre></td></tr></table></figure></p>
+<p>One possible way is to install <code>wxpython</code> in OS X using <code>homebrew</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install wxpython</span><br></pre></td></tr></table></figure>
+<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>There are 2 ways to install <code>CopyTranslator</code> , <strong>you can get latest features if you install from source.</strong></p>
+<h3 id="Install-this-Application-using-pip"><a href="#Install-this-Application-using-pip" class="headerlink" title="Install this Application using pip:"></a>Install this Application using <code>pip</code>:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install CopyTranslator</span><br></pre></td></tr></table></figure>
+<h3 id="Install-from-source"><a href="#Install-from-source" class="headerlink" title="Install from source"></a>Install from source</h3><ol>
+<li><code>git clone https://github.com/elliottzheng/CopyTranslator.git</code></li>
+<li><code>cd CopyTranslator</code></li>
+<li><code>python setup.py install</code></li>
+</ol>
+<p>For windows user, after clone the repository to local, you can just double click at the <code>install.bat</code> to install, and <code>start.bat</code> to start the CopyTranslator.</p>
 <h2 id="Example-usage"><a href="#Example-usage" class="headerlink" title="Example usage"></a>Example usage</h2><p>Run shell command<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CopyTranslator</span><br></pre></td></tr></table></figure></p>
+<p><strong>For Windows users</strong>, you can use command below instead to free yourself from console.<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CopyTranslator_win</span><br></pre></td></tr></table></figure></p>
 <h2 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h2><h3 id="Windows-10"><a href="#Windows-10" class="headerlink" title="Windows 10"></a>Windows 10</h3><p><img src="https://s1.ax2x.com/2018/05/19/xxdb9.png" alt="xxdb9.png"></p>
 <h3 id="Unbuntu"><a href="#Unbuntu" class="headerlink" title="Unbuntu"></a>Unbuntu</h3><p><img src="https://s1.ax2x.com/2018/05/19/xxW9u.png" alt="xxW9u.png"></p>
 <h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><p><a href="https://github.com/elliottzheng/CopyTranslator" target="_blank" rel="noopener">https://github.com/elliottzheng/CopyTranslator</a></p>
@@ -405,7 +414,7 @@
   <p><span>本文标题:</span><a href="/2018/05/19/CopyTranslator/">CopyTranslator</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
   <p><span>发布时间:</span>2018年05月19日 - 13:05</p>
-  <p><span>最后更新:</span>2018年05月25日 - 21:05</p>
+  <p><span>最后更新:</span>2018年05月28日 - 16:05</p>
   <p><span>原始链接:</span><a href="/2018/05/19/CopyTranslator/" title="CopyTranslator">https://hypercube.top/2018/05/19/CopyTranslator/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/05/19/CopyTranslator/"  aria-label="复制成功！"></i></span>
   </p>
@@ -451,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/16/opencv4android/" rel="next" title="OpenCV4android的Android Studio环境配置及项目实例下载">
-                <i class="fa fa-chevron-left"></i> OpenCV4android的Android Studio环境配置及项目实例下载
+              <a href="/2018/05/15/task2/" rel="next" title="Task2">
+                <i class="fa fa-chevron-left"></i> Task2
               </a>
             
           </div>
@@ -460,6 +469,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/28/PointCNN/" rel="prev" title="PointCNN 论文翻译解析">
+                PointCNN 论文翻译解析 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -538,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -551,7 +564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -606,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-started"><span class="nav-number">1.</span> <span class="nav-text">Get started</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Environment"><span class="nav-number">1.1.</span> <span class="nav-text">Environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows"><span class="nav-number">1.2.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unbuntu-or-other-Linux-release-with-GUI"><span class="nav-number">1.2.2.</span> <span class="nav-text">Unbuntu or other Linux release with GUI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS-X"><span class="nav-number">1.2.3.</span> <span class="nav-text">OS X</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup"><span class="nav-number">1.3.</span> <span class="nav-text">Setup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-usage"><span class="nav-number">2.</span> <span class="nav-text">Example usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screenshots"><span class="nav-number">3.</span> <span class="nav-text">Screenshots</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-10"><span class="nav-number">3.1.</span> <span class="nav-text">Windows 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unbuntu"><span class="nav-number">3.2.</span> <span class="nav-text">Unbuntu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source"><span class="nav-number">4.</span> <span class="nav-text">Source</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Acknowledgements"><span class="nav-number">5.</span> <span class="nav-text">Acknowledgements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">6.</span> <span class="nav-text">License</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Get-started"><span class="nav-number">1.</span> <span class="nav-text">Get started</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Environment"><span class="nav-number">1.1.</span> <span class="nav-text">Environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows"><span class="nav-number">1.2.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unbuntu-or-other-Linux-release-with-GUI"><span class="nav-number">1.2.2.</span> <span class="nav-text">Unbuntu or other Linux release with GUI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS-X"><span class="nav-number">1.2.3.</span> <span class="nav-text">OS X</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup"><span class="nav-number">1.3.</span> <span class="nav-text">Setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-this-Application-using-pip"><span class="nav-number">1.4.</span> <span class="nav-text">Install this Application using pip:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-from-source"><span class="nav-number">1.5.</span> <span class="nav-text">Install from source</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-usage"><span class="nav-number">2.</span> <span class="nav-text">Example usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screenshots"><span class="nav-number">3.</span> <span class="nav-text">Screenshots</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-10"><span class="nav-number">3.1.</span> <span class="nav-text">Windows 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unbuntu"><span class="nav-number">3.2.</span> <span class="nav-text">Unbuntu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source"><span class="nav-number">4.</span> <span class="nav-text">Source</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Acknowledgements"><span class="nav-number">5.</span> <span class="nav-text">Acknowledgements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">6.</span> <span class="nav-text">License</span></a></li></ol></div>
             
 
           </div>
@@ -742,24 +755,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 

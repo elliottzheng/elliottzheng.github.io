@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="编程闲谈," />
+  <meta name="keywords" content="计算机视觉,OpenCV," />
 
 
 
@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="一些我电脑里用的一些软件，感觉很好用哦，觉得要记录一下，也分享给大家">
-<meta name="keywords" content="编程闲谈">
+<meta name="description" content="对图像进行卷积是图像处理的基本操作，最近在研究图像滤波，经常要用到自定义卷积，所以实现了一下">
+<meta name="keywords" content="计算机视觉,OpenCV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电脑中的软件分享">
-<meta property="og:url" content="https://hypercube.top/2017/12/31/mycomputer/index.html">
+<meta property="og:title" content="使用OpenCV实现自定义卷积">
+<meta property="og:url" content="https://hypercube.top/2017/03/25/filter/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="一些我电脑里用的一些软件，感觉很好用哦，觉得要记录一下，也分享给大家">
+<meta property="og:description" content="对图像进行卷积是图像处理的基本操作，最近在研究图像滤波，经常要用到自定义卷积，所以实现了一下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-31T13:22:19.535Z">
+<meta property="og:updated_time" content="2018-05-28T08:40:39.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电脑中的软件分享">
-<meta name="twitter:description" content="一些我电脑里用的一些软件，感觉很好用哦，觉得要记录一下，也分享给大家">
+<meta name="twitter:title" content="使用OpenCV实现自定义卷积">
+<meta name="twitter:description" content="对图像进行卷积是图像处理的基本操作，最近在研究图像滤波，经常要用到自定义卷积，所以实现了一下">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://hypercube.top/2017/12/31/mycomputer/"/>
+  <link rel="canonical" href="https://hypercube.top/2017/03/25/filter/"/>
 
 
 
 
 
-  <title>电脑中的软件分享 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>使用OpenCV实现自定义卷积 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2017/12/31/mycomputer/">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2017/03/25/filter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elliott Zheng">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">电脑中的软件分享</h1>
+          <h1 class="post-title" itemprop="name headline">使用OpenCV实现自定义卷积</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T00:57:26+08:00">
-                2017-12-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T08:29:17+08:00">
+                2017-03-25
               </time>
             
 
@@ -341,84 +341,11 @@
       
 
       
-        <p>　　一些我电脑里用的一些软件，感觉很好用哦，觉得要记录一下，也分享给大家</p>
-<a id="more"></a>
-<h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><ul>
-<li>Internet Download Manager（配合Firefox食用）</li>
-<li>迅雷9精简版（迅雷下载BT的速度还可以，但是奈何广告太多，浏览器太大）</li>
-</ul>
-<h2 id="办公软件"><a href="#办公软件" class="headerlink" title="办公软件"></a>办公软件</h2><ul>
-<li>Office 2016</li>
-<li>iSkysoft Pdf Editor6 Pro</li>
-<li>Adobe PhotoShop CC 2017</li>
-<li>Evernote</li>
-</ul>
-<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
-<li>PotPlayer</li>
-<li>网易云音乐</li>
-<li>2345看图王精简版</li>
-</ul>
-<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
-<li>Firefox Developer Edition</li>
-</ul>
-<h2 id="版本控制系统"><a href="#版本控制系统" class="headerlink" title="版本控制系统"></a>版本控制系统</h2><ul>
-<li>git  （有些东西还是得在命令行下做）</li>
-<li>Tortoise git（日常的提交，推送的什么的图形化还还是快些）</li>
-</ul>
-<h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><ul>
-<li>Startisback （win10 状态栏美化）</li>
-<li>Rain Meter （桌面美化）</li>
-</ul>
-<h2 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h2><ul>
-<li>广告拦截器 （拦截桌面弹窗，比如说QQ，迅雷，福昕，不过这三个我好像都没有）</li>
-<li>ShadowSocks （你懂的）</li>
-<li>WinHotkey （快捷键）</li>
-<li>CCleaner （系统清理工具）</li>
-</ul>
-<h2 id="压缩软件"><a href="#压缩软件" class="headerlink" title="压缩软件"></a>压缩软件</h2><ul>
-<li>Bandzip （第一感觉是漂亮）</li>
-</ul>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
-<li>Quick Search(用来搜索文件名，速度很快)</li>
-<li>Docfetcher(用来搜索文件内容，需要建索引，现在发现很多代码文件都不支持，头疼)</li>
-</ul>
-<h2 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h2><ul>
-<li>网易邮箱大师</li>
-<li>TIM（QQ的弹窗很烦）</li>
-</ul>
-<h2 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h2><ul>
-<li>Pycharm</li>
-<li>Android Studio</li>
-<li>web storm</li>
-<li>Visual Studio</li>
-<li>IntelliJ IDEA Community</li>
-<li>MATLAB</li>
-</ul>
-<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ul>
-<li><p>Atom(不怎么用)</p>
-</li>
-<li><p>Visual studio code</p>
-</li>
-<li><p>Notepad++  （用来替代记事本，启动速度飞快，功能强大）</p>
-</li>
-<li><p>Typora （用来写markdown的，这篇文章就是用它写的，单栏所见即所得</p>
-<p>）</p>
-</li>
-</ul>
-<h2 id="编程字体"><a href="#编程字体" class="headerlink" title="编程字体"></a>编程字体</h2><ul>
-<li>思源黑体（安卓开发的时候）</li>
-<li>苹方（其他时候）</li>
-<li>Monaco（下面那几个看心情了）</li>
-<li>Consolas</li>
-<li>Unbuntu </li>
-<li>monofur (现在比较常用的，最近喜欢用比较花哨的)</li>
-</ul>
-<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
-<li>夜神模拟器（安卓模拟器）</li>
-<li>TeamViewer（最近几次老是连接不上，不知道为什么）</li>
-<li>Xshell（本来是是用来连接vps的，现在vps过期了）</li>
-<li>VMware workstation （虚拟机）</li>
-</ul>
+        <p>对图像进行卷积是图像处理的基本操作，最近在研究图像滤波，经常要用到自定义卷积，所以实现了一下<br><a id="more"></a><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/imgproc/imgproc.hpp"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"opencv2/highgui/highgui.hpp"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function">Mat <span class="title">get_blur_kernel</span><span class="params">(<span class="keyword">int</span> kernel_size)</span></span>;<span class="comment">//获得归一化滤波的卷积核</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> ** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Mat src, dst;</span><br><span class="line">    Point anchor;</span><br><span class="line">    <span class="keyword">double</span> delta;</span><br><span class="line">    <span class="keyword">int</span> ddepth;</span><br><span class="line">    <span class="keyword">int</span> kernel_size = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">// 生成一个掩模核 大小为kernel_size*kernel_size,这里我们用归一化块滤波的卷积核做示例</span></span><br><span class="line">    Mat kernel = get_blur_kernel(kernel_size);</span><br><span class="line">    <span class="comment">// 载入一张图片</span></span><br><span class="line">    src = imread(<span class="string">"a.jpg"</span>);</span><br><span class="line">    <span class="keyword">if</span> (!src.data)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建窗口</span></span><br><span class="line">    imshow(<span class="string">"before"</span>,src);</span><br><span class="line">    waitKey(<span class="number">500</span>);</span><br><span class="line">    <span class="comment">// 初始化滤波器参数</span></span><br><span class="line">    anchor = Point(<span class="number">-1</span>, <span class="number">-1</span>);</span><br><span class="line">    delta = <span class="number">0</span>;</span><br><span class="line">    ddepth = <span class="number">-1</span>;</span><br><span class="line">    <span class="comment">//将核设置好之后，使用函数 filter2D 就可以生成滤波器：</span></span><br><span class="line">    filter2D(src, dst, ddepth, kernel, anchor, delta, BORDER_DEFAULT);</span><br><span class="line"></span><br><span class="line">    imshow(<span class="string">"after"</span>, dst);</span><br><span class="line">    waitKey(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//生成归一化滤波的卷积核,通过对kernel.ptr(i)[j]的操作来进行</span></span><br><span class="line"><span class="function">Mat <span class="title">get_blur_kernel</span><span class="params">(<span class="keyword">int</span> kernel_size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Mat kernel = (Mat_&lt;<span class="keyword">float</span>&gt;(kernel_size, kernel_size));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; kernel_size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; kernel_size; j++)</span><br><span class="line">            kernel.ptr&lt;<span class="keyword">float</span>&gt;(i)[j] = <span class="number">1.0</span> / (kernel_size*kernel_size);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> kernel;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>卷积核<code>kernel</code>其实也是一个<code>Mat</code>对象，我们可以通过<code>kernel.ptr(i)[j]</code>实现对矩阵元素的直接操作，将核设置好之后，使用OpenCV提供的函数 <code>filter2D</code> 就可以生成滤波器：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filter2D(src, dst, ddepth, kernel, anchor, delta, BORDER_DEFAULT);</span><br></pre></td></tr></table></figure>
+<p>其中各参数含义如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">src : 源图像</span><br><span class="line">dst : 目标图像</span><br><span class="line">ddepth : dst 的深度。若为负值（如 - <span class="number">1</span> ），则表示其深度与源图像相等。</span><br><span class="line">kernel : 用来遍历图像的核</span><br><span class="line">anchor : 核的锚点的相对位置，其中心点默认为(<span class="number">-1</span>, <span class="number">-1</span>) 。</span><br><span class="line">delta : 在卷积过程中，该值会加到每个像素上。默认情况下，这个值为 <span class="number">0</span> 。</span><br><span class="line">BORDER_DEFAULT : 这里我们保持其默认值，更多细节将在其他教程中详解</span><br></pre></td></tr></table></figure></p>
+<p>只需改变卷积核，我们就可以使用类似的方法创造自定义滤波了。</p>
 
       
     </div>
@@ -446,12 +373,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2017/12/31/mycomputer/">电脑中的软件分享</a></p>
+  <p><span>本文标题:</span><a href="/2017/03/25/filter/">使用OpenCV实现自定义卷积</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
-  <p><span>发布时间:</span>2017年12月31日 - 00:12</p>
-  <p><span>最后更新:</span>2017年12月31日 - 21:12</p>
-  <p><span>原始链接:</span><a href="/2017/12/31/mycomputer/" title="电脑中的软件分享">https://hypercube.top/2017/12/31/mycomputer/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2017/12/31/mycomputer/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2017年03月25日 - 08:03</p>
+  <p><span>最后更新:</span>2018年05月28日 - 16:05</p>
+  <p><span>原始链接:</span><a href="/2017/03/25/filter/" title="使用OpenCV实现自定义卷积">https://hypercube.top/2017/03/25/filter/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2017/03/25/filter/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
 </div>
@@ -482,7 +409,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/编程闲谈/" rel="tag"><i class="fa fa-tag"></i> 编程闲谈</a>
+            <a href="/tags/计算机视觉/" rel="tag"><i class="fa fa-tag"></i> 计算机视觉</a>
+          
+            <a href="/tags/OpenCV/" rel="tag"><i class="fa fa-tag"></i> OpenCV</a>
           
         </div>
       
@@ -495,18 +424,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/29/DoubleArr/" rel="next" title="C++自封装矩阵类Matrix">
-                <i class="fa fa-chevron-left"></i> C++自封装矩阵类Matrix
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/31/sort/" rel="prev" title="数据结构复习-十种排序思想及实现">
-                数据结构复习-十种排序思想及实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/04/register/" rel="prev" title="基于点云几何特征匹配的配准概述">
+                基于点云几何特征匹配的配准概述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,17 +482,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -644,22 +560,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载工具"><span class="nav-number">1.</span> <span class="nav-text">下载工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#办公软件"><span class="nav-number">2.</span> <span class="nav-text">办公软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多媒体"><span class="nav-number">3.</span> <span class="nav-text">多媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器"><span class="nav-number">4.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本控制系统"><span class="nav-number">5.</span> <span class="nav-text">版本控制系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统美化"><span class="nav-number">6.</span> <span class="nav-text">系统美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统优化"><span class="nav-number">7.</span> <span class="nav-text">系统优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压缩软件"><span class="nav-number">8.</span> <span class="nav-text">压缩软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索"><span class="nav-number">9.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通讯"><span class="nav-number">10.</span> <span class="nav-text">通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成开发环境"><span class="nav-number">11.</span> <span class="nav-text">集成开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器"><span class="nav-number">12.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程字体"><span class="nav-number">13.</span> <span class="nav-text">编程字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他工具"><span class="nav-number">14.</span> <span class="nav-text">其他工具</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

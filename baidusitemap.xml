@@ -5,13 +5,110 @@
     
   <url>
     <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
-    <lastmod>2018-05-25T13:10:27.110Z</lastmod>
+    <lastmod>2018-05-28T08:43:03.916Z</lastmod>
     <data>
         <display>
         <title>CopyTranslator</title>
         <pubTime>2018-05-19T05:47:00.000Z</pubTime>
         
         <tag>Python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hypercube.top/2018/03/25/gauss/</loc>
+    <lastmod>2018-05-28T08:40:52.681Z</lastmod>
+    <data>
+        <display>
+        <title>opencv构建高斯卷积核</title>
+        <pubTime>2018-03-25T00:22:34.000Z</pubTime>
+        
+        <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hypercube.top/2017/03/25/filter/</loc>
+    <lastmod>2018-05-28T08:40:39.862Z</lastmod>
+    <data>
+        <display>
+        <title>使用OpenCV实现自定义卷积</title>
+        <pubTime>2017-03-25T00:29:17.000Z</pubTime>
+        
+        <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hypercube.top/2017/04/11/opencv4android/</loc>
+    <lastmod>2018-05-28T08:39:55.198Z</lastmod>
+    <data>
+        <display>
+        <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
+        <pubTime>2017-04-11T00:36:56.000Z</pubTime>
+        
+        <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
+         
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hypercube.top/2017/04/04/register/</loc>
+    <lastmod>2018-05-28T08:39:37.810Z</lastmod>
+    <data>
+        <display>
+        <title>基于点云几何特征匹配的配准概述</title>
+        <pubTime>2017-04-04T00:08:58.000Z</pubTime>
+        
+        <tag>计算机视觉</tag>
+         
+        <tag>点云处理</tag>
+         
+        <tag>算法</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hypercube.top/2018/05/28/PointCNN/</loc>
+    <lastmod>2018-05-28T08:38:09.041Z</lastmod>
+    <data>
+        <display>
+        <title>PointCNN 论文翻译解析</title>
+        <pubTime>2018-05-28T07:25:46.000Z</pubTime>
+        
+        <tag>深度学习</tag>
          
          
            
@@ -30,86 +127,6 @@
         <pubTime>2018-05-15T04:25:46.000Z</pubTime>
         
         <tag>Task</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hypercube.top/2018/05/16/gauss/</loc>
-    <lastmod>2018-05-16T00:56:36.745Z</lastmod>
-    <data>
-        <display>
-        <title>opencv构建高斯卷积核</title>
-        <pubTime>2018-05-16T00:22:34.000Z</pubTime>
-        
-        <tag>计算机视觉</tag>
-         
-        <tag>OpenCV</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hypercube.top/2018/05/16/filter/</loc>
-    <lastmod>2018-05-16T00:56:02.751Z</lastmod>
-    <data>
-        <display>
-        <title>使用OpenCV实现自定义卷积</title>
-        <pubTime>2018-05-16T00:29:17.000Z</pubTime>
-        
-        <tag>计算机视觉</tag>
-         
-        <tag>OpenCV</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hypercube.top/2018/05/16/register/</loc>
-    <lastmod>2018-05-16T00:55:26.126Z</lastmod>
-    <data>
-        <display>
-        <title>基于点云几何特征匹配的配准概述</title>
-        <pubTime>2018-05-16T00:08:58.000Z</pubTime>
-        
-        <tag>计算机视觉</tag>
-         
-        <tag>算法</tag>
-         
-        <tag>点云处理</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hypercube.top/2018/05/16/opencv4android/</loc>
-    <lastmod>2018-05-16T00:53:48.251Z</lastmod>
-    <data>
-        <display>
-        <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
-        <pubTime>2018-05-16T00:36:56.000Z</pubTime>
-        
-        <tag>计算机视觉</tag>
-         
-        <tag>OpenCV</tag>
-         
-        <tag>Android</tag>
          
          
            
