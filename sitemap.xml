@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hypercube.top/about/index.html</loc>
+    
+    <lastmod>2018-05-29T05:51:28.993Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hypercube.top/2018/05/28/PointCNN/</loc>
     
     <lastmod>2018-05-28T08:58:04.896Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://hypercube.top/2017/04/04/register/</loc>
     
     <lastmod>2018-05-28T08:39:37.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hypercube.top/about/index.html</loc>
-    
-    <lastmod>2018-05-28T08:36:11.697Z</lastmod>
     
   </url>
   
