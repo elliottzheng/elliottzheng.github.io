@@ -1,10 +1,10 @@
-https://hypercube.top/2018/06/17/music/
+https://hypercube.top/2018/06/27/task3/
 https://hypercube.top/2018/05/28/PointCNN/
 https://hypercube.top/2018/05/19/CopyTranslator/
 https://hypercube.top/2018/05/15/task2/
 https://hypercube.top/2018/05/13/task1/
+https://hypercube.top/2018/05/01/music/
 https://hypercube.top/2018/04/18/cuboid/
 https://hypercube.top/2018/03/25/gauss/
 https://hypercube.top/2018/01/07/detect-aruco/
 https://hypercube.top/2017/12/31/sort/
-https://hypercube.top/2017/12/31/mycomputer/

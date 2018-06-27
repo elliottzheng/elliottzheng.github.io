@@ -78,20 +78,18 @@
 
 
 
-<meta name="description" content="Openmesh and  Formula representationContent Configure Openmesh in x64 release and x64 debug (please use vs2017 and openmesh 7.0).  Read a .ply file and replace every vertex with the mean of its one-ri">
+<meta name="description" content="Face DetectionBaseline Install Python3.6 (I recommend install  Anaconda rather than the original python, and create a virtual environment of python3.6 ) Configure pip to use Pypi Tsinghua mirror.(glob">
 <meta name="keywords" content="Task">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Task2">
-<meta property="og:url" content="https://hypercube.top/2018/05/15/task2/index.html">
+<meta property="og:title" content="Task3">
+<meta property="og:url" content="https://hypercube.top/2018/06/27/task3/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="Openmesh and  Formula representationContent Configure Openmesh in x64 release and x64 debug (please use vs2017 and openmesh 7.0).  Read a .ply file and replace every vertex with the mean of its one-ri">
+<meta property="og:description" content="Face DetectionBaseline Install Python3.6 (I recommend install  Anaconda rather than the original python, and create a virtual environment of python3.6 ) Configure pip to use Pypi Tsinghua mirror.(glob">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s1.ax2x.com/2018/05/14/idoTS.png">
-<meta property="og:updated_time" content="2018-05-19T07:51:20.200Z">
+<meta property="og:updated_time" content="2018-06-27T04:14:15.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Task2">
-<meta name="twitter:description" content="Openmesh and  Formula representationContent Configure Openmesh in x64 release and x64 debug (please use vs2017 and openmesh 7.0).  Read a .ply file and replace every vertex with the mean of its one-ri">
-<meta name="twitter:image" content="https://s1.ax2x.com/2018/05/14/idoTS.png">
+<meta name="twitter:title" content="Task3">
+<meta name="twitter:description" content="Face DetectionBaseline Install Python3.6 (I recommend install  Anaconda rather than the original python, and create a virtual environment of python3.6 ) Configure pip to use Pypi Tsinghua mirror.(glob">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://hypercube.top/2018/05/15/task2/"/>
+  <link rel="canonical" href="https://hypercube.top/2018/06/27/task3/"/>
 
 
 
 
 
-  <title>Task2 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Task3 | 超立方体</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -276,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/05/15/task2/">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/06/27/task3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elliott Zheng">
@@ -293,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Task2</h1>
+          <h1 class="post-title" itemprop="name headline">Task3</h1>
         
 
         <div class="post-meta">
@@ -305,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T12:25:46+08:00">
-                2018-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T11:33:49+08:00">
+                2018-06-27
               </time>
             
 
@@ -343,15 +341,30 @@
       
 
       
-        <h2 id="Openmesh-and-Formula-representation"><a href="#Openmesh-and-Formula-representation" class="headerlink" title="Openmesh and  Formula representation"></a>Openmesh and  Formula representation</h2><h3 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h3><ol>
-<li><p>Configure Openmesh in x64 release and x64 debug (please use vs2017 and openmesh 7.0).</p>
-</li>
-<li><p>Read a .ply file and replace every vertex with the mean of its one-ring neighbors.</p>
-</li>
+        <h2 id="Face-Detection"><a href="#Face-Detection" class="headerlink" title="Face Detection"></a>Face Detection</h2><h3 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h3><ol>
+<li>Install <code>Python</code>3.6 (I recommend install  <code>Anaconda</code> rather than the original <code>python</code>, and create a virtual environment of <code>python</code>3.6 )</li>
+<li>Configure <code>pip</code> to use <code>Pypi</code> Tsinghua mirror.(global)</li>
+<li>Install <code>OpenCV for python</code>.</li>
+<li>Open camera, for each frame, detect the face using the OpenCV functions, and draw a rectangle around the detected face.  </li>
+<li>Figure out the <strong>principle</strong> behind the code example, and search for information about the latest face detection methods.(<strong>submit in the format of word</strong>)</li>
 </ol>
-<h4 id="Optional"><a href="#Optional" class="headerlink" title="Optional:"></a>Optional:</h4><p>Find ways to express the following formula in computer. (keyword: mathjax, markdown)</p>
-<p><img src="https://s1.ax2x.com/2018/05/14/idoTS.png" alt="1526218484796"></p>
-<h3 id="Due-date"><a href="#Due-date" class="headerlink" title="Due date"></a>Due date</h3><p>2018/5/21 </p>
+<h3 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a>Advanced</h3><ol>
+<li>Evaluate the performance of your face detection program:<ul>
+<li>How about the detection precision? How to improve it?</li>
+<li>How much time will be cost to detect a face in an image, How to improve it?</li>
+</ul>
+</li>
+<li>Try to use OpenCV to detect objects other than human face.</li>
+</ol>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><p><a href="https://google.com" target="_blank" rel="noopener">https://google.com</a></p>
+</li>
+<li><p><a href="https://baidu.com" target="_blank" rel="noopener">https://baidu.com</a></p>
+</li>
+<li><p><a href="https://github.com" target="_blank" rel="noopener">https://github.com</a></p>
+</li>
+</ul>
+<h3 id="Due-Date"><a href="#Due-Date" class="headerlink" title="Due Date"></a>Due Date</h3><p>2018/7/1 </p>
 
       
     </div>
@@ -379,12 +392,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/05/15/task2/">Task2</a></p>
+  <p><span>本文标题:</span><a href="/2018/06/27/task3/">Task3</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
-  <p><span>发布时间:</span>2018年05月15日 - 12:05</p>
-  <p><span>最后更新:</span>2018年05月19日 - 15:05</p>
-  <p><span>原始链接:</span><a href="/2018/05/15/task2/" title="Task2">https://hypercube.top/2018/05/15/task2/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/05/15/task2/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年06月27日 - 11:06</p>
+  <p><span>最后更新:</span>2018年06月27日 - 12:06</p>
+  <p><span>原始链接:</span><a href="/2018/06/27/task3/" title="Task3">https://hypercube.top/2018/06/27/task3/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/06/27/task3/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike  4.0 International (CC BY-NC-SA 4.0)">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> <br/>欢迎转载，但请保留原文链接及作者。</p>  
 </div>
@@ -428,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/13/task1/" rel="next" title="Task1">
-                <i class="fa fa-chevron-left"></i> Task1
+              <a href="/2018/05/28/PointCNN/" rel="next" title="PointCNN 论文翻译解析">
+                <i class="fa fa-chevron-left"></i> PointCNN 论文翻译解析
               </a>
             
           </div>
@@ -437,10 +450,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/19/CopyTranslator/" rel="prev" title="CopyTranslator">
-                CopyTranslator <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Openmesh-and-Formula-representation"><span class="nav-number">1.</span> <span class="nav-text">Openmesh and  Formula representation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Content"><span class="nav-number">1.1.</span> <span class="nav-text">Content</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Optional"><span class="nav-number">1.1.1.</span> <span class="nav-text">Optional:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Due-date"><span class="nav-number">1.2.</span> <span class="nav-text">Due date</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Face-Detection"><span class="nav-number">1.</span> <span class="nav-text">Face Detection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Baseline"><span class="nav-number">1.1.</span> <span class="nav-text">Baseline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-number">1.2.</span> <span class="nav-text">Advanced</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">1.3.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Due-Date"><span class="nav-number">1.4.</span> <span class="nav-text">Due Date</span></a></li></ol></li></ol></div>
             
 
           </div>
