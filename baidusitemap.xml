@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>https://hypercube.top/2018/06/29/task4/</loc>
     <lastmod>2018-07-02T06:18:22.230Z</lastmod>
@@ -19,7 +20,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://hypercube.top/2018/06/27/task3/</loc>
@@ -158,9 +158,9 @@
         
         <tag>计算机视觉</tag>
          
-        <tag>点云处理</tag>
-         
         <tag>算法</tag>
+         
+        <tag>点云处理</tag>
          
          
            
