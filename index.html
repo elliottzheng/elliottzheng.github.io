@@ -273,6 +273,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/07/27/task7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elliott Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="超立方体">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/27/task7/" itemprop="url">Task7</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T18:25:21+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Self-Deep-Learning"><a href="#Self-Deep-Learning" class="headerlink" title="Self-Deep-Learning"></a>Self-Deep-Learning</h2><p>亲爱的同学们，之后我们就进入一个多月的暑假，在经过了小学期的调研和数据收集之后，我之后会进入实现网络，做实验以及后续的不断调参的阶段，又因为大家的安排又都不太一样，因此我不会有特别硬性的要求，但是还是希望大家能够把握这个暑假尽量多的学到东西，我意识到大家其实学习能力都非常强，但是我觉得除了学习能力，学习态度更为重要，所以希望大家能够在假期自主地进行学习。遇到问题我们也可以进一步探讨。下面我列出一些较为系统深度学习的课程，以及我们项目需要的一些东西。</p>
+<h3 id="1-系统的深度学习课程"><a href="#1-系统的深度学习课程" class="headerlink" title="1. 系统的深度学习课程"></a>1. 系统的深度学习课程</h3><p>在经过了一个月左右的理论学习，大家可能会对对理论有一定了解，但是还不清楚如何应用，代码到底是怎么写的，所以暑假我推荐的课程fast.ai 更加侧重于实践。</p>
+<p><strong>课程地址：</strong> <a href="http://course.fast.ai/index.html" target="_blank" rel="noopener">fast.ai</a></p>
+<p>课程分为2部分，每7周学完一个部分。</p>
+<ol>
+<li>课程的第一部分讲授如何在计算机视觉和自然语言处理(NLP)领域使用深度学习。</li>
+<li>第二部分讲授生成网络，GAN，序列模型等前沿研究工作，如何阅读研究论文，以及如何在深入学习领域保持领先的实用技巧。这些技巧正在以惊人的速度发展。</li>
+</ol>
+<p>那么对于3DPV的同学来说，<strong>我们重点掌握计算机视觉，生成网络，GAN，如何阅读论文等；NLP，以及序列模型领域我们不做了解。希望大家在暑假至少完成课程第一部分的计算机视觉的部分</strong></p>
+<p>相比于吴恩达教授的deeplearning.ai ，fast.ai 更侧重实战，也就是大家可以跟着课程使用pytorch 真正地去搭建一个卷积神经网络或者其他的神经网络，然后去训练。</p>
+<h2 id="2-项目相关内容"><a href="#2-项目相关内容" class="headerlink" title="2. 项目相关内容"></a>2. 项目相关内容</h2><ol>
+<li><p>之前讲过大家的任务</p>
+<ol>
+<li>品彤：三维模型的自对称性以及其在神经网络中的应用<ul>
+<li>必看论文: Partial and Approximate Symmetry Detection for 3D Geometry (群文件里有)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>翛然：基于图的深度学习</p>
+<ul>
+<li><p>必看论文：GCN:  <a href="http://tkipf.github.io/graph-convolutional-networks/" target="_blank" rel="noopener">http://tkipf.github.io/graph-convolutional-networks/</a></p>
+<p><strong>下学期要做上述论文的分享</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>点云相关内容：PointNet, PointCNN, SO-Net</p>
+<p>这三篇论文应该在群文件都有，第一篇我做了presentation，后两篇文章我做了大部分的翻译，可以参见我个人网站的<strong>关于</strong>，就可以看到我的博客和文章。</p>
+</li>
+</ol>
+<h3 id="3-工具"><a href="#3-工具" class="headerlink" title="3. 工具"></a>3. 工具</h3><ol>
+<li><a href="https://research.google.com/colaboratory/unregistered.html" target="_blank" rel="noopener">google colab</a> 如果你能翻墙的话，这个玩意儿提供免费的在线gpu环境，并且配置好了 tensorflow。</li>
+<li><a href="https://github.com/elliottzheng/CopyTranslator" target="_blank" rel="noopener">CopyTranslator</a> 论文翻译助手，反正我和灵冰用着还可以，虽然还不太完善。。此外好像说翻译工具用多了英语会退化。我推荐正确的使用方法应该是，使用它一次翻译一大段之后，然后中英文对照着看，把错误的中文翻译改过来。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/07/15/task6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1590,137 +1752,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hypercube.top/2018/04/18/cuboid/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Elliott Zheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax2x.com/2018/05/16/xbvIe.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="超立方体">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/18/cuboid/" itemprop="url">空间长方体长宽高的判定</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T16:37:14+08:00">
-                2018-04-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>​    给定空间长方体的八个顶点坐标，求取长宽高对应向量的方法。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/18/cuboid/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1775,7 +1806,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
