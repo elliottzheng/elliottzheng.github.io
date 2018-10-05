@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="真香警告使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，转化为顶点颜色效果会很差，所以我们要转化为">
+<meta name="description" content="真香警告使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，直接将纹理转化为顶点颜色效果会很差，所以我">
 <meta name="keywords" content="Python,点云,计算机视觉">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用CloudCompare从彩色网格中采样彩色点云">
 <meta property="og:url" content="https://hypercube.top/2018/10/05/cloudcompare/index.html">
 <meta property="og:site_name" content="超立方体">
-<meta property="og:description" content="真香警告使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，转化为顶点颜色效果会很差，所以我们要转化为">
+<meta property="og:description" content="真香警告使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，直接将纹理转化为顶点颜色效果会很差，所以我">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-05T12:59:06.862Z">
+<meta property="og:updated_time" content="2018-10-05T13:06:40.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用CloudCompare从彩色网格中采样彩色点云">
-<meta name="twitter:description" content="真香警告使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，转化为顶点颜色效果会很差，所以我们要转化为">
+<meta name="twitter:description" content="真香警告使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，直接将纹理转化为顶点颜色效果会很差，所以我">
 
 
 
@@ -341,8 +341,8 @@
       
 
       
-        <h2 id="真香警告"><a href="#真香警告" class="headerlink" title="真香警告"></a>真香警告</h2><p>使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，转化为顶点颜色效果会很差，所以我们要转化为顶点颜色之前应该先上采样，增加顶点的个数，然后再做三角化/表面重建。</p>
-<p>使用CloudCompare 的命令行模式配合我们自己写的python脚本，就可以快速实现对点云的采样，缺点就是这个暂时只能在windows下运行，如果有需要该脚本的请给我发邮件。</p>
+        <h2 id="真香警告"><a href="#真香警告" class="headerlink" title="真香警告"></a>真香警告</h2><p>使用CloudCompare可以从各类彩色网格(包括但不限于obj，ply)中采样彩色点云，我们都知道ply如果只是用顶点颜色来表示的话，表现力不如使用纹理的obj，那么如果获得表现力强的ply呢，密集采样个几十万个十几万个，就可以了。obj的渲染是真的麻烦，而且不容易转化为其他顶点颜色的网格，主要的原因是obj的表现力强，他所需要的点的数目不多，直接将纹理转化为顶点颜色效果会很差，所以我们要转化为顶点颜色之前应该先上采样，增加点的个数，然后再做三角化/表面重建获得网格。</p>
+<p>使用CloudCompare 的命令行模式配合我们自己写的python脚本，就可以快速实现从网格采样点云，缺点就是这个暂时只能在windows下运行，如果有需要该脚本的请给我发邮件。</p>
 
       
     </div>
@@ -373,7 +373,7 @@
   <p><span>本文标题:</span><a href="/2018/10/05/cloudcompare/">使用CloudCompare从彩色网格中采样彩色点云</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Elliott Zheng 的个人博客">Elliott Zheng</a></p>
   <p><span>发布时间:</span>2018年10月05日 - 20:10</p>
-  <p><span>最后更新:</span>2018年10月05日 - 20:10</p>
+  <p><span>最后更新:</span>2018年10月05日 - 21:10</p>
   <p><span>原始链接:</span><a href="/2018/10/05/cloudcompare/" title="使用CloudCompare从彩色网格中采样彩色点云">https://hypercube.top/2018/10/05/cloudcompare/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://hypercube.top/2018/10/05/cloudcompare/"  aria-label="复制成功！"></i></span>
   </p>

@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://hypercube.top/2018/10/05/cloudcompare/</loc>
-    <lastmod>2018-10-05T12:59:06.862Z</lastmod>
+    <lastmod>2018-10-05T13:06:40.077Z</lastmod>
     <data>
         <display>
         <title>使用CloudCompare从彩色网格中采样彩色点云</title>
@@ -208,9 +208,9 @@
         <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
         <pubTime>2017-04-11T00:36:56.000Z</pubTime>
         
-        <tag>计算机视觉</tag>
-         
         <tag>Android</tag>
+         
+        <tag>计算机视觉</tag>
          
         <tag>OpenCV</tag>
          
@@ -231,9 +231,9 @@
         
         <tag>计算机视觉</tag>
          
-        <tag>算法</tag>
-         
         <tag>点云处理</tag>
+         
+        <tag>算法</tag>
          
          
            
