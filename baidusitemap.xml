@@ -3,6 +3,27 @@
 
 
     
+  <url>
+    <loc>https://hypercube.top/2018/10/05/cloudcompare/</loc>
+    <lastmod>2018-10-05T12:59:06.862Z</lastmod>
+    <data>
+        <display>
+        <title>使用CloudCompare从彩色网格中采样彩色点云</title>
+        <pubTime>2018-10-05T12:50:42.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>点云</tag>
+         
+        <tag>计算机视觉</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -149,9 +170,9 @@
         <title>opencv构建高斯卷积核</title>
         <pubTime>2018-03-25T00:22:34.000Z</pubTime>
         
-        <tag>OpenCV</tag>
-         
         <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
          
          
            
@@ -168,9 +189,9 @@
         <title>使用OpenCV实现自定义卷积</title>
         <pubTime>2017-03-25T00:29:17.000Z</pubTime>
         
-        <tag>OpenCV</tag>
-         
         <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
          
          
            
@@ -187,11 +208,11 @@
         <title>OpenCV4android的Android Studio环境配置及项目实例下载</title>
         <pubTime>2017-04-11T00:36:56.000Z</pubTime>
         
+        <tag>计算机视觉</tag>
+         
         <tag>Android</tag>
          
         <tag>OpenCV</tag>
-         
-        <tag>计算机视觉</tag>
          
          
            
@@ -210,9 +231,9 @@
         
         <tag>计算机视觉</tag>
          
-        <tag>点云处理</tag>
-         
         <tag>算法</tag>
+         
+        <tag>点云处理</tag>
          
          
            
@@ -299,9 +320,9 @@
         <title>翻译OpenCV文档:ArUco 标记的检测 （Detection of ArUco Markers）</title>
         <pubTime>2018-01-07T03:38:46.000Z</pubTime>
         
-        <tag>OpenCV</tag>
-         
         <tag>计算机视觉</tag>
+         
+        <tag>OpenCV</tag>
          
         <tag>翻译</tag>
          
