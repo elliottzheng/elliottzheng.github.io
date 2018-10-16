@@ -24,6 +24,7 @@ Released   : 20140228
 
     <!--[if IE 6]>
     <link href="default_ie6.css" rel="stylesheet" type="text/css"/><![endif]-->
+	<script type="text/javascript" src="version.json"></script>
     <link rel="icon" href="images/logo.ico" type="image/x-icon">
 </head>
 <body>
@@ -49,7 +50,7 @@ Released   : 20140228
             <span class="byline">Accurate, Concise, Efficient, and Open Source</span>
 
         </div>
-        <h3 >Latest: v0.0.6.1</h3>
+        <h3 id="version">Latest: v0.0.6.1</h3>
         <ul class="actions">
             <li><a href="#download" class="button"><span class="fab fa-windows"></span> Download</a></li>
         </ul>
@@ -150,6 +151,8 @@ Released   : 20140228
 //var logo=document.getElementById("logo")
 //window.scrollTo(0, logo.offsetTop);
 //滚动到logo位置，这样才比较好显示
+var version_h3=document.getElementById("version")
+version_h3.innerHTML="Latest: "+version["version"]
 </script>
 </body>
 </html>
