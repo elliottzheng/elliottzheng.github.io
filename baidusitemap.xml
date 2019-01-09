@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
+    <lastmod>2019-01-09T02:33:28.663Z</lastmod>
+    <data>
+        <display>
+        <title>CopyTranslator</title>
+        <pubTime>2018-05-19T05:47:00.000Z</pubTime>
+        
+        <tag>Python,CopyTranslator</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hypercube.top/2018/10/05/cloudcompare/</loc>
     <lastmod>2018-10-05T13:06:40.077Z</lastmod>
     <data>
@@ -11,11 +28,11 @@
         <title>使用CloudCompare从彩色网格中采样彩色点云</title>
         <pubTime>2018-10-05T12:50:42.000Z</pubTime>
         
+        <tag>计算机视觉</tag>
+         
         <tag>Python</tag>
          
         <tag>点云</tag>
-         
-        <tag>计算机视觉</tag>
          
          
            
@@ -137,23 +154,6 @@
         <pubTime>2018-05-28T07:25:46.000Z</pubTime>
         
         <tag>深度学习</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
-    <lastmod>2018-05-28T08:43:03.916Z</lastmod>
-    <data>
-        <display>
-        <title>CopyTranslator</title>
-        <pubTime>2018-05-19T05:47:00.000Z</pubTime>
-        
-        <tag>Python</tag>
          
          
            
