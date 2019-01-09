@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hypercube.top/about/index.html</loc>
+    
+    <lastmod>2019-01-09T02:45:41.566Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hypercube.top/2018/05/19/CopyTranslator/</loc>
     
-    <lastmod>2019-01-09T02:33:28.663Z</lastmod>
+    <lastmod>2019-01-09T02:44:59.320Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>https://hypercube.top/2018/10/05/cloudcompare/</loc>
     
     <lastmod>2018-10-05T13:06:40.077Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hypercube.top/about/index.html</loc>
-    
-    <lastmod>2018-09-23T23:29:40.692Z</lastmod>
     
   </url>
   
