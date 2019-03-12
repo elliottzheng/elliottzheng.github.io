@@ -1,0 +1,20 @@
+{
+  "name": "my_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "vuepress": "^1.0.0-alpha.42",
+    "vuepress-plugin-mathjax": "^1.2.1",
+    "vuepress-plugin-sitemap": "^2.1.1",
+    "vuepress-theme-meteorlxy": "^1.0.0-alpha.23"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev src",
+    "build": "vuepress build src --dest dist"
+  },
+  "author": "",
+  "license": "ISC"
+}
