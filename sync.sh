@@ -5,3 +5,5 @@ git add *
 git commit -m $1
 git push origin master -f 
 git push gitee master -f
+git subtree push --prefix=release origin gh-pages
+git subtree push --prefix=release gitee gh-pages

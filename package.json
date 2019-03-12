@@ -13,7 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vuepress dev src",
-    "build": "vuepress build src --dest dist"
+    "build": "vuepress build src --dest dist",
+	"deploy": "sh sync.sh deploy"
   },
   "author": "",
   "license": "ISC"
