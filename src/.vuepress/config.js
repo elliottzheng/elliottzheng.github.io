@@ -96,6 +96,7 @@ module.exports = {
         { text: '博客', link: '/posts/', exact: false },
         { text: '关于', link: '/about/', exact: false },
         { text: 'CopyTranslator', link: 'https://copytranslator.github.io/', exact: false },
+        { text: 'ERP大作业', link: '/erp_beefcake/'},
       ],
   
       // Comments config. See the [Posts Comments] section below.
