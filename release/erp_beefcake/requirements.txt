@@ -1,7 +1,7 @@
 numpy
 pickle
 scipy
-tensorflow==1.8
+tensorflow==2.6.4
 keras
 sklearn
 pillow
